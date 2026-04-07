@@ -850,6 +850,7 @@
 
     <!-- Toastify & Live Editor Scripts -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="./assets/js/nav.js"></script>
     <script src="./assets/js/live-editor.js"></script>
 
 </body>
@@ -857,17 +858,6 @@
     <script>
         $(document).ready(function () {
 
-            // ── Mobile nav ──
-            $('.toggle-nav').on('click', function () {
-                $('.nav-menu').addClass('open');
-                $('.menu-overlay').addClass('show');
-                $('body').addClass('nav-open');
-            });
-            $('.mobile-back, .menu-overlay').on('click', function () {
-                $('.nav-menu').removeClass('open');
-                $('.menu-overlay').removeClass('show');
-                $('body').removeClass('nav-open');
-            });
 
             // ── Quote slider (3 visible on desktop) ──
             $('.quote-slider').slick({

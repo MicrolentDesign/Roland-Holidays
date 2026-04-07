@@ -3,23 +3,24 @@ $(document).ready(function () {
 
     // Open menu
     $(".toggle-nav, .sidebar-bar").on("click", function () {
-        $(".nav-menu").css("right", "0px");
+        $(".nav-menu").addClass("open");
         $(".menu-overlay").addClass("show");
-        $("body").css("overflow", "hidden");
+        $("body").addClass("nav-open");
     });
 
     // Close via Back button
     $(".mobile-back").on("click", function () {
-        $(".nav-menu").css("right", "-410px");
+        $(".nav-menu").removeClass("open");
         $(".menu-overlay").removeClass("show");
-        $("body").css("overflow", "auto");
+        $("body").removeClass("nav-open");
     });
 
     // Close via overlay click
     $(".menu-overlay").on("click", function () {
-        $(".nav-menu").css("right", "-410px");
+        $(".nav-menu").removeClass("open");
         $(this).removeClass("show");
-        $("body").css("overflow", "auto");
+        $("body").removeClass("nav-open");
     });
+
 
 });

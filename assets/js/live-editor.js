@@ -161,23 +161,49 @@
                 <label>Source URL (Image/Video):</label>
                 <input type="text" id="rleUrl" class="rle-input" value="${currentUrl}" placeholder="Paste link here...">
             </div>
+            ${type !== 'video' ? `
+            <div class="rle-field">
+                <label>OR Upload from Device:</label>
+                <input type="file" id="rleFile" class="rle-input" accept="image/*">
+            </div>
+            ` : ''}
             ${type !== 'video' ? `<img src="${currentUrl}" class="rle-preview" id="rlePreview">` : ''}
         `;
 
-        createRLEModal(`Edit ${type.toUpperCase()}`, body, (m) => {
-            const url = m.querySelector('#rleUrl').value.trim();
-            if (!url) return false;
+        const overlay = createRLEModal(`Edit ${type.toUpperCase()}`, body, (m) => {
+            const urlInput = m.querySelector('#rleUrl').value.trim();
+            if (!urlInput) return false;
 
-            if (type === 'img') el.src = url;
-            else if (type === 'bg') el.style.backgroundImage = `url('${url}')`;
-            else if (type === 'video') { const ifr = el.querySelector('iframe'); if (ifr) ifr.src = url; }
+            if (type === 'img') el.src = urlInput;
+            else if (type === 'bg') el.style.backgroundImage = `url('${urlInput}')`;
+            else if (type === 'video') { const ifr = el.querySelector('iframe'); if (ifr) ifr.src = urlInput; }
 
             const prefix = type === 'img' ? STORAGE_KEYS.IMG : (type === 'bg' ? STORAGE_KEYS.BG : STORAGE_KEYS.VIDEO);
-            localStorage.setItem(getFullKey(getAutoId(el), prefix, el), url);
+            localStorage.setItem(getFullKey(getAutoId(el), prefix, el), urlInput);
             showToast("✓ Media updated");
             return true;
         });
+
+        // Handle File Upload preview
+        const fileInput = overlay.querySelector('#rleFile');
+        if (fileInput) {
+            fileInput.onchange = (e) => {
+                const file = e.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = (re) => {
+                        const base64 = re.target.result;
+                        overlay.querySelector('#rleUrl').value = base64;
+                        const preview = overlay.querySelector('#rlePreview');
+                        if (preview) preview.src = base64;
+                    };
+
+                    reader.readAsDataURL(file);
+                }
+            };
+        }
     }
+
 
     function toggleEditMode() {
         editModeActive = !editModeActive;
@@ -239,8 +265,8 @@
         if (!loginLink) return;
 
         if (isAdmin) {
-            loginLink.innerHTML = 'Logout Admin';
-            // loginLink.classList.add('rle-logout-link');
+            loginLink.innerHTML = '<i class="fas fa-sign-out-alt"></i> Logout Admin';
+            loginLink.classList.add('rle-logout-link');
             loginLink.onclick = (e) => {
                 e.preventDefault();
                 createRLEModal('Confirm Logout', '<p class="rle-confirm-copy">Are you sure you want to exit the admin portal? Any unsaved browser cache changes might be lost.</p>', () => {
@@ -251,6 +277,7 @@
             };
         }
     }
+
 
     // -- INIT --
     window.addEventListener('DOMContentLoaded', () => {

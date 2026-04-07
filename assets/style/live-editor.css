@@ -10,13 +10,23 @@
 .tour-header .brand-logo {
     flex: 0 0 auto !important;
     position: relative;
-    z-index: 7;
+    z-index: 100010 !important;
+    /* Ensure it stays above hero but below modals */
     padding: 5px 0 !important;
 }
 
+.toggle-nav {
+    position: relative;
+    z-index: 100020 !important;
+    /* Higher than brand logo */
+    cursor: pointer;
+}
+
+
 .tour-header .brand-logo img {
     width: auto;
-    max-height: 30px !important; /* User preferred small size */
+    max-height: 30px !important;
+    /* User preferred small size */
     display: block;
 }
 
@@ -84,7 +94,8 @@
     position: absolute;
     width: 100%;
     /* Respect top:14% from color5.css */
-    z-index: 1 !important; /* Text Behind */
+    z-index: 1 !important;
+    /* Text Behind */
     display: flex;
     align-items: center;
     justify-content: center;
