@@ -27,9 +27,13 @@
 
     <!-- Responsive css -->
     <link rel="stylesheet" type="text/css" href="./assets/style/custom.css">
+
+    <!-- Toastify & Live Editor -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" type="text/css" href="./assets/style/live-editor.css">
 </head>
 
-<body>
+<body data-page-key="luxury_beach">
 
     <!-- ══════════════ HEADER ══════════════ -->
     <header class="tour-header">
@@ -40,7 +44,8 @@
                         <div class="brand-logo">
                             <a href="index.html">
                                 <img src="./assets/img/footer-logo.png" alt="Roland Holidays"
-                                    class="img-fluid blur-up lazyloaded">
+                                    class="img-fluid blur-up lazyloaded" data-img-id="main_logo"
+                                    data-edit-scope="global">
                             </a>
                         </div>
                         <nav>
@@ -64,6 +69,8 @@
                                         <li><a href="testimonials.html" class="nav-link menu-title">Testimonials</a>
                                         </li>
                                         <li><a href="contact-us.html" class="nav-link menu-title">Contact Us</a></li>
+                                        <li><a href="login.html" class="nav-link menu-title" id="navLoginLink">Login</a>
+                                        </li>
                                     </ul>
                                 </div>
                             </div>
@@ -77,12 +84,13 @@
 
 
     <!-- ══════════════ BREADCRUMB HERO ══════════════ -->
-    <section class="breadcrumb-section bg-size blur-up lazyloaded"
+    <section class="breadcrumb-section bg-size blur-up lazyloaded" data-bg-editable="true" data-bg-id="lux_hero_bg"
         style="background-image: url(./assets/img/inner-bg2.jpg); background-size: cover; background-position: center center; background-repeat: no-repeat;">
-        <img src="./assets/img/7.jpg" class="img-fluid blur-up lazyload bg-img" alt="" style="display:none;">
+        <img src="./assets/img/7.jpg" class="img-fluid blur-up lazyload bg-img" alt="" style="display:none;"
+            data-img-id="lux_hero_fallback">
         <div class="breadcrumb-content overlay-black">
             <div>
-                <h2>Luxury Beach Packages</h2>
+                <h2 data-editable="true" data-edit-id="lux_page_title">Luxury Beach Packages</h2>
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="index.html">Home</a></li>
@@ -140,8 +148,9 @@
                     <div class="overlay-content">
                         <div>
                             <div class="gold-line"></div>
-                            <h2>Premium Luxury Beach Products</h2>
-                            <p>Exclusive wholesale rates with High-NNC structures designed for high-margin resale.
+                            <h2 data-editable="true" data-edit-id="lux_showcase_h2">Premium Luxury Beach Products</h2>
+                            <p data-editable="true" data-edit-id="lux_showcase_p">Exclusive wholesale rates with
+                                High-NNC structures designed for high-margin resale.
                                 Access the world's finest beach resorts at rates only available to registered partner
                                 agents.</p>
                             <div class="d-flex flex-wrap gap-2">
@@ -177,7 +186,8 @@
                                         <div class="collection-brand-filter">
                                             <div class="filter-check"><input type="checkbox" id="f-maldives" checked>
                                                 <label for="f-maldives">Maldives</label><span
-                                                    class="filter-count">32</span></div>
+                                                    class="filter-count">32</span>
+                                            </div>
                                             <div class="filter-check"><input type="checkbox" id="f-sey"> <label
                                                     for="f-sey">Seychelles</label><span class="filter-count">18</span>
                                             </div>
@@ -205,7 +215,8 @@
                                             <div class="filter-check"><input type="checkbox" id="f-fit" checked> <label
                                                     for="f-fit">FIT / Couple</label></div>
                                             <div class="filter-check"><input type="checkbox" id="f-group" checked>
-                                                <label for="f-group">Group Package</label></div>
+                                                <label for="f-group">Group Package</label>
+                                            </div>
                                             <div class="filter-check"><input type="checkbox" id="f-honey"> <label
                                                     for="f-honey">Honeymoon Special</label></div>
                                             <div class="filter-check"><input type="checkbox" id="f-corp"> <label
@@ -250,7 +261,8 @@
 
                             <!-- Quick inquiry CTA -->
                             <div class="sidebar-cta-wrap">
-                                <a href="#luxury-inquiry-form" class="btn btn-rounded btn-gold w-100 d-block text-center">
+                                <a href="#luxury-inquiry-form"
+                                    class="btn btn-rounded btn-gold w-100 d-block text-center">
                                     <i class="fas fa-gem me-2"></i> Get Exclusive Rates
                                 </a>
                             </div>
@@ -303,8 +315,8 @@
                                             <h6><i class="fas fa-umbrella-beach me-1"></i> Water Villas</h6>
                                         </div>
                                         <div class="d-flex align-items-center gap-2 mt-1 mb-1">
-                                            <span class="nnc-badge elite nnc-badge-xs"><i
-                                                    class="fas fa-crown"></i> NNC 42%+</span>
+                                            <span class="nnc-badge elite nnc-badge-xs"><i class="fas fa-crown"></i> NNC
+                                                42%+</span>
                                             <span class="seasonal-tag">Peak: Dec–Apr</span>
                                         </div>
                                         <div class="rating rating-card">
@@ -325,7 +337,8 @@
                                             <span class="card-meta-item"><i class="fas fa-plane"></i> Direct
                                                 flights</span>
                                         </div>
-                                        <a href="#luxury-inquiry-form" class="btn btn-rounded btn-gold w-100 mt-3 btn-card-sm">
+                                        <a href="#luxury-inquiry-form"
+                                            class="btn btn-rounded btn-gold w-100 mt-3 btn-card-sm">
                                             Get Wholesale Rate
                                         </a>
                                     </div>
@@ -354,8 +367,8 @@
                                             <h6><i class="fas fa-island-tropical me-1"></i> Private Islands</h6>
                                         </div>
                                         <div class="d-flex align-items-center gap-2 mt-1 mb-1">
-                                            <span class="nnc-badge platinum nnc-badge-xs"><i
-                                                    class="fas fa-gem"></i> NNC 35–42%</span>
+                                            <span class="nnc-badge platinum nnc-badge-xs"><i class="fas fa-gem"></i> NNC
+                                                35–42%</span>
                                             <span class="seasonal-tag">Best: Apr–May</span>
                                         </div>
                                         <div class="rating rating-card">
@@ -376,7 +389,8 @@
                                             <span class="card-meta-item"><i class="fas fa-ship"></i> Island
                                                 hopping</span>
                                         </div>
-                                        <a href="#luxury-inquiry-form" class="btn btn-rounded btn-gold w-100 mt-3 btn-card-sm">
+                                        <a href="#luxury-inquiry-form"
+                                            class="btn btn-rounded btn-gold w-100 mt-3 btn-card-sm">
                                             Get Wholesale Rate
                                         </a>
                                     </div>
@@ -427,7 +441,8 @@
                                             <span class="card-meta-item"><i class="fas fa-car"></i> Transfers
                                                 incl.</span>
                                         </div>
-                                        <a href="#luxury-inquiry-form" class="btn btn-rounded btn-gold w-100 mt-3 btn-card-sm">
+                                        <a href="#luxury-inquiry-form"
+                                            class="btn btn-rounded btn-gold w-100 mt-3 btn-card-sm">
                                             Get Wholesale Rate
                                         </a>
                                     </div>
@@ -456,8 +471,8 @@
                                             <h6><i class="fas fa-fish me-1"></i> Premium Island Resorts</h6>
                                         </div>
                                         <div class="d-flex align-items-center gap-2 mt-1 mb-1">
-                                            <span class="nnc-badge platinum nnc-badge-xs"><i
-                                                    class="fas fa-gem"></i> NNC 35–42%</span>
+                                            <span class="nnc-badge platinum nnc-badge-xs"><i class="fas fa-gem"></i> NNC
+                                                35–42%</span>
                                             <span class="seasonal-tag">Best: May–Oct</span>
                                         </div>
                                         <div class="rating rating-card">
@@ -478,7 +493,8 @@
                                             <span class="card-meta-item"><i class="fas fa-water"></i> Diving
                                                 incl.</span>
                                         </div>
-                                        <a href="#luxury-inquiry-form" class="btn btn-rounded btn-gold w-100 mt-3 btn-card-sm">
+                                        <a href="#luxury-inquiry-form"
+                                            class="btn btn-rounded btn-gold w-100 mt-3 btn-card-sm">
                                             Get Wholesale Rate
                                         </a>
                                     </div>
@@ -528,7 +544,8 @@
                                             <span class="card-meta-item"><i class="fas fa-moon"></i> 5–10 nights</span>
                                             <span class="card-meta-item"><i class="fas fa-spa"></i> Spa packages</span>
                                         </div>
-                                        <a href="#luxury-inquiry-form" class="btn btn-rounded btn-gold w-100 mt-3 btn-card-sm">
+                                        <a href="#luxury-inquiry-form"
+                                            class="btn btn-rounded btn-gold w-100 mt-3 btn-card-sm">
                                             Get Wholesale Rate
                                         </a>
                                     </div>
@@ -579,7 +596,8 @@
                                             <span class="card-meta-item"><i class="fas fa-cocktail"></i>
                                                 All-inclusive</span>
                                         </div>
-                                        <a href="#luxury-inquiry-form" class="btn btn-rounded btn-gold w-100 mt-3 btn-card-sm">
+                                        <a href="#luxury-inquiry-form"
+                                            class="btn btn-rounded btn-gold w-100 mt-3 btn-card-sm">
                                             Get Wholesale Rate
                                         </a>
                                     </div>
@@ -756,7 +774,7 @@
                 <!-- Video 1 -->
                 <div class="col-lg-4">
                     <div class="video-agent-card">
-                        <div class="video-ratio">
+                        <div class="video-ratio" data-video-editable="true" data-video-id="lux_video_1">
                             <!-- Replace LUX_VIDEO_ID_1 with actual YouTube video ID -->
                             <iframe src="https://www.youtube.com/embed/LUX_VIDEO_ID_1"
                                 title="Priya Nair – Luxury Beach Package Success with Roland Holidays"
@@ -788,7 +806,7 @@
                 <!-- Video 2 -->
                 <div class="col-lg-4">
                     <div class="video-agent-card">
-                        <div class="video-ratio">
+                        <div class="video-ratio" data-video-editable="true" data-video-id="lux_video_2">
                             <!-- Replace LUX_VIDEO_ID_2 with actual YouTube video ID -->
                             <iframe src="https://www.youtube.com/embed/LUX_VIDEO_ID_2"
                                 title="Charlotte Beaumont – Luxury Beach Wholesale Review"
@@ -819,9 +837,10 @@
                 <!-- Video 3 -->
                 <div class="col-lg-4">
                     <div class="video-agent-card">
-                        <div class="video-ratio">
+                        <div class="video-ratio" data-video-editable="true" data-video-id="lux_video_3">
+                            <!-- Replace LUX_VIDEO_ID_3 with actual YouTube video ID -->
                             <iframe src="https://www.youtube.com/embed/LUX_VIDEO_ID_3"
-                                title="Marcus Reid – Fiji &amp; Mauritius Wholesale Experience"
+                                title="James Okafor – Roland Holidays Luxury Beach Agent Testimonial"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                 allowfullscreen loading="lazy">
                             </iframe>
@@ -839,7 +858,10 @@
                                             class="fas fa-star"></i></div>
                                 </div>
                             </div>
-                            <p class="v-quote">"Our Fiji and Mauritius group bookings through Roland Holidays have been flawless. The Elite NNC tier puts us well ahead of competitors on margin, and the co-branded marketing collateral makes us look incredibly professional to high-net-worth clients."</p>
+                            <p class="v-quote">"Our Fiji and Mauritius group bookings through Roland Holidays have been
+                                flawless. The Elite NNC tier puts us well ahead of competitors on margin, and the
+                                co-branded marketing collateral makes us look incredibly professional to high-net-worth
+                                clients."</p>
                         </div>
                     </div>
                 </div>
@@ -896,7 +918,8 @@
                                 </div>
 
                                 <div class="col-md-6">
-                                    <label for="lq-dest">Interested Destination(s) <span class="required-star">*</span></label>
+                                    <label for="lq-dest">Interested Destination(s) <span
+                                            class="required-star">*</span></label>
                                     <select id="lq-dest" class="form-control form-select" required>
                                         <option value="" disabled selected>Select destination</option>
                                         <option>Maldives – Water Villas</option>
@@ -1030,7 +1053,8 @@
 
                         <h4 class="lb-card-title">Ready to get started?</h4>
                         <p class="lb-card-body">
-                            Submit an inquiry and our luxury beach desk will respond within one business day with exclusive rates.
+                            Submit an inquiry and our luxury beach desk will respond within one business day with
+                            exclusive rates.
                         </p>
 
                         <a href="#luxury-inquiry-form" class="lb-btn-primary">
@@ -1051,7 +1075,7 @@
 
 
     <!-- ══════════════ FOOTER ══════════════ -->
-   <!-- footer start -->
+    <!-- footer start -->
     <footer class="effect-cls-up footer-bg bg-size blur-up lazyloaded"
         style="background-image: url(./assets/img/13.jpg); background-size: cover; background-position: center center; background-repeat: no-repeat; display: block;">
         <img src="./assets/img/13.jpg" class="img-fluid blur-up lazyload bg-img" alt="" style="display: none;">
@@ -1276,7 +1300,7 @@
 
         });
     </script>
-
+    <script src="./assets/js/live-editor.js"></script>
 </body>
 
 </html>

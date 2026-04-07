@@ -25,9 +25,13 @@
 
     <!-- Responsive css -->
     <link rel="stylesheet" type="text/css" href="./assets/style/custom.css">
+
+    <!-- Toastify & Live Editor -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" type="text/css" href="./assets/style/live-editor.css">
 </head>
 
-<body>
+<body data-page-key="destination_detail">
 
     <!-- ══════════════ HEADER ══════════════ -->
     <header class="tour-header">
@@ -37,7 +41,7 @@
                     <div class="menu">
                         <div class="brand-logo">
                             <a href="index.html">
-                                <img src="./assets/img/footer-logo.png" alt="Roland Holidays" class="img-fluid blur-up lazyloaded">
+                                <img src="./assets/img/footer-logo.png" alt="Roland Holidays" class="img-fluid blur-up lazyloaded" data-img-id="main_logo" data-edit-scope="global">
                             </a>
                         </div>
                         <nav>
@@ -58,6 +62,7 @@
                                         <li><a href="luxury-beach.html" class="nav-link menu-title">Luxury Beaches</a></li>
                                         <li><a href="testimonials.html" class="nav-link menu-title">Testimonials</a></li>
                                         <li><a href="contact-us.html" class="nav-link menu-title">Contact Us</a></li>
+                                        <li><a href="login.html" class="nav-link menu-title" id="navLoginLink">Login</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -72,11 +77,12 @@
 
     <!-- ══════════════ BREADCRUMB HERO ══════════════ -->
     <section class="breadcrumb-section bg-size blur-up lazyloaded"
+        data-bg-editable="true" data-bg-id="dest_detail_hero_bg"
         style="background-image: url(./assets/img/ab6.jpg); background-size: cover; background-position: center center; background-repeat: no-repeat;">
-        <img src="./assets/img/inner-bg.jpg" class="img-fluid blur-up lazyload bg-img" alt="" style="display:none;">
+        <img src="./assets/img/inner-bg.jpg" class="img-fluid blur-up lazyload bg-img" alt="" style="display:none;" data-img-id="dest_detail_hero_fallback">
         <div class="breadcrumb-content overlay-black">
             <div>
-                <h2>Maldives – Wholesale Destination Guide</h2>
+                <h2 data-editable="true" data-edit-id="dest_detail_page_title">Maldives – Wholesale Destination Guide</h2>
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="index.html">Home</a></li>
@@ -120,10 +126,10 @@
                     <div id="overview" class="mb-5 pt-2">
 
                         <div class="section-title-bar">
-                            <span class="title-label"><i class="fas fa-water me-1"></i> Indian Ocean Elite</span>
-                            <h2>Maldives for Travel Agents – Why It Sells</h2>
+                            <span class="title-label" data-editable="true" data-edit-id="dd_over_label"><i class="fas fa-water me-1"></i> Indian Ocean Elite</span>
+                            <h2 data-editable="true" data-edit-id="dd_over_h2">Maldives for Travel Agents – Why It Sells</h2>
                             <div class="blue-line"></div>
-                            <p>The Maldives remains the world's most coveted luxury beach destination. As a Roland Holidays partner, you gain access to exclusive NNC rates across 100+ contracted resorts, with dedicated support from our Maldives specialist desk.</p>
+                            <p data-editable="true" data-edit-id="dd_over_p">The Maldives remains the world's most coveted luxury beach destination. As a Roland Holidays partner, you gain access to exclusive NNC rates across 100+ contracted resorts, with dedicated support from our Maldives specialist desk.</p>
                         </div>
 
                         <!-- Stat boxes -->
@@ -671,35 +677,35 @@
                         <div class="row g-3">
                             <div class="col-md-6">
                                 <div class="video-agent-card">
-                                    <div class="video-ratio">
+                                    <div class="video-ratio" data-video-editable="true" data-video-id="dd_video_1">
                                         <iframe src="https://www.youtube.com/embed/VIDEO_ID_1" allowfullscreen loading="lazy" title="Sarah Mitchell testimonial"></iframe>
                                     </div>
                                     <div class="v-body">
                                         <div class="v-agent">
                                             <div class="agent-avatar-initial">S</div>
                                             <div>
-                                                <p class="v-name">Sarah Mitchell</p>
-                                                <p class="v-agency">Dream Getaways – Sydney, Australia</p>
+                                                <p class="v-name" data-editable="true" data-edit-id="dd_v1_name">Sarah Mitchell</p>
+                                                <p class="v-agency" data-editable="true" data-edit-id="dd_v1_agency">Dream Getaways – Sydney, Australia</p>
                                             </div>
                                         </div>
-                                        <p class="v-quote">"Roland Holidays' Maldives rates are genuinely the best in the market. The 42% NNC on Velaa completely changed our luxury product offering. Our clients come back every year."</p>
+                                        <p class="v-quote" data-editable="true" data-edit-id="dd_v1_quote">"Roland Holidays' Maldives rates are genuinely the best in the market. The 42% NNC on Velaa completely changed our luxury product offering. Our clients come back every year."</p>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="video-agent-card">
-                                    <div class="video-ratio">
+                                    <div class="video-ratio" data-video-editable="true" data-video-id="dd_video_2">
                                         <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" allowfullscreen loading="lazy" title="James Chen testimonial"></iframe>
                                     </div>
                                     <div class="v-body">
                                         <div class="v-agent">
                                             <div class="agent-avatar-initial">J</div>
                                             <div>
-                                                <p class="v-name">James Chen</p>
-                                                <p class="v-agency">Pacific Travel Group – Singapore</p>
+                                                <p class="v-name" data-editable="true" data-edit-id="dd_v2_name">James Chen</p>
+                                                <p class="v-agency" data-editable="true" data-edit-id="dd_v2_agency">Pacific Travel Group – Singapore</p>
                                             </div>
                                         </div>
-                                        <p class="v-quote">"We moved our entire Maldives group portfolio to Roland Holidays two years ago. The allocation flexibility for groups of 20+ and the dedicated account manager made everything seamless."</p>
+                                        <p class="v-quote" data-editable="true" data-edit-id="dd_v2_quote">"We moved our entire Maldives group portfolio to Roland Holidays two years ago. The allocation flexibility for groups of 20+ and the dedicated account manager made everything seamless."</p>
                                     </div>
                                 </div>
                             </div>
@@ -1134,11 +1140,35 @@
                                         <li><a href="#">Explore Wholesale Destination</a></li>
                                         <li><a href="#"> Luxury Beach Wholesale Packages,</a></li>
                                         <li><a href="#">artner Testimonials</a> </li>
+                                        <li><a href="login.html">Login</a></li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="./assets/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/lazysizes.min.js"></script>
+    <script src="./assets/js/snow.js"></script>
+    <script src="./assets/js/nav.js"></script>
+
+    <!-- Toastify & Live Editor Scripts -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="./assets/js/live-editor.js"></script>
+
+    <!-- LIVE EDITOR FLOATING BUTTONS -->
+    <button id="editModeBtn" class="edit-mode-toggle">
+        <i class="fas fa-edit"></i> Edit Mode OFF
+    </button>
+    <button id="resetEditsBtn" class="reset-edits-btn">
+        <i class="fas fa-undo"></i> Reset All Edits
+    </button>
 
                 </div>
             </div>

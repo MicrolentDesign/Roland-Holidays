@@ -1,0 +1,473 @@
+/* Shared header polish */
+.tour-header .menu {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 15px !important;
+    flex-wrap: nowrap !important;
+}
+
+.tour-header .brand-logo {
+    flex: 0 0 auto !important;
+    position: relative;
+    z-index: 7;
+    padding: 5px 0 !important;
+}
+
+.tour-header .brand-logo img {
+    width: auto;
+    max-height: 30px !important; /* User preferred small size */
+    display: block;
+}
+
+.tour-header nav {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.tour-header .main-navbar {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.tour-header .nav-menu {
+    align-items: center;
+}
+
+/* #navLoginLink {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 100px;
+    padding: 9px 15px !important;
+    font-size: 13px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #1f6fe5 0%, #0f5ccc 100%);
+    color: #fff !important;
+    font-weight: 700;
+    box-shadow: 0 12px 22px rgba(31, 111, 229, 0.22);
+    transition: transform 0.2s ease;
+} */
+
+#navLoginLink:hover,
+#navLoginLink:focus {
+    transform: translateY(-1px);
+    box-shadow: 0 16px 26px rgba(31, 111, 229, 0.28);
+    background: linear-gradient(135deg, #1765d5 0%, #0d4faa 100%);
+}
+
+#navLoginLink.rle-logout-link {
+    background: #fff;
+    color: #1f6fe5 !important;
+    border: 1px solid rgba(31, 111, 229, 0.2);
+    box-shadow: 0 10px 24px rgba(17, 39, 74, 0.12);
+}
+
+#navLoginLink.rle-logout-link:hover,
+#navLoginLink.rle-logout-link:focus {
+    background: #f2f7ff;
+}
+
+/* Hero layering fix */
+.home_effect .effect_image {
+    position: relative;
+    isolation: isolate;
+}
+
+.home_effect .effect_image img {
+    position: relative;
+    z-index: 2 !important;
+    /* Peak in Front */
+}
+
+.home_effect .effect_image .effect_content {
+    position: absolute;
+    width: 100%;
+    /* Respect top:14% from color5.css */
+    z-index: 1 !important; /* Text Behind */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+}
+
+.home_effect .effect_image .effect_content>div,
+.home_effect .effect_image .effect_content h1 {
+    position: relative;
+    z-index: 3;
+}
+
+/* Floating admin actions */
+.edit-mode-toggle,
+.reset-edits-btn {
+    position: fixed;
+    z-index: 100060;
+    border: none;
+    border-radius: 999px;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    box-shadow: 0 16px 30px rgba(16, 30, 54, 0.22);
+}
+
+.edit-mode-toggle {
+    right: 24px;
+    bottom: 24px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 24px;
+    background: linear-gradient(135deg, #1f6fe5 0%, #0f5ccc 100%);
+}
+
+.edit-mode-toggle.active {
+    background: linear-gradient(135deg, #e23f57 0%, #c92f46 100%);
+}
+
+.reset-edits-btn {
+    left: 24px;
+    bottom: 24px;
+    padding: 13px 22px;
+    background: #20324f;
+}
+
+.edit-mode-toggle:hover,
+.reset-edits-btn:hover {
+    transform: translateY(-2px);
+}
+
+/* Edit mode targeting */
+body.rle-edit-mode .snow {
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
+body.rle-edit-mode .rle-target {
+    position: relative;
+    cursor: pointer !important;
+    pointer-events: auto !important;
+    /* FORCE CLICKABLE */
+    z-index: 1000 !important;
+}
+
+body.rle-edit-mode iframe {
+    pointer-events: none !important;
+    /* Block video play to allow edit click */
+}
+
+body.rle-edit-mode .rle-text-target {
+    box-shadow: inset 0 0 0 2px rgba(31, 111, 229, 0.18);
+}
+
+body.rle-edit-mode .rle-text-target:hover {
+    box-shadow: inset 0 0 0 2px rgba(31, 111, 229, 0.48);
+    background: rgba(31, 111, 229, 0.05);
+}
+
+body.rle-edit-mode .rle-media-target,
+body.rle-edit-mode .rle-bg-target,
+body.rle-edit-mode .rle-iframe-target {
+    box-shadow: 0 0 0 2px rgba(31, 111, 229, 0.34);
+}
+
+body.rle-edit-mode .rle-media-target:hover,
+body.rle-edit-mode .rle-bg-target:hover,
+body.rle-edit-mode .rle-iframe-target:hover {
+    box-shadow: 0 0 0 3px rgba(31, 111, 229, 0.55);
+}
+
+body.rle-edit-mode .rle-target[data-rle-badge]::after {
+    content: attr(data-rle-badge);
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    min-width: 20px;
+    height: 20px;
+    padding: 0 6px;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #1f6fe5;
+    color: #fff;
+    font-size: 10px;
+    line-height: 1;
+    letter-spacing: 0.02em;
+    box-shadow: 0 4px 10px rgba(17, 39, 74, 0.24);
+    pointer-events: none;
+    z-index: 5;
+}
+
+body.rle-edit-mode .rle-text-target[data-rle-badge]::after {
+    background: #0f5ccc;
+}
+
+/* Modals */
+.rle-modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 100120;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: rgba(11, 21, 38, 0.72);
+    backdrop-filter: blur(8px);
+}
+
+.rle-modal {
+    width: min(760px, 100%);
+    max-height: min(88vh, 900px);
+    overflow: hidden;
+    border-radius: 22px;
+    background: #fff;
+    box-shadow: 0 28px 60px rgba(8, 18, 34, 0.34);
+    display: flex;
+    flex-direction: column;
+}
+
+.rle-modal-header,
+.rle-modal-footer {
+    padding: 18px 22px;
+    background: #f8fbff;
+    border-color: rgba(31, 111, 229, 0.08);
+}
+
+.rle-modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    border-bottom: 1px solid rgba(31, 111, 229, 0.08);
+}
+
+.rle-modal-title {
+    margin: 0;
+    font-size: 1.18rem;
+    font-weight: 700;
+    color: #16345e;
+}
+
+.rle-close-btn {
+    width: 38px;
+    height: 38px;
+    border: none;
+    border-radius: 50%;
+    background: #e9f1ff;
+    color: #1f6fe5;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.rle-modal-body {
+    padding: 22px;
+    overflow: auto;
+}
+
+.rle-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 16px;
+    padding: 12px;
+    border-radius: 14px;
+    background: #f8fbff;
+}
+
+.rle-toolbar button,
+.rle-toolbar select,
+.rle-toolbar input[type="color"] {
+    height: 40px;
+    border: 1px solid rgba(31, 111, 229, 0.14);
+    border-radius: 10px;
+    background: #fff;
+}
+
+.rle-toolbar button {
+    min-width: 40px;
+    padding: 0 12px;
+    color: #16345e;
+}
+
+.rle-toolbar select {
+    padding: 0 12px;
+    color: #16345e;
+}
+
+.rle-toolbar input[type="color"] {
+    width: 44px;
+    padding: 4px;
+}
+
+.rle-field {
+    margin-bottom: 14px;
+}
+
+.rle-field label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #26456f;
+}
+
+.rle-textarea,
+.rle-input {
+    width: 100%;
+    border: 1px solid rgba(31, 111, 229, 0.16);
+    border-radius: 14px;
+    background: #fff;
+    color: #19385f;
+    font-size: 15px;
+}
+
+.rle-textarea {
+    min-height: 220px;
+    padding: 16px 18px;
+    resize: vertical;
+    line-height: 1.65;
+}
+
+.rle-input {
+    height: 48px;
+    padding: 0 16px;
+}
+
+.rle-preview {
+    width: 100%;
+    max-height: 260px;
+    object-fit: contain;
+    border-radius: 16px;
+    background: #f6f9ff;
+    margin-top: 14px;
+}
+
+.rle-upload-btn,
+.rle-save-btn,
+.rle-cancel-btn,
+.rle-danger-btn {
+    border: none;
+    border-radius: 999px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.rle-upload-btn {
+    padding: 10px 18px;
+    background: #1f6fe5;
+    color: #fff;
+}
+
+.rle-modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    border-top: 1px solid rgba(31, 111, 229, 0.08);
+}
+
+.rle-cancel-btn,
+.rle-save-btn,
+.rle-danger-btn {
+    padding: 11px 20px;
+}
+
+.rle-cancel-btn {
+    background: #e9eef7;
+    color: #24456f;
+}
+
+.rle-save-btn {
+    background: linear-gradient(135deg, #1f6fe5 0%, #0f5ccc 100%);
+    color: #fff;
+}
+
+.rle-danger-btn {
+    background: linear-gradient(135deg, #e23f57 0%, #c92f46 100%);
+    color: #fff;
+}
+
+.rle-confirm-copy {
+    margin: 0;
+    color: #35557f;
+    line-height: 1.7;
+}
+
+/* Small screens */
+@media (max-width: 991px) {
+    .tour-header .menu {
+        gap: 16px;
+    }
+
+    .tour-header .brand-logo img {
+        max-height: 50px;
+        padding: 7px 10px;
+    }
+
+    #navLoginLink {
+        min-width: 100px;
+        padding: 10px 16px !important;
+    }
+}
+
+@media (max-width: 767px) {
+    .tour-header .menu {
+        align-items: center;
+    }
+
+    .tour-header .brand-logo {
+        max-width: 160px;
+    }
+
+    .tour-header .brand-logo img {
+        max-width: 100%;
+        max-height: 44px;
+    }
+
+    .edit-mode-toggle,
+    .reset-edits-btn {
+        bottom: 16px;
+        padding: 12px 18px;
+        font-size: 13px;
+    }
+
+    .edit-mode-toggle {
+        right: 16px;
+    }
+
+    .reset-edits-btn {
+        left: 16px;
+    }
+
+    body.rle-edit-mode .rle-target[data-rle-badge]::after {
+        top: 4px;
+        right: 4px;
+        min-width: 18px;
+        height: 18px;
+        font-size: 9px;
+        padding: 0 5px;
+    }
+
+    .rle-modal-overlay {
+        padding: 14px;
+    }
+
+    .rle-modal-header,
+    .rle-modal-body,
+    .rle-modal-footer {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .rle-modal-footer {
+        flex-direction: column-reverse;
+    }
+
+    .rle-cancel-btn,
+    .rle-save-btn,
+    .rle-danger-btn {
+        width: 100%;
+    }
+}

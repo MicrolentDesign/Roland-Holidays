@@ -27,9 +27,13 @@
 
     <!-- Responsive css -->
     <link rel="stylesheet" type="text/css" href="./assets/style/custom.css">
+
+    <!-- Toastify & Live Editor -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" type="text/css" href="./assets/style/live-editor.css">
 </head>
 
-<body>
+<body data-page-key="destinations">
 
     <!-- ══════════════ HEADER ══════════════ -->
     <header class="tour-header">
@@ -40,7 +44,7 @@
                         <div class="brand-logo">
                             <a href="index.html">
                                 <img src="./assets/img/footer-logo.png" alt="Roland Holidays"
-                                    class="img-fluid blur-up lazyloaded">
+                                    class="img-fluid blur-up lazyloaded" data-img-id="main_logo" data-edit-scope="global">
                             </a>
                         </div>
                         <nav>
@@ -64,6 +68,7 @@
                                         <li><a href="testimonials.html" class="nav-link menu-title">Testimonials</a>
                                         </li>
                                         <li><a href="contact-us.html" class="nav-link menu-title">Contact Us</a></li>
+                                        <li><a href="login.html" class="nav-link menu-title" id="navLoginLink">Login</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -77,10 +82,12 @@
 
     <!-- ══════════════ BREADCRUMB HERO ══════════════ -->
     <section class="breadcrumb-section bg-size blur-up lazyloaded"
+        data-bg-editable="true" data-bg-id="dest_hero_bg"
         style="background-image: url(./assets/img/ab6.jpg); background-size: cover; background-position: center center; background-repeat: no-repeat;">
+        <img src="./assets/img/ab6.jpg" class="img-fluid blur-up lazyload bg-img" alt="" style="display:none;" data-img-id="dest_hero_fallback">
         <div class="breadcrumb-content overlay-black">
             <div>
-                <h2>Wholesale Destinations</h2>
+                <h2 data-editable="true" data-edit-id="dest_page_title">Wholesale Destinations</h2>
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="index.html">Home</a></li>
@@ -147,8 +154,8 @@
         <div class="container">
 
             <div class="dest-section-title">           
-                <h2>Our Wholesale Destinations</h2>
-                <p>Handpicked destinations with exclusive NNC rates – from Middle East city breaks to Indian Ocean
+                <h2 data-editable="true" data-edit-id="dest_intro_h2">Our Wholesale Destinations</h2>
+                <p data-editable="true" data-edit-id="dest_intro_p">Handpicked destinations with exclusive NNC rates – from Middle East city breaks to Indian Ocean
                     island retreats.</p>
             </div>
 
@@ -158,19 +165,19 @@
                 <div class="col-xl-4 col-md-6 dest-card-wrap" data-region="middle-east" data-nnc="gold">
                     <div class="routes-box">
                         <div class="routes-img">
-                            <img src="./assets/img/p1.jpg" alt="Dubai" class="img-fluid blur-up lazyloaded">
+                            <img src="./assets/img/p1.jpg" alt="Dubai" class="img-fluid blur-up lazyloaded" data-img-id="dest_1_img">
                             <div class="discount">
-                                <h6>Gold Tier</h6>
+                                <h6 data-editable="true" data-edit-id="dest_1_tier">Gold Tier</h6>
                             </div>
                             <div class="price-round">
                                 <h6>NNC</h6>
-                                <h3>28–35%</h3>
+                                <h3 data-editable="true" data-edit-id="dest_1_nnc">28–35%</h3>
                             </div>
                         </div>
                         <div class="routes-content">
                             <div class="top-bar">
-                                <h5>Dubai</h5>
-                                <h6><i class="fas fa-map-marker-alt me-1 icon-blue"></i> Middle East</h6>
+                                <h5 data-editable="true" data-edit-id="dest_1_name">Dubai</h5>
+                                <h6 data-editable="true" data-edit-id="dest_1_region"><i class="fas fa-map-marker-alt me-1 icon-blue"></i> Middle East</h6>
                             </div>
                             <div class="star-rating mb-1">
                                 <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
@@ -631,7 +638,13 @@
     <script src="./assets/js/bootstrap.bundle.min.js"></script>
     <script src="./assets/js/lazysizes.min.js"></script>
     <script src="./assets/js/snow.js"></script>
+    <script src="./assets/js/nav.js"></script>
 
+    <!-- Toastify & Live Editor Scripts -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="./assets/js/live-editor.js"></script>
+
+</body>
     <script>
         // ── Mobile nav ──
         $(document).ready(function () {
