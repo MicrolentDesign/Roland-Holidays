@@ -32,9 +32,13 @@
 
     <!-- Responsive css -->
     <link rel="stylesheet" type="text/css" href="./assets/style/custom.css">
+
+    <!-- Toastify & Live Editor -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" type="text/css" href="./assets/style/live-editor.css">
 </head>
 
-<body>
+<body data-page-key="testimonials">
 
     <!-- ══════════════ HEADER ══════════════ -->
     <header class="tour-header">
@@ -44,7 +48,7 @@
                     <div class="menu">
                         <div class="brand-logo">
                             <a href="index.html">
-                                <img src="./assets/img/footer-logo.png" alt="Roland Holidays" class="img-fluid blur-up lazyloaded">
+                                <img src="./assets/img/footer-logo.png" alt="Roland Holidays" class="img-fluid blur-up lazyloaded" data-img-id="main_logo" data-edit-scope="global">
                             </a>
                         </div>
                         <nav>
@@ -65,6 +69,7 @@
                                         <li><a href="luxury-beach.html" class="nav-link menu-title">Luxury Beaches</a></li>
                                         <li><a href="testimonials.html" class="nav-link menu-title active">Testimonials</a></li>
                                         <li><a href="contact-us.html" class="nav-link menu-title">Contact Us</a></li>
+                                        <li><a href="login.html" class="nav-link menu-title" id="navLoginLink">Login</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -79,11 +84,12 @@
 
     <!-- ══════════════ BREADCRUMB HERO ══════════════ -->
     <section class="breadcrumb-section bg-size blur-up lazyloaded"
+        data-bg-editable="true" data-bg-id="test_breadcrumb_bg"
         style="background-image: url(./assets/img/inner-bg.jpg); background-size: cover; background-position: center center; background-repeat: no-repeat;">
-        <img src="./assets/img/8.jpg" class="img-fluid blur-up lazyload bg-img" alt="" style="display:none;">
+        <img src="./assets/img/8.jpg" class="img-fluid blur-up lazyload bg-img" alt="" style="display:none;" data-img-id="test_breadcrumb_fallback">
         <div class="breadcrumb-content overlay-black">
             <div>
-                <h2>Partner Testimonials</h2>
+                <h2 data-editable="true" data-edit-id="test_page_title">Partner Testimonials</h2>
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="index.html">Home</a></li>
@@ -103,11 +109,11 @@
         <div class="container">
             <div class="row justify-content-center text-center mb-1">
                 <div class="col-xl-7 col-lg-9">
-                    <div class="section-tag">Agent Stories</div>
-                    <h2 class="section-h2-fluid">
+                    <div class="section-tag" data-editable="true" data-edit-id="test_intro_tag">Agent Stories</div>
+                    <h2 class="section-h2-fluid" data-editable="true" data-edit-id="test_intro_h2">
                         What Our Partner Agents <span class="text-blue">Say</span>
                     </h2>
-                    <p class="section-desc-grey">
+                    <p class="section-desc-grey" data-editable="true" data-edit-id="test_intro_p">
                         Travel agents and tour operators from across the globe share their first-hand experiences of growing their business with Roland Holidays as their wholesale partner. These are real stories — real results.
                     </p>
                 </div>
@@ -136,7 +142,7 @@
                 <div class="col-xl-4 col-lg-6" data-category="rates groups">
                     <div class="video-testimonial-card position-relative">
                         <span class="featured-ribbon"><i class="fas fa-star me-1"></i> Featured</span>
-                        <div class="video-ratio">
+                        <div class="video-ratio" data-video-editable="true" data-video-id="testimonial_video_1">
                             <!-- Replace VIDEO_ID_1 with actual YouTube video ID -->
                             <iframe
                                 src="https://www.youtube.com/embed/VIDEO_ID_1"
@@ -149,9 +155,9 @@
                             <div class="agent-meta">
                                 <img src="./assets/img/1.jpg" alt="Sarah Mitchell" class="agent-avatar">
                                 <div>
-                                    <p class="agent-name">Sarah Mitchell</p>
-                                    <p class="agent-agency">Dream Getaways Travel Agency</p>
-                                    <p class="agent-country"><i class="fas fa-map-marker-alt me-1"></i> New York, USA</p>
+                                    <p class="agent-name" data-editable="true" data-edit-id="test_1_agent_name">Sarah Mitchell</p>
+                                    <p class="agent-agency" data-editable="true" data-edit-id="test_1_agent_agency">Dream Getaways Travel Agency</p>
+                                    <p class="agent-country" data-editable="true" data-edit-id="test_1_agent_loc"><i class="fas fa-map-marker-alt me-1"></i> New York, USA</p>
                                 </div>
                                 <div class="ms-auto">
                                     <div class="rating">
@@ -159,7 +165,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <p class="card-quote">"Roland Holidays' NNC rate structure completely transformed how we price group packages. We're now 22% more competitive in the market without cutting our own margins. The dedicated account manager made the transition seamless."</p>
+                            <p class="card-quote" data-editable="true" data-edit-id="test_1_quote">"Roland Holidays' NNC rate structure completely transformed how we price group packages. We're now 22% more competitive in the market without cutting our own margins. The dedicated account manager made the transition seamless."</p>
                             <div class="card-tags">
                                 <span class="tag">NNC Rates</span>
                                 <span class="tag">Group Travel</span>
@@ -172,7 +178,7 @@
                 <!-- Video 2 – Support -->
                 <div class="col-xl-4 col-lg-6" data-category="support visa">
                     <div class="video-testimonial-card">
-                        <div class="video-ratio">
+                        <div class="video-ratio" data-video-editable="true" data-video-id="testimonial_video_2">
                             <!-- Replace VIDEO_ID_2 with actual YouTube video ID -->
                             <iframe
                                 src="https://www.youtube.com/embed/VIDEO_ID_2"
@@ -185,9 +191,9 @@
                             <div class="agent-meta">
                                 <img src="./assets/img/2.jpg" alt="James Okafor" class="agent-avatar">
                                 <div>
-                                    <p class="agent-name">James Okafor</p>
-                                    <p class="agent-agency">Elite Tours International</p>
-                                    <p class="agent-country"><i class="fas fa-map-marker-alt me-1"></i> Lagos, Nigeria</p>
+                                    <p class="agent-name" data-editable="true" data-edit-id="test_2_agent_name">James Okafor</p>
+                                    <p class="agent-agency" data-editable="true" data-edit-id="test_2_agent_agency">Elite Tours International</p>
+                                    <p class="agent-country" data-editable="true" data-edit-id="test_2_agent_loc"><i class="fas fa-map-marker-alt me-1"></i> Lagos, Nigeria</p>
                                 </div>
                                 <div class="ms-auto">
                                     <div class="rating">
@@ -195,7 +201,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <p class="card-quote">"We handle complex multi-country group visas for up to 60 pax at a time. Roland Holidays' visa team processes everything within 5 business days — accurately, every time. That reliability is what keeps our clients coming back to us."</p>
+                            <p class="card-quote" data-editable="true" data-edit-id="test_2_quote">"We handle complex multi-country group visas for up to 60 pax at a time. Roland Holidays' visa team processes everything within 5 business days — accurately, every time. That reliability is what keeps our clients coming back to us."</p>
                             <div class="card-tags">
                                 <span class="tag">Visa Processing</span>
                                 <span class="tag">Agent Support</span>
@@ -208,7 +214,7 @@
                 <!-- Video 3 – Luxury Beach -->
                 <div class="col-xl-4 col-lg-6" data-category="luxury rates">
                     <div class="video-testimonial-card">
-                        <div class="video-ratio">
+                        <div class="video-ratio" data-video-editable="true" data-video-id="testimonial_video_3">
                             <!-- Replace VIDEO_ID_3 with actual YouTube video ID -->
                             <iframe
                                 src="https://www.youtube.com/embed/VIDEO_ID_3"
@@ -221,9 +227,9 @@
                             <div class="agent-meta">
                                 <img src="./assets/img/3(2).jpg" alt="Priya Nair" class="agent-avatar">
                                 <div>
-                                    <p class="agent-name">Priya Nair</p>
-                                    <p class="agent-agency">Horizon Travel Solutions</p>
-                                    <p class="agent-country"><i class="fas fa-map-marker-alt me-1"></i> Mumbai, India</p>
+                                    <p class="agent-name" data-editable="true" data-edit-id="test_3_agent_name">Priya Nair</p>
+                                    <p class="agent-agency" data-editable="true" data-edit-id="test_3_agent_agency">Horizon Travel Solutions</p>
+                                    <p class="agent-country" data-editable="true" data-edit-id="test_3_agent_loc"><i class="fas fa-map-marker-alt me-1"></i> Mumbai, India</p>
                                 </div>
                                 <div class="ms-auto">
                                     <div class="rating">
@@ -231,7 +237,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <p class="card-quote">"The luxury beach packages Roland Holidays offers are genuinely exclusive. Our honeymoon clients consistently rate their experiences 5-stars, and we've built our agency's premium brand around Roland's Maldives and Mauritius offerings."</p>
+                            <p class="card-quote" data-editable="true" data-edit-id="test_3_quote">"The luxury beach packages Roland Holidays offers are genuinely exclusive. Our honeymoon clients consistently rate their experiences 5-stars, and we've built our agency's premium brand around Roland's Maldives and Mauritius offerings."</p>
                             <div class="card-tags">
                                 <span class="tag">Luxury Beach</span>
                                 <span class="tag">Maldives</span>
@@ -837,7 +843,16 @@
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="./assets/js/bootstrap.bundle.min.js"></script>
     <script src="./assets/js/lazysizes.min.js"></script>
+    <script src="./assets/js/nav.js"></script>
+
+    <!-- Theme js -->
     <script src="./assets/js/snow.js"></script>
+
+    <!-- Toastify & Live Editor Scripts -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="./assets/js/live-editor.js"></script>
+
+</body>
 
     <script>
         $(document).ready(function () {

@@ -34,9 +34,13 @@
 
     <!-- Responsive css -->
     <link rel="stylesheet" type="text/css" href="./assets/style/custom.css">
+
+    <!-- Toastify & Live Editor -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" type="text/css" href="./assets/style/live-editor.css">
 </head>
 
-<body>
+<body data-page-key="about">
 
     <!-- header start -->
     <header class="tour-header">
@@ -47,7 +51,7 @@
                         <div class="brand-logo">
                             <a href="index.html">
                                 <img src="./assets/img/footer-logo.png" alt="Roland Holidays"
-                                    class="img-fluid blur-up lazyloaded">
+                                    class="img-fluid blur-up lazyloaded" data-img-id="main_logo" data-edit-scope="global">
                             </a>
                         </div>
                         <nav>
@@ -70,6 +74,7 @@
                                         <li><a href="testimonials.html" class="nav-link menu-title">Testimonials</a>
                                         </li>
                                         <li><a href="contact-us.html" class="nav-link menu-title">Contact Us</a></li>
+                                        <li><a href="login.html" class="nav-link menu-title" id="navLoginLink">Login</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -84,11 +89,12 @@
 
     <!-- breadcrumb section start -->
     <section class="breadcrumb-section bg-size blur-up lazyloaded"
+        data-bg-editable="true" data-bg-id="about_breadcrumb_bg"
         style="background-image: url(./assets/img/inner-bg.jpg); background-size: cover; background-position: center center; background-repeat: no-repeat;">
-        <img src="./assets/img/3.jpg" class="img-fluid blur-up lazyload bg-img" alt="" style="display:none;">
+        <img src="./assets/img/3.jpg" class="img-fluid blur-up lazyload bg-img" alt="" style="display:none;" data-img-id="about_breadcrumb_fallback">
         <div class="breadcrumb-content overlay-black">
             <div>
-                <h2>About Us</h2>
+                <h2 data-editable="true" data-edit-id="about_page_title">About Us</h2>
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="index.html">Home</a></li>
@@ -129,15 +135,15 @@
                     <div class="about-text">
                         <div>
                             <div class="title-3 text-start">
-                                <span class="title-label">Our Story</span>
-                                <h2>Pioneers in B2B Wholesale<span>Travel Solutions</span></h2>
+                                <span class="title-label" data-editable="true" data-edit-id="about_story_badge">Our Story</span>
+                                <h2 data-editable="true" data-edit-id="about_story_title">Pioneers in B2B Wholesale<span>Travel Solutions</span></h2>
                             </div>
-                            <p>Founded over three decades ago, Roland Holidays has grown from a regional travel
+                            <p data-editable="true" data-edit-id="about_story_p1">Founded over three decades ago, Roland Holidays has grown from a regional travel
                                 specialist into one of the most trusted B2B wholesale travel partners in the industry.
                                 Our deep-rooted expertise and long-standing supplier relationships allow us to
                                 consistently deliver the most competitive rates and premium travel products exclusively
                                 to travel agents and tour operators.</p>
-                            <p>We understand the challenges faced by agents in today's market. That is why Roland
+                            <p data-editable="true" data-edit-id="about_story_p2">We understand the challenges faced by agents in today's market. That is why Roland
                                 Holidays is built from the ground up to serve the trade — not the end consumer. Every
                                 product, rate, and itinerary we offer is designed to help our agent partners win more
                                 business and deliver extraordinary experiences to their clients.</p>
@@ -170,8 +176,8 @@
 
             <!-- heading -->
             <div class="text-center mb-5">
-                <span class="stats-badge">Roland Holidays</span>
-                <h2 class="stats-heading">No Stories, Facts Only</h2>
+                <span class="stats-badge" data-editable="true" data-edit-id="stats_badge">Roland Holidays</span>
+                <h2 class="stats-heading" data-editable="true" data-edit-id="stats_heading">No Stories, Facts Only</h2>
             </div>
 
             <!-- cards -->
@@ -871,7 +877,13 @@
 
     <!-- Theme js -->
     <script src="./assets/js/snow.js"></script>
+    <script src="./assets/js/nav.js"></script>
 
+    <!-- Toastify & Live Editor Scripts -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="./assets/js/live-editor.js"></script>
+
+</body>
     <script>
         // Mobile nav toggle
         $(document).ready(function () {

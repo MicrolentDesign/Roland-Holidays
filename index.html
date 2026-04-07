@@ -43,9 +43,13 @@
     <!-- Responsive css -->
     <link rel="stylesheet" type="text/css" href="./assets/style/custom.css">
 
+    <!-- Toastify & Live Editor -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" type="text/css" href="./assets/style/live-editor.css">
+
 </head>
 
-<body>
+<body data-page-key="home">
 
 
     <!-- header start -->
@@ -56,7 +60,7 @@
                     <div class="menu">
                         <div class="brand-logo">
                             <a href="#">
-                                <img src="./assets/img/footer-logo.png" alt="" class="img-fluid blur-up lazyloaded">
+                                <img src="./assets/img/footer-logo.png" alt="" class="img-fluid blur-up lazyloaded" data-img-id="main_logo" data-edit-scope="global">
                             </a>
                         </div>
                         <nav>
@@ -80,6 +84,7 @@
                                         <li><a href="testimonials.html" class="nav-link menu-title">Testimonials</a>
                                         </li>
                                         <li><a href="contact-us.html" class="nav-link menu-title">Contact Us</a></li>
+                                        <li><a href="login.html" class="nav-link menu-title" id="navLoginLink">Login</a></li>
 
                                     </ul>
                                 </div>
@@ -100,8 +105,7 @@
             <img src="./assets/img/2.png" alt="">
             <div class="effect_content">
                 <div>
-
-                    <h1>Your Reliable<br>B2B Travel Partner</h1>
+                    <h1 data-editable="true" data-edit-id="hero_title">Your Reliable<br>B2B Travel Partner</h1>
                 </div>
             </div>
         </div>
@@ -116,9 +120,9 @@
                 <div class="col-12">
                     <div class="search_section">
                         <div class="title-3 detail-title">
-                            <h2 class="mb-0 pb-0">Your Reliable B2B Travel Wholesaler</h2>
-                            <h2 class="mt-0 pt-0">Competitive Rates &amp; Dedicated Agent Support</h2>
-                            <p>Roland Holidays has been a pioneer in wholesale travel solutions for over three decades.
+                            <h2 class="mb-0 pb-0" data-editable="true" data-edit-id="search_title_1">Your Reliable B2B Travel Wholesaler</h2>
+                            <h2 class="mt-0 pt-0" data-editable="true" data-edit-id="search_title_2">Competitive Rates &amp; Dedicated Agent Support</h2>
+                            <p data-editable="true" data-edit-id="search_description">Roland Holidays has been a pioneer in wholesale travel solutions for over three decades.
                                 As one of the region's most trusted B2B travel partners, we have built our reputation
                                 on delivering unbeatable wholesale rates, comprehensive destination knowledge, and
                                 unwavering support to travel agents and tour operators worldwide. Our long-standing
@@ -162,12 +166,13 @@
 
     <!--section start-->
     <section class="effect-cls effect-cls-up padding-cls full-banner parallax-img bg-size blur-up lazyloaded"
+        data-bg-editable="true" data-bg-id="featured_bg"
         style="background-image: url(./assets/img/3.jpg); background-size: cover; background-position: center center; background-repeat: no-repeat; display: block;">
-        <img src="./assets/img/3.jpg" class="img-fluid blur-up lazyload bg-img" alt="" style="display: none;">
+        <img src="./assets/img/3.jpg" class="img-fluid blur-up lazyload bg-img" alt="" style="display: none;" data-img-id="featured_bg_fallback">
         <div class="menu-section ">
             <div class="container">
                 <div class="title-3">
-                    <h2>Featured Wholesale Services</h2>
+                    <h2 data-editable="true" data-edit-id="featured_title">Featured Wholesale Services</h2>
                 </div>
                 <div class="row">
                     <div class="col">
@@ -176,8 +181,8 @@
                             <div class="menu-box">
                                 <div class="top-bar">
                                     <a href="#" tabindex="-1"><img src="./assets/img/4.jpg"
-                                            class="img-fluid blur-up lazyload" alt=""></a>
-                                    <h2>Visa Processing</h2>
+                                            class="img-fluid blur-up lazyload" alt="" data-img-id="service_1_img"></a>
+                                    <h2 data-editable="true" data-edit-id="service_1_title">Visa Processing</h2>
                                 </div>
                                 <div class="bottom-bar">
                                     <div class="menu-bar">
@@ -453,7 +458,7 @@
                 <div class="col-lg-4 col-md-6 d-flex">
                     <div class="testimonial-card">
                         <div class="card-accent-bar"></div>
-                        <div class="video-embed-wrap">
+                        <div class="video-embed-wrap" data-video-editable="true" data-video-id="testimonial_1_video">
                             <iframe src="https://www.youtube.com/embed/VIDEO_ID_1" title="Testimonial – Sarah Mitchell"
                                 frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -463,8 +468,8 @@
                             <div class="card-meta-author">
                                 <div class="card-avatar">S</div>
                                 <div>
-                                    <div class="card-author-name">Sarah Mitchell</div>
-                                    <div class="card-author-agency">Dream Getaways</div>
+                                    <div class="card-author-name" data-editable="true" data-edit-id="testimonial_1_name">Sarah Mitchell</div>
+                                    <div class="card-author-agency" data-editable="true" data-edit-id="testimonial_1_agency">Dream Getaways</div>
                                 </div>
                             </div>
                             <div class="card-stars">
@@ -473,7 +478,7 @@
                             </div>
                         </div>
                         <div class="card-quote-wrap">
-                            <p class="card-quote">
+                            <p class="card-quote" data-editable="true" data-edit-id="testimonial_1_quote">
                                 "Transformed our group booking process — from chaos to seamless."
                             </p>
                         </div>
@@ -484,7 +489,7 @@
                 <div class="col-lg-4 col-md-6 d-flex">
                     <div class="testimonial-card">
                         <div class="card-accent-bar"></div>
-                        <div class="video-embed-wrap">
+                        <div class="video-ratio" data-video-editable="true" data-video-id="index_test_video_2">
                             <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" title="Testimonial – James Okafor"
                                 frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -515,7 +520,7 @@
                 <div class="col-lg-4 col-md-6 d-flex">
                     <div class="testimonial-card">
                         <div class="card-accent-bar"></div>
-                        <div class="video-embed-wrap">
+                        <div class="video-ratio" data-video-editable="true" data-video-id="index_test_video_3">
                             <iframe src="https://www.youtube.com/embed/VIDEO_ID_3" title="Testimonial – Priya Nair"
                                 frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -799,11 +804,11 @@
     <script src="./assets/js/lazysizes.min.js"></script>
 
     <!-- Theme js -->
-    <!-- <script src="./assets/js/script.js"></script> -->
     <script src="./assets/js/snow.js"></script>
-    <script src="./assets/js/nav.js"></script>
 
-
+    <!-- Toastify & Live Editor Scripts -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="./assets/js/live-editor.js"></script>
 
 </body>
 
