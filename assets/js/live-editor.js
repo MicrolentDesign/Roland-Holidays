@@ -21,6 +21,41 @@
         VIDEO: 'rle_video_'
     };
 
+    // Format any video URL to its embed version (Privacy Enhanced)
+    function formatVideoUrl(url) {
+        if (!url) return "";
+        url = url.trim();
+        let videoId = "";
+        
+        // 1. Extraction for common formats
+        if (url.includes("youtube.com/watch")) {
+            try { videoId = new URL(url).searchParams.get("v"); } catch(e) {}
+        } else if (url.includes("youtu.be/")) {
+            videoId = url.split("youtu.be/")[1]?.split(/[?#]/)[0];
+        } else if (url.includes("youtube.com/embed/") || url.includes("youtube-nocookie.com/embed/")) {
+            videoId = url.split("/embed/")[1]?.split(/[?#]/)[0];
+        } else if (url.includes("youtube.com/shorts/")) {
+            videoId = url.split("youtube.com/shorts/")[1]?.split(/[?#]/)[0];
+        }
+        
+        // 2. Fallback: Robust regex for any YouTube ID (11 chars)
+        if (!videoId) {
+            const ytRegex = /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/|youtube-nocookie\.com\/embed\/)([^"&?\/\s]{11})/i;
+            const match = url.match(ytRegex);
+            if (match) videoId = match[1];
+        }
+        
+        if (videoId) return `https://www.youtube-nocookie.com/embed/${videoId}`;
+        
+        // Vimeo support
+        if (url.includes("vimeo.com/")) {
+            const vimeoId = url.split("vimeo.com/")[1]?.split(/[?#]/)[0];
+            if (vimeoId && !vimeoId.includes("video/")) return `https://player.vimeo.com/video/${vimeoId}`;
+        }
+        
+        return url;
+    }
+
     const pageKey = document.body.getAttribute('data-page-key') || window.location.pathname.split('/').pop().replace('.html', '') || 'index';
 
     // -- UTILS --
@@ -98,7 +133,12 @@
             const data = localStorage.getItem(getFullKey(getAutoId(el), STORAGE_KEYS.TEXT, el));
             if (data) {
                 const parsed = JSON.parse(data);
-                if (parsed.html) el.innerHTML = parsed.html;
+                if (parsed.html) {
+                    // If it contains tags, its old data. We try to preserve it as HTML, 
+                    // but move towards innerText for new edits.
+                    if (parsed.isTextOnly) el.innerText = parsed.html;
+                    else el.innerHTML = parsed.html;
+                }
                 if (parsed.color) el.style.color = parsed.color;
                 if (parsed.size) el.style.fontSize = parsed.size;
             }
@@ -114,11 +154,48 @@
             if (bg) el.style.backgroundImage = `url('${bg}')`;
         });
         // Video
-        document.querySelectorAll('.video-ratio iframe, .video-embed-wrap iframe').forEach(iframe => {
-            const wrap = iframe.closest('.video-ratio, .video-embed-wrap');
+        document.querySelectorAll('.video-ratio, .video-embed-wrap, [data-video-editable="true"]').forEach(wrap => {
             const src = localStorage.getItem(getFullKey(getAutoId(wrap), STORAGE_KEYS.VIDEO, wrap));
-            if (src) iframe.src = src;
+            renderVideoThumb(wrap, src);
         });
+    }
+
+    function renderVideoThumb(wrap, src) {
+        if (!src) {
+            const ifr = wrap.querySelector('iframe');
+            if (ifr) src = ifr.src;
+        }
+        if (!src) return;
+
+        const formatted = formatVideoUrl(src);
+        const videoId = formatted.split('/embed/')[1]?.split(/[?#]/)[0];
+        // Use hqdefault as it is more reliably available than maxresdefault
+        const thumbUrl = videoId ? `https://img.youtube.com/vi/${videoId}/hqdefault.jpg` : "";
+
+        wrap.innerHTML = `
+            <div class="rle-video-preview" style="background-image: url('${thumbUrl || './assets/img/video-placeholder.jpg'}')">
+                <div class="play-button-overlay">
+                    <i class="fas fa-play"></i>
+                </div>
+            </div>
+        `;
+        
+        // Use a persistent listener that checks the mode
+        wrap.onclick = (e) => {
+            if (typeof editModeActive !== 'undefined' && editModeActive && isAdmin) {
+                e.preventDefault();
+                e.stopPropagation();
+                openMediaEditor(wrap, 'video');
+            } else {
+                playVideo(wrap, formatted);
+            }
+        };
+    }
+
+    function playVideo(wrap, url) {
+        // Ensure we don't duplicate the ? if it's already in the URL
+        const connector = url.includes('?') ? '&' : '?';
+        wrap.innerHTML = `<iframe src="${url}${connector}autoplay=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin" class="video-embed-iframe"></iframe>`;
     }
 
     function openTextEditor(el) {
@@ -126,61 +203,71 @@
         const currentHex = rgbToHex(computed.color);
         const body = `
             <div class="rle-toolbar">
-                <button type="button" onclick="document.execCommand('bold', false, null)"><i class="fas fa-bold"></i></button>
                 <input type="color" id="rleColor" value="${currentHex}">
                 <select id="rleSize">
                     <option value="">Font Size</option>
                     ${[14, 16, 18, 20, 24, 28, 32, 48, 64].map(s => `<option value="${s}px" ${computed.fontSize === s + 'px' ? 'selected' : ''}>${s}px</option>`).join('')}
                 </select>
+                <div style="font-size: 11px; color: #888; margin-top: 5px;">* Plain text only (HTML tags will be escaped)</div>
             </div>
-            <textarea id="rleContent" class="rle-textarea">${el.innerHTML}</textarea>
+            <textarea id="rleContent" class="rle-textarea" placeholder="Enter text here...">${el.innerText}</textarea>
         `;
-        createRLEModal('Edit Content', body, (m) => {
-            const html = m.querySelector('#rleContent').value;
+        createRLEModal('Edit Text Content', body, (m) => {
+            const text = m.querySelector('#rleContent').value;
             const color = m.querySelector('#rleColor').value;
             const size = m.querySelector('#rleSize').value;
 
-            el.innerHTML = html;
+            el.innerText = text;
             el.style.color = color;
             if (size) el.style.fontSize = size;
 
-            localStorage.setItem(getFullKey(getAutoId(el), STORAGE_KEYS.TEXT, el), JSON.stringify({ html, color, size }));
-            showToast("✓ Saved successfully");
+            localStorage.setItem(getFullKey(getAutoId(el), STORAGE_KEYS.TEXT, el), JSON.stringify({ html: text, color, size, isTextOnly: true }));
+            showToast("✓ Text saved successfully");
             return true;
         });
     }
 
     function openMediaEditor(el, type) {
         let currentUrl = "";
+        const rleType = el.getAttribute('data-rle-type');
+        const isIcon = rleType === 'icon';
+
         if (type === 'img') currentUrl = el.src;
         else if (type === 'bg') currentUrl = (el.style.backgroundImage.match(/url\(['"]?([^'")\s]+)['"]?\)/) || [])[1];
         else if (type === 'video') currentUrl = el.querySelector('iframe')?.src || "";
 
         const body = `
             <div class="rle-field">
-                <label>Source URL (Image/Video):</label>
+                <label>Source URL (${isIcon ? 'Icon' : 'Image/Video'}):</label>
                 <input type="text" id="rleUrl" class="rle-input" value="${currentUrl}" placeholder="Paste link here...">
             </div>
             ${type !== 'video' ? `
             <div class="rle-field">
-                <label>OR Upload from Device:</label>
-                <input type="file" id="rleFile" class="rle-input" accept="image/*">
+                <label>OR Upload ${isIcon ? 'Icon' : 'from Device'}:</label>
+                <input type="file" id="rleFile" class="rle-input" accept="${isIcon ? 'image/x-icon,image/png,image/svg+xml,image/webp' : 'image/*'}">
+                ${isIcon ? '<div style="font-size: 11px; color: #888; margin-top: 4px;">Recommended: SVG or PNG (max 128x128)</div>' : ''}
             </div>
             ` : ''}
-            ${type !== 'video' ? `<img src="${currentUrl}" class="rle-preview" id="rlePreview">` : ''}
+            ${type !== 'video' ? `<img src="${currentUrl}" class="rle-preview" id="rlePreview" style="${isIcon ? 'max-width: 64px; object-fit: contain;' : ''}">` : ''}
         `;
 
-        const overlay = createRLEModal(`Edit ${type.toUpperCase()}`, body, (m) => {
+        const overlay = createRLEModal(`Edit ${isIcon ? 'Icon' : type.toUpperCase()}`, body, (m) => {
             const urlInput = m.querySelector('#rleUrl').value.trim();
             if (!urlInput) return false;
 
             if (type === 'img') el.src = urlInput;
             else if (type === 'bg') el.style.backgroundImage = `url('${urlInput}')`;
-            else if (type === 'video') { const ifr = el.querySelector('iframe'); if (ifr) ifr.src = urlInput; }
+            else if (type === 'video') { 
+                const formattedUrl = formatVideoUrl(urlInput);
+                localStorage.setItem(getFullKey(getAutoId(el), STORAGE_KEYS.VIDEO, el), formattedUrl);
+                renderVideoThumb(el, formattedUrl);
+                showToast(`✓ Video updated and formatted`);
+                return true;
+            }
 
             const prefix = type === 'img' ? STORAGE_KEYS.IMG : (type === 'bg' ? STORAGE_KEYS.BG : STORAGE_KEYS.VIDEO);
             localStorage.setItem(getFullKey(getAutoId(el), prefix, el), urlInput);
-            showToast("✓ Media updated");
+            showToast(`✓ ${isIcon ? 'Icon' : 'Media'} updated`);
             return true;
         });
 
@@ -228,12 +315,16 @@
         // Text detection
         document.querySelectorAll('h1, h2, h3, h4, h5, h6, p, span, a, li, label, .stat-num, .v-name').forEach(el => {
             if (el.id === 'navLoginLink' || el.closest('.edit-mode-toggle')) return;
+            if (el.getAttribute('data-rle-type') === 'icon') return; // Skip icons
+
             el.classList.add('rle-target', 'rle-text-target');
             el.setAttribute('data-rle-badge', 'T');
             el.onclick = (e) => { e.preventDefault(); e.stopPropagation(); openTextEditor(el); };
         });
         // Image detection
         document.querySelectorAll('img').forEach(img => {
+            if (img.getAttribute('data-rle-type') === 'icon') return; // Skip icons
+
             img.classList.add('rle-target', 'rle-media-target');
             img.setAttribute('data-rle-badge', 'IMG');
             img.onclick = (e) => { e.preventDefault(); e.stopPropagation(); openMediaEditor(img, 'img'); };
@@ -244,11 +335,11 @@
             el.setAttribute('data-rle-badge', 'BG');
             el.onclick = (e) => { e.preventDefault(); e.stopPropagation(); openMediaEditor(el, 'bg'); };
         });
-        // Video detection
-        document.querySelectorAll('.video-ratio, .video-embed-wrap').forEach(el => {
+        // Video detection (YouTube embeds) - Badge only, click is handled by renderVideoThumb
+        document.querySelectorAll('.video-ratio, .video-embed-wrap, [data-video-editable="true"]').forEach(el => {
             el.classList.add('rle-target', 'rle-iframe-target');
             el.setAttribute('data-rle-badge', 'VID');
-            el.onclick = (e) => { e.preventDefault(); e.stopPropagation(); openMediaEditor(el, 'video'); };
+            // We don't override onclick here because renderVideoThumb already handles Edit Mode vs Play
         });
     }
 
@@ -256,7 +347,13 @@
         document.querySelectorAll('.rle-target').forEach(el => {
             el.classList.remove('rle-target', 'rle-text-target', 'rle-media-target', 'rle-bg-target', 'rle-iframe-target');
             el.removeAttribute('data-rle-badge');
-            el.onclick = null;
+            
+            // Only remove onclick if it was specifically set by the editor detection
+            // For videos, we want to keep the play handler from renderVideoThumb
+            const isVideo = el.classList.contains('video-ratio') || el.classList.contains('video-embed-wrap') || el.hasAttribute('data-video-editable');
+            if (!isVideo) {
+                el.onclick = null;
+            }
         });
     }
 

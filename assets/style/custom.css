@@ -1252,17 +1252,55 @@ body.nav-open {
 }
 
 /* ── 16:9 video embed wrapper ── */
-.video-embed-wrap {
+.video-embed-wrap, .video-ratio {
     position: relative;
     padding-bottom: 56.25%;
     height: 0;
     overflow: hidden;
     flex-shrink: 0;
+    background: #000;
+    cursor: pointer;
 }
-.video-embed-iframe {
+.video-embed-iframe, .video-embed-wrap iframe, .video-ratio iframe {
     position: absolute;
     top: 0; left: 0;
     width: 100%; height: 100%;
+    border: 0;
+}
+
+/* ── Thumbnail Preview & Play Button ── */
+.rle-video-preview {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+.video-embed-wrap:hover .rle-video-preview, 
+.video-ratio:hover .rle-video-preview {
+    transform: scale(1.05);
+}
+.play-button-overlay {
+    width: 60px; height: 60px;
+    background: rgba(255,255,255,0.9);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    color: #1a2a3a;
+    font-size: 20px;
+    transition: all 0.3s ease;
+}
+.video-embed-wrap:hover .play-button-overlay,
+.video-ratio:hover .play-button-overlay {
+    background: #fff;
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.4);
 }
 
 /* ── Card meta row (author + stars) ── */
@@ -1925,3 +1963,21 @@ body.nav-open {
 
 /* ── Card small button ── */
 .btn-card-sm { font-size: 13px !important; padding: 10px !important; }
+
+/* =============================================================
+   MOBILE FIXES: HERO HEADING VISIBILITY
+   ============================================================= */
+@media (max-width: 767px) {
+    .home_effect .effect_image .effect_content {
+        top: 60% !important; /* Move it down slightly */
+    }
+    .home_effect .effect_content h1 {
+        font-size: 28px !important;
+        line-height: 1.2 !important;
+    }
+}
+
+/* Ensure editor modals are above everything */
+.rle-modal-overlay {
+    z-index: 10001 !important;
+}
