@@ -163,6 +163,41 @@ body.rle-edit-mode .rle-target {
     z-index: 1000 !important;
 }
 
+/* Image Resize Handle Fix */
+.rle-img-editable-wrap {
+    position: relative;
+    display: inline-block;
+    max-width: 100%;
+    line-height: 0; /* Remove bottom gap */
+}
+
+.rle-resize-handle {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    background: #1f6fe5;
+    border: 2px solid #fff;
+    border-radius: 4px;
+    bottom: -7px;
+    right: -7px;
+    cursor: nwse-resize !important;
+    z-index: 100050;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+    display: block !important;
+    pointer-events: auto !important;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.rle-resize-handle:hover {
+    transform: scale(1.2);
+    background: #e23f57;
+}
+
+body.rle-resizing {
+    cursor: nwse-resize !important;
+    user-select: none;
+}
+
 body.rle-edit-mode iframe {
     pointer-events: none !important;
     /* Block video play to allow edit click */

@@ -145,8 +145,16 @@
         });
         // Images
         document.querySelectorAll('img').forEach(img => {
-            const src = localStorage.getItem(getFullKey(getAutoId(img), STORAGE_KEYS.IMG, img));
+            const key = getFullKey(getAutoId(img), STORAGE_KEYS.IMG, img);
+            const src = localStorage.getItem(key);
             if (src) img.src = src;
+            
+            const dim = localStorage.getItem(key + '_dim');
+            if (dim) {
+                const parsed = JSON.parse(dim);
+                if (parsed.w) img.style.width = parsed.w;
+                if (parsed.h) img.style.height = parsed.h;
+            }
         });
         // BG
         document.querySelectorAll('[style*="background-image"], .breadcrumb-section, .bg-img-container').forEach(el => {
@@ -266,7 +274,16 @@
             }
 
             const prefix = type === 'img' ? STORAGE_KEYS.IMG : (type === 'bg' ? STORAGE_KEYS.BG : STORAGE_KEYS.VIDEO);
-            localStorage.setItem(getFullKey(getAutoId(el), prefix, el), urlInput);
+            const key = getFullKey(getAutoId(el), prefix, el);
+            localStorage.setItem(key, urlInput);
+
+            if (type === 'img') {
+                // Clear dimensions if source changed (optional, but usually safer)
+                // localStorage.removeItem(key + '_dim');
+                // el.style.width = '';
+                // el.style.height = '';
+            }
+
             showToast(`✓ ${isIcon ? 'Icon' : 'Media'} updated`);
             return true;
         });
@@ -324,10 +341,58 @@
         // Image detection
         document.querySelectorAll('img').forEach(img => {
             if (img.getAttribute('data-rle-type') === 'icon') return; // Skip icons
+            if (img.closest('.rle-modal')) return; // Skip modal images
 
             img.classList.add('rle-target', 'rle-media-target');
             img.setAttribute('data-rle-badge', 'IMG');
             img.onclick = (e) => { e.preventDefault(); e.stopPropagation(); openMediaEditor(img, 'img'); };
+
+            // Wrap image for relative positioning of handle
+            const wrapper = document.createElement('div');
+            wrapper.className = 'rle-img-editable-wrap';
+            img.parentNode.insertBefore(wrapper, img);
+            wrapper.appendChild(img);
+
+            const handle = document.createElement('div');
+            handle.className = 'rle-resize-handle';
+            wrapper.appendChild(handle);
+
+            handle.onmousedown = (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+
+                const startX = e.clientX;
+                const startY = e.clientY;
+                const startW = img.offsetWidth;
+                const startH = img.offsetHeight;
+
+                document.body.classList.add('rle-resizing');
+
+                const onMouseMove = (me) => {
+                    const newW = startW + (me.clientX - startX);
+                    const newH = startH + (me.clientY - startY);
+                    
+                    img.style.width = newW + 'px';
+                    img.style.height = newH + 'px';
+                };
+
+                const onMouseUp = () => {
+                    document.body.classList.remove('rle-resizing');
+                    window.removeEventListener('mousemove', onMouseMove);
+                    window.removeEventListener('mouseup', onMouseUp);
+
+                    // Save dimensions
+                    const key = getFullKey(getAutoId(img), STORAGE_KEYS.IMG, img);
+                    localStorage.setItem(key + '_dim', JSON.stringify({
+                        w: img.style.width,
+                        h: img.style.height
+                    }));
+                    showToast("✓ Image size saved");
+                };
+
+                window.addEventListener('mousemove', onMouseMove);
+                window.addEventListener('mouseup', onMouseUp);
+            };
         });
         // BG detection
         document.querySelectorAll('[style*="background-image"], .breadcrumb-section, .bg-img-container').forEach(el => {
@@ -354,6 +419,15 @@
             if (!isVideo) {
                 el.onclick = null;
             }
+        });
+
+        // Unwrap images
+        document.querySelectorAll('.rle-img-editable-wrap').forEach(wrap => {
+            const img = wrap.querySelector('img');
+            if (img) {
+                wrap.parentNode.insertBefore(img, wrap);
+            }
+            wrap.remove();
         });
     }
 
