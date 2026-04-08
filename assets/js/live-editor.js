@@ -155,6 +155,12 @@
                 if (parsed.w) img.style.width = parsed.w;
                 if (parsed.h) img.style.height = parsed.h;
             }
+
+            const pos = localStorage.getItem(key + '_pos');
+            if (pos) {
+                const parsed = JSON.parse(pos);
+                if (parsed.x && parsed.y) img.style.transform = `translate(${parsed.x}, ${parsed.y})`;
+            }
         });
         // BG
         document.querySelectorAll('[style*="background-image"], .breadcrumb-section, .bg-img-container').forEach(el => {
@@ -345,18 +351,21 @@
 
             img.classList.add('rle-target', 'rle-media-target');
             img.setAttribute('data-rle-badge', 'IMG');
-            img.onclick = (e) => { e.preventDefault(); e.stopPropagation(); openMediaEditor(img, 'img'); };
-
-            // Wrap image for relative positioning of handle
+            
+            // Wrap image for relative positioning of handle & translation
             const wrapper = document.createElement('div');
             wrapper.className = 'rle-img-editable-wrap';
             img.parentNode.insertBefore(wrapper, img);
             wrapper.appendChild(img);
 
+            // Sync existing transform to wrapper
+            if (img.style.transform) wrapper.style.transform = img.style.transform;
+
             const handle = document.createElement('div');
             handle.className = 'rle-resize-handle';
             wrapper.appendChild(handle);
 
+            // Resize Logic
             handle.onmousedown = (e) => {
                 e.preventDefault();
                 e.stopPropagation();
@@ -388,6 +397,65 @@
                         h: img.style.height
                     }));
                     showToast("✓ Image size saved");
+                };
+
+                window.addEventListener('mousemove', onMouseMove);
+                window.addEventListener('mouseup', onMouseUp);
+            };
+
+            // Smart Move & Click Logic
+            img.onmousedown = (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+
+                const startX = e.clientX;
+                const startY = e.clientY;
+                let isDragging = false;
+                
+                let currentX = 0, currentY = 0;
+                const match = wrapper.style.transform.match(/translate\(([-\d.%a-z]+),\s*([-\d.%a-z]+)\)/i);
+                if (match) {
+                    currentX = parseFloat(match[1]);
+                    currentY = parseFloat(match[2]);
+                    var unitX = match[1].includes('%') ? '%' : 'px';
+                    var unitY = match[2].includes('%') ? '%' : 'px';
+                } else {
+                    var unitX = 'px', unitY = 'px';
+                }
+
+                const onMouseMove = (me) => {
+                    const dx = me.clientX - startX;
+                    const dy = me.clientY - startY;
+
+                    if (!isDragging && (Math.abs(dx) > 5 || Math.abs(dy) > 5)) {
+                        isDragging = true;
+                        document.body.classList.add('rle-moving');
+                        img.classList.add('rle-is-dragging');
+                    }
+
+                    if (isDragging) {
+                        wrapper.style.transform = `translate(${currentX + dx}${unitX}, ${currentY + dy}${unitY})`;
+                    }
+                };
+
+                const onMouseUp = () => {
+                    window.removeEventListener('mousemove', onMouseMove);
+                    window.removeEventListener('mouseup', onMouseUp);
+
+                    if (isDragging) {
+                        document.body.classList.remove('rle-moving');
+                        img.classList.remove('rle-is-dragging');
+
+                        const key = getFullKey(getAutoId(img), STORAGE_KEYS.IMG, img);
+                        const finalPos = wrapper.style.transform.match(/translate\(([^,]+),\s*([^)]+)\)/);
+                        if (finalPos) {
+                            localStorage.setItem(key + '_pos', JSON.stringify({ x: finalPos[1], y: finalPos[2] }));
+                            showToast("✓ Position saved");
+                        }
+                    } else {
+                        // It was just a click
+                        openMediaEditor(img, 'img');
+                    }
                 };
 
                 window.addEventListener('mousemove', onMouseMove);
@@ -425,6 +493,7 @@
         document.querySelectorAll('.rle-img-editable-wrap').forEach(wrap => {
             const img = wrap.querySelector('img');
             if (img) {
+                if (wrap.style.transform) img.style.transform = wrap.style.transform;
                 wrap.parentNode.insertBefore(img, wrap);
             }
             wrap.remove();
