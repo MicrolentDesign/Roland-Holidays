@@ -5,34 +5,28 @@
     justify-content: space-between !important;
     gap: 15px !important;
     flex-wrap: nowrap !important;
+    width: 100% !important;
 }
 
 .tour-header .brand-logo {
     flex: 0 0 auto !important;
-    position: relative;
-    z-index: 100010 !important;
-    /* Ensure it stays above hero but below modals */
     padding: 5px 0 !important;
 }
 
 .toggle-nav {
-    position: relative;
-    z-index: 100020 !important;
-    /* Higher than brand logo */
     cursor: pointer;
 }
 
-
 .tour-header .brand-logo img {
     width: auto;
-    max-height: 30px !important;
-    /* User preferred small size */
+    max-height: 50px !important;
     display: block;
 }
 
 .tour-header nav {
-    flex: 1 1 auto;
-    min-width: 0;
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+    margin: 0 !important;
 }
 
 .tour-header .main-navbar {

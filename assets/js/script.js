@@ -1,11 +1,5 @@
 /*-----------------------------------------------------------------------------------
 
- Template Name:Rica
- Template URI: themes.pixelstrap.com/rica
- Description: This is E-commerce website
- Author: Pixelstrap
- Author URI: https://themeforest.net/user/pixelstrap
-
  ----------------------------------------------------------------------------------- */
 // 01.Loader
 // 02.Tap to Top
