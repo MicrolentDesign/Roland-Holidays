@@ -25,7 +25,7 @@ h1 {
   font-weight: 700;
   letter-spacing: 0.03em;
   line-height: 1.1;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
 }
 
 h2 {
@@ -383,14 +383,30 @@ section,
   text-align: center;
 }
 .title-3 .title-label {
-  font-size: 14px;
-  color: white;
-  background-color: #7fb4d4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-size: 20px;
+  color: #e8524a;
+  background-color: transparent;
   text-transform: capitalize;
-  padding: 4px 18px 6px;
-  line-height: 1;
-  font-family: Work Sans;
-  font-weight: 600;
+  padding: 0;
+  line-height: 1.4;
+  font-family: 'Playwrite GB J', cursive;
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: 0.02em;
+  margin-bottom: 6px;
+}
+.title-3 .title-label::before,
+.title-3 .title-label::after {
+  content: '';
+  flex: 1;
+  max-width: 60px;
+  height: 1px;
+  background-color: #e8524a;
+  opacity: 0.5;
 }
 .title-3 h2 {
   font-size: calc(20px + (30 - 20) * ((100vw - 320px) / (1920 - 320)));
@@ -1027,23 +1043,27 @@ header.tour-header {
 .home_effect .effect_image img {
   position: absolute;
   width: 100%;
-  bottom: -240px;
+  bottom: -300px;
   left: 0;
 }
 .home_effect .effect_image .effect_content {
   position: absolute;
   width: 100%;
-  top: 14%;
+  top: 15%;
   left: 0;
   z-index: -1;
-  display: inline-block;
+  display: flex;
+  justify-content: center;
   text-align: center;
 }
 .home_effect .effect_image .effect_content h1 {
-  font-size: 580%;
+  font-size: clamp(28px, 3.5vw, 52px);
   color: white;
   font-weight: 900;
-  display: inline-block;
+  display: block;
+  line-height: 1.7;
+  text-shadow: 0 2px 16px rgba(0,0,0,0.4);
+  white-space: nowrap;
 }
 
 .home_effect canvas {
@@ -1815,11 +1835,11 @@ header.tour-header {
   text-align: left;
   margin-bottom: 10px;
 }
-.about-section.about_page .about-text .title-3 .title-label {
-  text-transform: uppercase;
+/* .about-section.about_page .about-text .title-3 .title-label { */
+  /* text-transform: uppercase; */
   /* -webkit-box-shadow: 5px 8.66px 20px 0px rgba(239, 63, 62, 0.22);
   box-shadow: 5px 8.66px 20px 0px rgba(239, 63, 62, 0.22); */
-}
+/* } */
 .about-section.about_page .about-text h2 {
   font-weight: 700;
 }
@@ -3852,7 +3872,6 @@ header.tour-header {
 .breadcrumb-section .breadcrumb-content h2 {
   font-size: calc(18px + (36 - 18) * ((100vw - 320px) / (1920 - 320)));
   color: white;
-  text-transform: uppercase;
   font-weight: 800;
   margin-bottom: 16px;
   margin-top: -2px;
@@ -8161,7 +8180,7 @@ header .main-navbar .nav-menu > li.mega-menu {
   header .main-navbar .nav-menu > li:hover .nav-submenu {
     opacity: 1;
     visibility: visible;
-    margin-top: 30px;
+    margin-top: 0px;
     -webkit-transition: all 0.5s ease;
     transition: all 0.5s ease;
   }
