@@ -7868,20 +7868,13 @@ header .main-navbar .nav-menu > li {
   position: relative;
   float: left;
   display: block;
-  margin-right: 30px;
-  padding-top: 30px;
-  padding-bottom: 30px;
 }
 header .main-navbar .nav-menu > li > a {
   display: block;
   color: white;
-  font-size: 14px;
-  font-weight: 900;
-  line-height: 23px;
+  font-size: 15px;
+  font-weight: 600;
   text-decoration: none;
-  text-transform: uppercase;
-  padding: 2px 18px;
-  letter-spacing: 0.07em;
   position: relative;
   border-radius: 4px;
 }

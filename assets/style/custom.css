@@ -887,7 +887,7 @@ width: 20px; height: 20px; cursor: pointer; }
    ============================================================= */
 .tab-nav-bar {
     background: #fff; border-bottom: 1px solid #eee; padding: 0;
-    position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    position: sticky; top: 0; z-index: 50; box-shadow: 0 2px 12px rgba(0,0,0,0.06);
 }
 .tab-nav-inner { display: flex; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
 .tab-nav-inner::-webkit-scrollbar { display: none; }
@@ -1085,6 +1085,10 @@ width: 20px; height: 20px; cursor: pointer; }
    RESPONSIVE — MOBILE (≤ 767px)
    ============================================================= */
 @media (max-width: 767px) {
+
+    /* ── Header ── */
+    header.tour-header .container { padding: 0 16px; }
+    .breadcrumb-section .breadcrumb-content { padding-top: 120px; }
 
     /* ── Hero ── */
     .home_effect .effect_content h1 { font-size: 24px; line-height: 1.3; }
@@ -2315,11 +2319,33 @@ width: 20px; height: 20px; cursor: pointer; }
     pointer-events: none;
 }
 
-/* Nav spacing fix */
-header .main-navbar .nav-menu > li { margin-right: 4px; }
-header .main-navbar .nav-menu > li > a { font-size: 11px; letter-spacing: 0.03em; padding-top: 20px; padding-bottom: 20px; }
-header .main-navbar { flex: 1; }
+/* ── Header ── */    
+header.tour-header { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: linear-gradient(180deg, rgba(0,0,0,0.45) 0%, transparent 100%); }
+header.tour-header .container { max-width: 100%; padding: 0 40px; }
 header .menu { display: flex; align-items: center; justify-content: space-between; }
+header .brand-logo img { height: 52px; width: auto; }
+header .main-navbar { flex: 1; }
+header .main-navbar .nav-menu > li { margin-right: 0; }
+header .main-navbar .nav-menu > li > a { color: #fff !important; font-size: 14px; font-weight: 600; letter-spacing: 0.06em;  padding: 24px 10px; position: relative; transition: color 0.25s;font-family: Nunito, sans-serif; }
+header .main-navbar .nav-menu > li > a::after { content: ''; position: absolute; bottom: 16px; left: 10px; right: 10px; height: 2px; background: #E53935; transform: scaleX(0); transition: transform 0.25s ease; border-radius: 2px; }
+header .main-navbar .nav-menu > li > a:hover::after, header .main-navbar .nav-menu > li > a.active::after { transform: scaleX(1); }
+header .main-navbar .nav-menu > li > a:hover, header .main-navbar .nav-menu > li > a.active { color: #fff !important; }
+header.tour-header.sticky { position: fixed; top: 0; background: rgb(0 0 0 / 15%); backdrop-filter: blur(12px); box-shadow: 0 2px 20px rgba(0,0,0,0.1); animation: slideDown 0.3s ease; }
+@keyframes slideDown { from { transform: translateY(-100%); } to { transform: translateY(0); } }
+
+
+/* Mobile nav — higher specificity to beat desktop color: #fff !important */
+@media (max-width: 1199px) {
+    header.tour-header .main-navbar .nav-menu > li > a,
+    header.tour-header .main-navbar .nav-menu > li > a:hover,
+    header.tour-header .main-navbar .nav-menu > li > a.active { color: #333 !important; }
+    header.tour-header .main-navbar .nav-menu > li > a::after { display: none !important; }
+    .toggle-nav i { color: #fff !important; }
+
+    /* Submenu — remove card styling on mobile */
+    header.tour-header .main-navbar .nav-menu > li .nav-submenu { box-shadow: none !important; border-radius: 0 !important; background: transparent !important; overflow: visible !important; border: none !important; }
+    header.tour-header .main-navbar .nav-menu > li .nav-submenu li a { color: #333 !important; }
+}
 
 /* ── Trending Dropdown ── */
 header .main-navbar .nav-menu > li .nav-submenu {
@@ -2519,3 +2545,4 @@ header .main-navbar .nav-menu > li .nav-submenu li a .drop-icon {
     .vhero-stats { padding: 12px 16px; border-radius: 16px; }
     .vhero-stat { padding: 0 14px; }
 }
+

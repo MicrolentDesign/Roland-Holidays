@@ -6,12 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Roland Holidays Destinations – Exclusive NNC rates on Dubai, Maldives, Seychelles, Thailand, Bali & more. Premium travel products for travel agents.">
+        content="Roland Holidays Destinations – Dubai, Maldives, Seychelles, Thailand, Bali & more. Premium travel packages for travel agents worldwide.">
     <meta name="keywords"
-        content="destinations, NNC rates, travel agents, Dubai packages, Maldives packages, Bali packages, Southeast Asia packages">
+        content="destinations, travel agents, Dubai packages, Maldives packages, Bali packages, Southeast Asia packages, Roland Holidays">
     <meta name="author" content="Roland Holidays">
     <link rel="icon" href="./assets/img/icon.png" type="image/x-icon">
-    <title>Destinations – Roland Holidays | NNC Rates for Travel Agents</title>
+    <title>Destinations – Roland Holidays | Top Travel Destinations</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Playwrite+GB+J:ital,wght@0,100..400;1,100..400&display=swap');
 
@@ -1084,9 +1084,7 @@
                                 <div class="footer-links">
                                     <ul>
                                         <!-- <li><a href="#">Visa Processing</a></li> -->
-                                        <li><a href="#">ustomized Group Itineraries &
-                                                Travel Guides</a>
-                                        </li>
+                                        <li><a href="#">Customized Group Itineraries &amp; Travel Guides</a></li>
                                         <li><a href="#"> Land Arrangements</a>
                                         </li>
                                         <li><a href="#">Travel Insurance Solutions. </a>
@@ -1106,9 +1104,9 @@
                             <div class="footer-content">
                                 <div class="footer-links">
                                     <ul>
-                                        <li><a href="#">Explore Top Destinations</a></li>
-                                        <li><a href="#"> Luxury Beach Packages</a></li>
-                                        <li><a href="#">Partner Testimonials</a> </li>
+                                        <li><a href="destinations.html">Explore Top Destinations</a></li>
+                                        <li><a href="luxury-beach.html">Luxury Beach Packages</a></li>
+                                        <li><a href="testimonials.html">Partner Testimonials</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -1135,10 +1133,7 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="./assets/js/live-editor.js"></script>
 
-</body>
-<script>
-
-
+    <script>
     // ── Filter logic ──
     document.querySelectorAll('.region-pill').forEach(function (btn) {
         btn.addEventListener('click', function () {
@@ -1156,7 +1151,6 @@
         });
     });
 
-    // Auto-filter from URL param (?season=summer or ?season=winter)
     (function() {
         var params = new URLSearchParams(window.location.search);
         var season = params.get('season');
@@ -1174,26 +1168,20 @@
         var region = regionBtn ? (regionBtn.dataset.region || 'all') : 'all';
         var season = seasonBtn ? (seasonBtn.dataset.season || 'all') : 'all';
         var visibleCount = 0;
-
         document.querySelectorAll('.dest-card-wrap').forEach(function (card) {
             var regionMatch = region === 'all' || card.dataset.region === region;
             var seasonMatch = season === 'all' || card.dataset.season === season;
-            if (regionMatch && seasonMatch) {
-                card.style.display = 'block';
-                visibleCount++;
-            } else {
-                card.style.display = 'none';
-            }
+            if (regionMatch && seasonMatch) { card.style.display = 'block'; visibleCount++; }
+            else { card.style.display = 'none'; }
         });
-
         var noResults = document.getElementById('noResults');
-        if (noResults) {
-            noResults.style.setProperty('display', visibleCount === 0 ? 'block' : 'none', 'important');
-        }
+        if (noResults) { noResults.style.setProperty('display', visibleCount === 0 ? 'block' : 'none', 'important'); }
         var countEl = document.getElementById('destCount');
         if (countEl) { countEl.textContent = visibleCount; }
     }
-</script>
+
+    </script>
+    <script src="./assets/js/sticky.js"></script>
 
 </body>
 

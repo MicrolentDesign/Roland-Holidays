@@ -22,5 +22,15 @@ $(document).ready(function () {
         $("body").removeClass("nav-open");
     });
 
+    // Mobile submenu toggle (accordion)
+    $(".main-navbar .nav-menu > li > a").on("click", function (e) {
+        if ($(window).width() > 1199) return;
+        var $submenu = $(this).siblings(".nav-submenu");
+        if ($submenu.length === 0) return;
+        e.preventDefault();
+        var isOpen = $submenu.hasClass("opensubmenu");
+        $(".nav-submenu").removeClass("opensubmenu");
+        if (!isOpen) { $submenu.addClass("opensubmenu"); }
+    });
 
 });

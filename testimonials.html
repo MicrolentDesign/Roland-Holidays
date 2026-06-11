@@ -85,8 +85,8 @@
     <!-- ══════════════ BREADCRUMB HERO ══════════════ -->
     <section class="breadcrumb-section bg-size blur-up lazyloaded"
         data-bg-editable="true" data-bg-id="test_breadcrumb_bg"
-        style="background: linear-gradient(rgb(0 0 0 / 20%), rgb(0 0 0 / 13%)), url(https://img.magnific.com/premium-photo/tengboche-monastery-himalaya-mountains-khumbu-valley-everest-region-nepal_545689-3663.jpg?w=1480); background-size: cover; background-position: center center; background-repeat: no-repeat;">
-        <img src="./assets/img/8.jpg" class="img-fluid blur-up lazyload bg-img" alt="" style="display:none;" data-img-id="test_breadcrumb_fallback">
+        style="background: linear-gradient(rgb(0 0 0 / 20%), rgb(0 0 0 / 13%)), url(assets/img/bg/bg-t.jpg); background-size: cover; background-position: center center; background-repeat: no-repeat;">
+        <!-- <img src="./assets/img/8.jpg" class="img-fluid blur-up lazyload bg-img" alt="" style="display:none;" data-img-id="test_breadcrumb_fallback"> -->
         <div class="breadcrumb-content overlay-black">
             <div>
                 <h2 data-editable="true" data-edit-id="test_page_title">Partner Testimonials</h2>
@@ -387,14 +387,11 @@
                                     <img src=".//assets/img/footer-logo.png" alt="" class="img-fluid blur-up lazyloaded"
                                         data-rle-type="icon">
                                 </div>
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                                    Ipsum has been the industry's standard dummy text ever since the 1500s, when an
-                                    unknown printer took a galley of type and scrambled it to
-                                    make a type specimen book. It has survived not only five centuries</p>
+                                <p>Roland Holidays has been a trusted travel partner for over three decades, delivering premium travel solutions, exclusive rates, and dedicated support to travel agents worldwide.</p>
                                 <ul class="contact-list">
-                                    <li><i class="fas fa-map-marker-alt"></i> A-32, Albany, Newyork.</li>
-                                    <li><i class="fas fa-phone-alt"></i> 518 - 457 - 5181</li>
-                                    <li><i class="fas fa-envelope"></i>rolandholidaysgmail.com</li>
+                                    <li><i class="fas fa-map-marker-alt"></i> Regus 5th &amp; 6th Floor, Matatial House, H.T. Parekh Marg, Mumbai – 400020</li>
+                                    <li><i class="fas fa-phone-alt"></i> +91 97694-21051</li>
+                                    <li><i class="fas fa-envelope"></i> sales1@rolandholidays.com</li>
                                 </ul>
                             </div>
                         </div>
@@ -429,9 +426,7 @@
                                 <div class="footer-links">
                                     <ul>
                                           <!-- <li><a href="#">Visa Processing</a></li> -->
-                                        <li><a href="#">ustomized Group Itineraries &
-                                                Travel Guides</a>
-                                        </li>
+                                        <li><a href="#">Customized Group Itineraries &amp; Travel Guides</a></li>
                                         <li><a href="#"> Land Arrangements</a>
                                         </li>
                                         <li><a href="#">Travel Insurance Solutions. </a>
@@ -451,9 +446,9 @@
                             <div class="footer-content">
                                 <div class="footer-links">
                                     <ul>
-                                        <li><a href="#">Explore Top Destinations</a></li>
-                                        <li><a href="#">Luxury Beach Packages</a></li>
-                                        <li><a href="#">Partner Testimonials</a> </li>
+                                        <li><a href="destinations.html">Explore Top Destinations</a></li>
+                                        <li><a href="luxury-beach.html">Luxury Beach Packages</a></li>
+                                        <li><a href="testimonials.html">Partner Testimonials</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -479,103 +474,66 @@
 
     <!-- Toastify & Live Editor Scripts -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-    <script src="./assets/js/nav.js"></script>
     <script src="./assets/js/live-editor.js"></script>
-
-</body>
 
     <script>
         $(document).ready(function () {
-
-
-            // ── Quote slider (3 visible on desktop) ──
             $('.quote-slider').slick({
-                infinite: true,
-                speed: 500,
-                slidesToShow: 3,
-                slidesToScroll: 1,
-                autoplay: true,
-                autoplaySpeed: 4500,
-                dots: true,
-                arrows: false,
+                infinite: true, speed: 500, slidesToShow: 3, slidesToScroll: 1,
+                autoplay: true, autoplaySpeed: 4500, dots: true, arrows: false,
                 responsive: [
                     { breakpoint: 1200, settings: { slidesToShow: 2 } },
                     { breakpoint: 768,  settings: { slidesToShow: 1 } }
                 ]
             });
 
-            // ── Full-width testimonial carousel ──
             $('.slide-1').slick({
-                infinite: true,
-                speed: 600,
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                autoplay: true,
-                autoplaySpeed: 5000,
-                dots: false,
-                arrows: true,
-                fade: true,
-                cssEase: 'linear'
+                infinite: true, speed: 600, slidesToShow: 1, slidesToScroll: 1,
+                autoplay: true, autoplaySpeed: 5000, dots: false, arrows: true,
+                fade: true, cssEase: 'linear'
             });
 
-            // ── Filter pills ──
             $('.pill-btn').on('click', function () {
                 $('.pill-btn').removeClass('active');
                 $(this).addClass('active');
-
                 var filter = $(this).data('filter');
-
                 if (filter === 'all') {
                     $('[data-category]').closest('.col-xl-6').show();
                 } else {
                     $('[data-category]').closest('.col-xl-6').each(function () {
                         var cats = $(this).find('[data-category]').data('category') || '';
-                        if (cats.includes(filter)) {
-                            $(this).show();
-                        } else {
-                            $(this).hide();
-                        }
+                        if (cats.includes(filter)) { $(this).show(); } else { $(this).hide(); }
                     });
                 }
             });
 
-            // ── Star rating input ──
             var currentRating = 0;
             $('.star-input').on('mouseover', function () {
                 var val = $(this).data('val');
-                $('.star-input').each(function () {
-                    $(this).css('color', $(this).data('val') <= val ? '#ffcc33' : '#ddd');
-                });
+                $('.star-input').each(function () { $(this).css('color', $(this).data('val') <= val ? '#ffcc33' : '#ddd'); });
             }).on('mouseout', function () {
-                $('.star-input').each(function () {
-                    $(this).css('color', $(this).data('val') <= currentRating ? '#ffcc33' : '#ddd');
-                });
+                $('.star-input').each(function () { $(this).css('color', $(this).data('val') <= currentRating ? '#ffcc33' : '#ddd'); });
             }).on('click', function () {
                 currentRating = $(this).data('val');
                 $('#t-rating').val(currentRating);
-                $('.star-input').each(function () {
-                    $(this).css('color', $(this).data('val') <= currentRating ? '#ffcc33' : '#ddd');
-                });
+                $('.star-input').each(function () { $(this).css('color', $(this).data('val') <= currentRating ? '#ffcc33' : '#ddd'); });
             });
 
-            // ── Submit testimonial form ──
             $('#testimonial-submit-form').on('submit', function (e) {
                 e.preventDefault();
                 var btn = $(this).find('[type="submit"]');
                 btn.html('<i class="fas fa-spinner fa-spin me-2"></i> Submitting...').prop('disabled', true);
-
                 setTimeout(function () {
-                    btn.html('<i class="fas fa-check me-2"></i> Testimonial Submitted – Thank You!')
-                       .css('background', '#27ae60');
+                    btn.html('<i class="fas fa-check me-2"></i> Testimonial Submitted – Thank You!').css('background', '#27ae60');
                     setTimeout(function () {
-                        btn.html('<i class="fas fa-paper-plane me-2"></i> Submit My Testimonial')
-                           .css('background', '').prop('disabled', false);
+                        btn.html('<i class="fas fa-paper-plane me-2"></i> Submit My Testimonial').css('background', '').prop('disabled', false);
                     }, 4000);
                 }, 1800);
             });
-
         });
+
     </script>
+    <script src="./assets/js/sticky.js"></script>
 
 </body>
 </html>
