@@ -13,17 +13,7 @@
     <link rel="icon" href="./assets/img/icon.png" type="image/x-icon">
     <title>Destinations – Roland Holidays | Top Travel Destinations</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Playwrite+GB+J:ital,wght@0,100..400;1,100..400&display=swap');
-
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6,
-        .title-label {
-            font-family: 'Playwrite GB J', cursive !important;
-        }
+        h1, h2, h3, h4, h5, h6 { font-family: var(--ds-font-heading); }
     </style>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" />
@@ -33,6 +23,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
     <link rel="stylesheet" type="text/css" href="./assets/style/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="./assets/style/color5.css">
+
+    <!-- Design System css -->
+    <link rel="stylesheet" type="text/css" href="./assets/style/design-system.css">
 
     <!-- Responsive css -->
     <link rel="stylesheet" type="text/css" href="./assets/style/custom.css">
@@ -47,14 +40,12 @@
     <!-- ══════════════ HEADER ══════════════ -->
     <header class="tour-header">
         <div class="container">
-            <div class="row">
+            <div class="row align-items-center">
                 <div class="col">
                     <div class="menu">
                         <div class="brand-logo">
                             <a href="index.html">
-                                <img src="./assets/img/footer-logo.png" alt="Roland Holidays"
-                                    class="img-fluid blur-up lazyloaded" data-img-id="main_logo"
-                                    data-edit-scope="global" data-rle-type="icon">
+                                <img src="./assets/img/logo.png" alt="Roland Holidays" class="img-fluid blur-up lazyloaded">
                             </a>
                         </div>
                         <nav>
@@ -63,13 +54,11 @@
                                     <div class="toggle-nav"><i class="fa fa-bars sidebar-bar"></i></div>
                                     <div class="menu-overlay"></div>
                                     <ul class="nav-menu">
-                                        <li class='back-btn'><div class='mobile-back text-end'><span>Back</span><i aria-hidden='true' class='fa fa-angle-right ps-2'></i></div></li>
-                                        <li><a href='index.html' class='nav-link menu-title'>Home</a></li>
-                                        <li><a href='about-us.html' class='nav-link menu-title'>About Us</a></li>
-                                        <li><a href='#' class='nav-link menu-title'>Top Trending Destinations in India <i class="fa fa-angle-down"></i></a><ul class='nav-submenu'><li><a href='destinations.html?season=summer'><span class='drop-icon summer'><i class='fas fa-sun'></i></span> Summer</a></li><li><a href='destinations.html?season=winter'><span class='drop-icon winter'><i class='fas fa-snowflake'></i></span> Winter</a></li></ul></li>
-                                        <li><a href='#' class='nav-link menu-title'>Top Trending Destinations Abroad <i class="fa fa-angle-down"></i></a><ul class='nav-submenu'><li><a href='destinations.html?season=summer'><span class='drop-icon summer'><i class='fas fa-sun'></i></span> Summer</a></li><li><a href='destinations.html?season=winter'><span class='drop-icon winter'><i class='fas fa-snowflake'></i></span> Winter</a></li></ul></li>
-                                        <li><a href='testimonials.html' class='nav-link menu-title'>Testimonials</a></li>
-                                        <li><a href='contact-us.html' class='nav-link menu-title'>Contact Us</a></li>
+                                        <li><a href="index.html" class="nav-link">Home</a></li>
+                                        <li><a href="about-us.html" class="nav-link">About Us</a></li>
+                                        <li><a href="destinations.html" class="nav-link active">Destinations</a></li>
+                                        <li><a href="testimonials.html" class="nav-link">Testimonials</a></li>
+                                        <li><a href="contact-us.html" class="nav-link">Contact Us</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -85,172 +74,451 @@
     <section class="breadcrumb-section bg-size blur-up lazyloaded" data-bg-editable="true" data-bg-id="dest_hero_bg"
         style="background:linear-gradient(rgb(0 0 0 / 20%), rgb(0 0 0 / 13%)), url(assets/img/qwe.png); background-size: cover; background-position: center center; background-repeat: no-repeat;">
    
-        <div class="breadcrumb-content overlay-black">
+        <div class="breadcrumb-content overlay-black text-center">
             <div>
-                <h2 data-editable="true" data-edit-id="dest_page_title">Destinations</h2>
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Destinations</li>
-                    </ol>
-                </nav>
+                <h1 class="ds-page-title mb-0" data-editable="true" data-edit-id="dest_page_title">Explore Global Destinations</h1>
             </div>
         </div>
 
     </section>
-    <!-- BREADCRUMB END -->
-
-
-
+    <!-- FLOATING 3-SEGMENT SEARCH PILL BAR (WonderLand Style) -->
+    <div class="container position-relative mb-5" style="margin-top: -35px; z-index: 20;">
+        <div class="ds-search-pill-bar">
+            <div class="ds-search-segment">
+                <i class="fas fa-map-marker-alt ds-search-icon"></i>
+                <input type="text" id="destSearchInput" class="ds-search-input" placeholder="Search destination (e.g. Dubai, Bali, Maldives)">
+            </div>
+            <div class="ds-search-segment">
+                <i class="fas fa-calendar-alt ds-search-icon"></i>
+                <input type="text" class="ds-search-input" placeholder="Travel Month / Season">
+            </div>
+            <div class="ds-search-segment">
+                <i class="fas fa-user-friends ds-search-icon"></i>
+                <input type="text" class="ds-search-input" placeholder="Agent Pax Count">
+            </div>
+            <a href="#destGrid" class="primary-button">
+                <div class="button-item-main">
+                    <div class="button-text-pill">
+                        <div class="primay-button-text">Filter Tours</div>
+                        <div class="primay-button-text">Filter Tours</div>
+                    </div>
+                    <div class="button-arrow-pill">
+                        <div class="arrow-wrapper">
+                            <i class="fas fa-filter button-arrow"></i>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
 
     <!-- ══════════════ DESTINATIONS GRID ══════════════ -->
     <section class="routes-section small-section bg-inner">
         <div class="container">
-                   <div class="filter-bar filter-bar-dark mb-5">
-                    <div class="filter-group">
-                        <span class="filter-label-dark"><i class="fas fa-globe-asia me-1"></i> Region</span>
-                        <button class="region-pill active" data-region="all">All</button>
-                        <button class="region-pill" data-region="east-asia">East Asia</button>
-                        <button class="region-pill" data-region="south-asia">South Asia</button>
-                        <button class="region-pill" data-region="southeast-asia">Southeast Asia</button>
-                        <button class="region-pill" data-region="west-asia">West Asia</button>
-                    </div>
-                    <div class="filter-group mt-2">
-                        <span class="filter-label-dark"><i class="fas fa-sun me-1"></i> Season</span>
-                        <button class="season-pill active" data-season="all">All</button>
-                        <button class="season-pill" data-season="summer">Summer</button>
-                        <button class="season-pill" data-season="winter">Winter</button>
-                    </div>
+            <div class="filter-bar filter-bar-dark mb-5">
+                <div class="filter-group">
+                    <span class="filter-label-dark"><i class="fas fa-globe-asia me-1"></i> Region / Hub</span>
+                    <button class="region-pill active" data-region="all">All Portfolio</button>
+                    <button class="region-pill" data-region="india">India Inbound</button>
+                    <button class="region-pill" data-region="southeast-asia">Southeast Asia</button>
+                    <button class="region-pill" data-region="asia-eurasia">Asia &amp; Eurasia</button>
+                    <button class="region-pill" data-region="africa-islands">Africa &amp; Islands</button>
                 </div>
+                <div class="filter-group mt-2">
+                    <span class="filter-label-dark"><i class="fas fa-sun me-1"></i> Season</span>
+                    <button class="season-pill active" data-season="all">All Seasons</button>
+                    <button class="season-pill" data-season="summer">Summer Peak</button>
+                    <button class="season-pill" data-season="winter">Winter Season</button>
+                </div>
+            </div>
 
             <div class="row g-4" id="destGrid">
 
-                <!-- ══ EAST ASIA ══ -->
-                <div class="col-xl-4 col-md-6 dest-card-wrap" data-season="summer" data-region="east-asia"
-                    data-nnc="gold">
+                <!-- ══════════════════════════════════════════════════════════
+                     1. INDIA INBOUND (data-region="india")
+                     ══════════════════════════════════════════════════════════ -->
+                <!-- Rajasthan -->
+                <div class="col-xl-4 col-md-6 dest-card-wrap" data-region="india">
                     <div class="routes-box">
                         <div class="routes-img">
-                            <img src="./assets/img/d2.jpg" alt="China" class="img-fluid blur-up lazyloaded">
-
-
+                            <img src="https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=600&q=80" alt="Rajasthan" class="img-fluid blur-up lazyloaded">
                         </div>
                         <div class="routes-content">
                             <div class="top-bar">
-                                <h5>China</h5>
-                                <h6><i class="fas fa-map-marker-alt me-1 icon-blue"></i> East Asia</h6>
+                                <h5>Rajasthan</h5>
+                                <h6><i class="fas fa-map-marker-alt me-1 icon-blue"></i> India Inbound</h6>
                             </div>
-
                             <ul class="selling-points">
-                                <li>Great Wall tours</li>
-                                <li>Cultural city circuits</li>
-                                <li>Group &amp; FIT packages</li>
+                                <li>Jodhpur, Jaipur, Udaipur &amp; Jaisalmer</li>
+                                <li>Forts, Palaces &amp; Desert Camel Safaris</li>
+                                <li>Heritage Hotels &amp; Royal Holiday Packages</li>
                             </ul>
-
-                            <a href="destination-detail.html" class="btn btn-rounded color1">View Details</a>
+                            <a href="destination-detail.html?state=rajasthan" class="primary-button ds-btn-kinetic w-100">
+                                <div class="button-item-main">
+                                    <div class="button-text-pill">
+                                        <div class="primay-button-text">Multi-Select Activities &amp; Plan</div>
+                                        <div class="primay-button-text">Multi-Select Activities &amp; Plan</div>
+                                    </div>
+                                    <div class="button-arrow-pill">
+                                        <div class="arrow-wrapper"><i class="fas fa-list-check button-arrow"></i></div>
+                                    </div>
+                                </div>
+                            </a>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-xl-4 col-md-6 dest-card-wrap" data-season="summer" data-region="east-asia"
-                    data-nnc="platinum">
+                <!-- Kerala -->
+                <div class="col-xl-4 col-md-6 dest-card-wrap" data-region="india">
                     <div class="routes-box">
                         <div class="routes-img">
-                            <img src="./assets/img/d1.jpg" alt="Japan" class="img-fluid blur-up lazyloaded">
-
-
+                            <img src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=600&q=80" alt="Kerala" class="img-fluid blur-up lazyloaded">
                         </div>
                         <div class="routes-content">
                             <div class="top-bar">
-                                <h5>Japan</h5>
-                                <h6><i class="fas fa-map-marker-alt me-1 icon-blue"></i> East Asia</h6>
+                                <h5>Kerala</h5>
+                                <h6><i class="fas fa-map-marker-alt me-1 icon-blue"></i> India Inbound</h6>
                             </div>
-
                             <ul class="selling-points">
-                                <li>Cherry blossom season tours</li>
-                                <li>Tokyo &amp; Kyoto combos</li>
-                                <li>Luxury ryokan stays</li>
+                                <li>Alleppey Houseboats &amp; Backwaters</li>
+                                <li>Munnar Tea Gardens &amp; Kochi Heritage</li>
+                                <li>Ayurveda Wellness &amp; Kovalam Beach</li>
                             </ul>
-
-                            <a href="destination-detail.html" class="btn btn-rounded color1">View Details</a>
+                            <a href="destination-detail.html?state=kerala" class="primary-button ds-btn-kinetic w-100">
+                                <div class="button-item-main">
+                                    <div class="button-text-pill">
+                                        <div class="primay-button-text">Multi-Select Activities &amp; Plan</div>
+                                        <div class="primay-button-text">Multi-Select Activities &amp; Plan</div>
+                                    </div>
+                                    <div class="button-arrow-pill">
+                                        <div class="arrow-wrapper"><i class="fas fa-list-check button-arrow"></i></div>
+                                    </div>
+                                </div>
+                            </a>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-xl-4 col-md-6 dest-card-wrap" data-season="summer" data-region="east-asia"
-                    data-nnc="gold">
+                <!-- Himachal Pradesh -->
+                <div class="col-xl-4 col-md-6 dest-card-wrap" data-region="india">
                     <div class="routes-box">
                         <div class="routes-img">
-                            <img src="https://img.magnific.com/free-photo/haedong-yonggungsa-temple-haeundae-sea-busan-buddhist-temple-busan-south-korea_335224-436.jpg?t=st=1780999439~exp=1781003039~hmac=8dd9fb41a1b00fa2a9d744d4786aa421b14177354122e153df7698906ef3e09e&w=1480" alt="North Korea" class="img-fluid blur-up lazyloaded">
-
-
+                            <img src="https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=600&q=80" alt="Himachal Pradesh" class="img-fluid blur-up lazyloaded">
                         </div>
                         <div class="routes-content">
                             <div class="top-bar">
-                                <h5>North Korea</h5>
-                                <h6><i class="fas fa-map-marker-alt me-1 icon-blue"></i> East Asia</h6>
+                                <h5>Himachal Pradesh</h5>
+                                <h6><i class="fas fa-map-marker-alt me-1 icon-blue"></i> India Inbound</h6>
                             </div>
-
                             <ul class="selling-points">
-                                <li>Exclusive guided tours</li>
-                                <li>Cultural heritage visits</li>
-                                <li>Specialist group packages</li>
+                                <li>Manali, Shimla &amp; Dharamshala</li>
+                                <li>Solang Valley Snow Sports &amp; Rohtang</li>
+                                <li>Pine Forests &amp; Mountain Resorts</li>
                             </ul>
-
-                            <a href="destination-detail.html" class="btn btn-rounded color1">View Details</a>
+                            <a href="destination-detail.html?state=himachal" class="primary-button ds-btn-kinetic w-100">
+                                <div class="button-item-main">
+                                    <div class="button-text-pill">
+                                        <div class="primay-button-text">Multi-Select Activities &amp; Plan</div>
+                                        <div class="primay-button-text">Multi-Select Activities &amp; Plan</div>
+                                    </div>
+                                    <div class="button-arrow-pill">
+                                        <div class="arrow-wrapper"><i class="fas fa-list-check button-arrow"></i></div>
+                                    </div>
+                                </div>
+                            </a>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-xl-4 col-md-6 dest-card-wrap" data-season="summer" data-region="east-asia"
-                    data-nnc="gold">
+                <!-- Goa -->
+                <div class="col-xl-4 col-md-6 dest-card-wrap" data-region="india">
                     <div class="routes-box">
                         <div class="routes-img">
-                            <img src="https://img.magnific.com/free-photo/gyeongbokgung-palace-with-cherry-blossom-spring-south-korea_335224-383.jpg?t=st=1781000326~exp=1781003926~hmac=d2c794c186ee1b0e6d64bd6179244fe44a047e4c7e539b7d933661eeab120850&w=1480" alt="South Korea" class="img-fluid blur-up lazyloaded">
-
-
+                            <img src="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=600&q=80" alt="Goa" class="img-fluid blur-up lazyloaded">
                         </div>
                         <div class="routes-content">
                             <div class="top-bar">
-                                <h5>South Korea</h5>
-                                <h6><i class="fas fa-map-marker-alt me-1 icon-blue"></i> East Asia</h6>
+                                <h5>Goa</h5>
+                                <h6><i class="fas fa-map-marker-alt me-1 icon-blue"></i> India Inbound</h6>
                             </div>
-
                             <ul class="selling-points">
-                                <li>Seoul city &amp; K-culture tours</li>
-                                <li>DMZ day trips</li>
-                                <li>Jeju Island escapes</li>
+                                <li>North &amp; South Goa Beach Resorts</li>
+                                <li>Dudhsagar Waterfalls &amp; Mandovi Cruises</li>
+                                <li>Portuguese Churches &amp; Nightlife</li>
                             </ul>
-
-                            <a href="destination-detail.html" class="btn btn-rounded color1">View Details</a>
+                            <a href="destination-detail.html?state=goa" class="primary-button ds-btn-kinetic w-100">
+                                <div class="button-item-main">
+                                    <div class="button-text-pill">
+                                        <div class="primay-button-text">Multi-Select Activities &amp; Plan</div>
+                                        <div class="primay-button-text">Multi-Select Activities &amp; Plan</div>
+                                    </div>
+                                    <div class="button-arrow-pill">
+                                        <div class="arrow-wrapper"><i class="fas fa-list-check button-arrow"></i></div>
+                                    </div>
+                                </div>
+                            </a>
                         </div>
                     </div>
                 </div>
 
-                <!-- ══ SOUTH ASIA ══ -->
-                <div class="col-xl-4 col-md-6 dest-card-wrap" data-season="summer" data-region="south-asia"
-                    data-nnc="gold">
+                <!-- ══════════════════════════════════════════════════════════
+                     2. SOUTHEAST ASIA (data-region="southeast-asia")
+                     ══════════════════════════════════════════════════════════ -->
+                <!-- Thailand -->
+                <div class="col-xl-4 col-md-6 dest-card-wrap" data-region="southeast-asia">
                     <div class="routes-box">
                         <div class="routes-img">
-                            <img src="https://img.magnific.com/free-photo/person-standing-near-body-water_155999-27.jpg?t=st=1781000384~exp=1781003984~hmac=b1b868cfe69cd909167e48d6f8746f689d25b1d2ae0a7c109a16c8ba61c641d7&w=1480" alt="Afghanistan" class="img-fluid blur-up lazyloaded">
-
-
+                            <img src="https://images.unsplash.com/photo-1508009603885-50cf7c579365?auto=format&fit=crop&w=600&q=80" alt="Thailand" class="img-fluid blur-up lazyloaded">
                         </div>
                         <div class="routes-content">
                             <div class="top-bar">
-                                <h5>Afghanistan</h5>
-                                <h6><i class="fas fa-map-marker-alt me-1 icon-blue"></i> South Asia</h6>
+                                <h5>Thailand</h5>
+                                <h6><i class="fas fa-map-marker-alt me-1 icon-blue"></i> Southeast Asia</h6>
                             </div>
-
                             <ul class="selling-points">
-                                <li>Ancient silk road routes</li>
-                                <li>Cultural heritage tours</li>
-                                <li>Specialist group itineraries</li>
+                                <li>Bangkok, Pattaya, Phuket, Krabi &amp; Chiang Mai</li>
+                                <li>Phi Phi Speedboat, Grand Palace &amp; Safari World</li>
+                                <li>Carnival Magic &amp; Columbia Aquaverse</li>
                             </ul>
-
-                            <a href="destination-detail.html" class="btn btn-rounded color1">View Details</a>
+                            <a href="destination-detail.html?country=thailand" class="primary-button ds-btn-kinetic w-100">
+                                <div class="button-item-main">
+                                    <div class="button-text-pill">
+                                        <div class="primay-button-text">Multi-Select Activities &amp; Plan</div>
+                                        <div class="primay-button-text">Multi-Select Activities &amp; Plan</div>
+                                    </div>
+                                    <div class="button-arrow-pill">
+                                        <div class="arrow-wrapper"><i class="fas fa-list-check button-arrow"></i></div>
+                                    </div>
+                                </div>
+                            </a>
                         </div>
                     </div>
                 </div>
+
+                <!-- Indonesia / Bali DMC -->
+                <div class="col-xl-4 col-md-6 dest-card-wrap" data-region="southeast-asia">
+                    <div class="routes-box">
+                        <div class="routes-img">
+                            <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=600&q=80" alt="Indonesia / Bali DMC" class="img-fluid blur-up lazyloaded">
+                        </div>
+                        <div class="routes-content">
+                            <div class="top-bar">
+                                <h5>Indonesia (Bali DMC)</h5>
+                                <h6><i class="fas fa-map-marker-alt me-1 icon-blue"></i> Southeast Asia</h6>
+                            </div>
+                            <ul class="selling-points">
+                                <li>Official Roland Holidays Bali DMC Office</li>
+                                <li>Ubud Swings, Tanah Lot &amp; Nusa Penida</li>
+                                <li>Luxury Pool Villas &amp; Honeymoon Circuits</li>
+                            </ul>
+                            <a href="destination-detail.html?country=indonesia" class="primary-button ds-btn-kinetic w-100">
+                                <div class="button-item-main">
+                                    <div class="button-text-pill">
+                                        <div class="primay-button-text">Multi-Select Activities &amp; Plan</div>
+                                        <div class="primay-button-text">Multi-Select Activities &amp; Plan</div>
+                                    </div>
+                                    <div class="button-arrow-pill">
+                                        <div class="arrow-wrapper"><i class="fas fa-list-check button-arrow"></i></div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vietnam -->
+                <div class="col-xl-4 col-md-6 dest-card-wrap" data-region="southeast-asia">
+                    <div class="routes-box">
+                        <div class="routes-img">
+                            <img src="https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=600&q=80" alt="Vietnam" class="img-fluid blur-up lazyloaded">
+                        </div>
+                        <div class="routes-content">
+                            <div class="top-bar">
+                                <h5>Vietnam</h5>
+                                <h6><i class="fas fa-map-marker-alt me-1 icon-blue"></i> Southeast Asia</h6>
+                            </div>
+                            <ul class="selling-points">
+                                <li>Ha Long Bay Overnight Cruises</li>
+                                <li>Hanoi, Da Nang Golden Bridge &amp; Hoi An</li>
+                                <li>Bana Hills &amp; Cultural Food Trails</li>
+                            </ul>
+                            <a href="destination-detail.html?country=vietnam" class="primary-button ds-btn-kinetic w-100">
+                                <div class="button-item-main">
+                                    <div class="button-text-pill">
+                                        <div class="primay-button-text">Multi-Select Activities &amp; Plan</div>
+                                        <div class="primay-button-text">Multi-Select Activities &amp; Plan</div>
+                                    </div>
+                                    <div class="button-arrow-pill">
+                                        <div class="arrow-wrapper"><i class="fas fa-list-check button-arrow"></i></div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ══════════════════════════════════════════════════════════
+                     3. ASIA & EURASIA (data-region="asia-eurasia")
+                     ══════════════════════════════════════════════════════════ -->
+                <!-- Maldives -->
+                <div class="col-xl-4 col-md-6 dest-card-wrap" data-region="asia-eurasia">
+                    <div class="routes-box">
+                        <div class="routes-img">
+                            <img src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=600&q=80" alt="Maldives" class="img-fluid blur-up lazyloaded">
+                        </div>
+                        <div class="routes-content">
+                            <div class="top-bar">
+                                <h5>Maldives</h5>
+                                <h6><i class="fas fa-map-marker-alt me-1 icon-blue"></i> Asia &amp; Eurasia</h6>
+                            </div>
+                            <ul class="selling-points">
+                                <li>Private Overwater Villas &amp; All-Inclusive</li>
+                                <li>Speedboat &amp; Seaplane Transfers</li>
+                                <li>Coral Reef Snorkeling &amp; Sunset Cruises</li>
+                            </ul>
+                            <a href="destination-detail.html?country=maldives" class="primary-button ds-btn-kinetic w-100">
+                                <div class="button-item-main">
+                                    <div class="button-text-pill">
+                                        <div class="primay-button-text">Multi-Select Activities &amp; Plan</div>
+                                        <div class="primay-button-text">Multi-Select Activities &amp; Plan</div>
+                                    </div>
+                                    <div class="button-arrow-pill">
+                                        <div class="arrow-wrapper"><i class="fas fa-list-check button-arrow"></i></div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Türkiye -->
+                <div class="col-xl-4 col-md-6 dest-card-wrap" data-region="asia-eurasia">
+                    <div class="routes-box">
+                        <div class="routes-img">
+                            <img src="https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?auto=format&fit=crop&w=600&q=80" alt="Türkiye" class="img-fluid blur-up lazyloaded">
+                        </div>
+                        <div class="routes-content">
+                            <div class="top-bar">
+                                <h5>Türkiye</h5>
+                                <h6><i class="fas fa-map-marker-alt me-1 icon-blue"></i> Asia &amp; Eurasia</h6>
+                            </div>
+                            <ul class="selling-points">
+                                <li>Istanbul Bosphorus &amp; Hagia Sophia</li>
+                                <li>Cappadocia Hot Air Balloon &amp; Cave Hotels</li>
+                                <li>Pamukkale Thermal Pools &amp; Ephesus</li>
+                            </ul>
+                            <a href="destination-detail.html?country=turkey" class="primary-button ds-btn-kinetic w-100">
+                                <div class="button-item-main">
+                                    <div class="button-text-pill">
+                                        <div class="primay-button-text">Multi-Select Activities &amp; Plan</div>
+                                        <div class="primay-button-text">Multi-Select Activities &amp; Plan</div>
+                                    </div>
+                                    <div class="button-arrow-pill">
+                                        <div class="arrow-wrapper"><i class="fas fa-list-check button-arrow"></i></div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ══════════════════════════════════════════════════════════
+                     4. AFRICA & ISLANDS (data-region="africa-islands")
+                     ══════════════════════════════════════════════════════════ -->
+                <!-- Mauritius -->
+                <div class="col-xl-4 col-md-6 dest-card-wrap" data-region="africa-islands">
+                    <div class="routes-box">
+                        <div class="routes-img">
+                            <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=600&q=80" alt="Mauritius" class="img-fluid blur-up lazyloaded">
+                        </div>
+                        <div class="routes-content">
+                            <div class="top-bar">
+                                <h5>Mauritius</h5>
+                                <h6><i class="fas fa-map-marker-alt me-1 icon-blue"></i> Africa &amp; Islands</h6>
+                            </div>
+                            <ul class="selling-points">
+                                <li>Luxury Beach Resorts &amp; Lagoon Catamarans</li>
+                                <li>Chamarel Seven Colored Earth</li>
+                                <li>Le Morne Brabant &amp; Water Sports</li>
+                            </ul>
+                            <a href="destination-detail.html?country=mauritius" class="primary-button ds-btn-kinetic w-100">
+                                <div class="button-item-main">
+                                    <div class="button-text-pill">
+                                        <div class="primay-button-text">Multi-Select Activities &amp; Plan</div>
+                                        <div class="primay-button-text">Multi-Select Activities &amp; Plan</div>
+                                    </div>
+                                    <div class="button-arrow-pill">
+                                        <div class="arrow-wrapper"><i class="fas fa-list-check button-arrow"></i></div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Seychelles -->
+                <div class="col-xl-4 col-md-6 dest-card-wrap" data-region="africa-islands">
+                    <div class="routes-box">
+                        <div class="routes-img">
+                            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80" alt="Seychelles" class="img-fluid blur-up lazyloaded">
+                        </div>
+                        <div class="routes-content">
+                            <div class="top-bar">
+                                <h5>Seychelles</h5>
+                                <h6><i class="fas fa-map-marker-alt me-1 icon-blue"></i> Africa &amp; Islands</h6>
+                            </div>
+                            <ul class="selling-points">
+                                <li>Anse Source d'Argent &amp; La Digue</li>
+                                <li>Praslin Vallee de Mai Giant Palms</li>
+                                <li>Exclusive Island Hopping &amp; Private Resorts</li>
+                            </ul>
+                            <a href="destination-detail.html?country=seychelles" class="primary-button ds-btn-kinetic w-100">
+                                <div class="button-item-main">
+                                    <div class="button-text-pill">
+                                        <div class="primay-button-text">Multi-Select Activities &amp; Plan</div>
+                                        <div class="primay-button-text">Multi-Select Activities &amp; Plan</div>
+                                    </div>
+                                    <div class="button-arrow-pill">
+                                        <div class="arrow-wrapper"><i class="fas fa-list-check button-arrow"></i></div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kenya -->
+                <div class="col-xl-4 col-md-6 dest-card-wrap" data-region="africa-islands">
+                    <div class="routes-box">
+                        <div class="routes-img">
+                            <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=600&q=80" alt="Kenya" class="img-fluid blur-up lazyloaded">
+                        </div>
+                        <div class="routes-content">
+                            <div class="top-bar">
+                                <h5>Kenya</h5>
+                                <h6><i class="fas fa-map-marker-alt me-1 icon-blue"></i> Africa &amp; Islands</h6>
+                            </div>
+                            <ul class="selling-points">
+                                <li>Masai Mara Wildlife Safari &amp; Big Five</li>
+                                <li>Great Wildebeest Migration Safaris</li>
+                                <li>Lake Nakuru &amp; Amboseli Kilimanjaro Views</li>
+                            </ul>
+                            <a href="destination-detail.html?country=kenya" class="primary-button ds-btn-kinetic w-100">
+                                <div class="button-item-main">
+                                    <div class="button-text-pill">
+                                        <div class="primay-button-text">Multi-Select Activities &amp; Plan</div>
+                                        <div class="primay-button-text">Multi-Select Activities &amp; Plan</div>
+                                    </div>
+                                    <div class="button-arrow-pill">
+                                        <div class="arrow-wrapper"><i class="fas fa-list-check button-arrow"></i></div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
 
                 <div class="col-xl-4 col-md-6 dest-card-wrap" data-season="winter" data-region="south-asia"
                     data-nnc="gold">
@@ -729,237 +997,11 @@
                     </div>
                 </div>
 
-                <div class="col-xl-4 col-md-6 dest-card-wrap" data-season="winter" data-region="west-asia"
-                    data-nnc="platinum">
-                    <div class="routes-box">
-                        <div class="routes-img">
-                            <img src="./assets/img/d5.jpg" alt="Kuwait" class="img-fluid blur-up lazyloaded">
-
-
-                        </div>
-                        <div class="routes-content">
-                            <div class="top-bar">
-                                <h5>Kuwait</h5>
-                                <h6><i class="fas fa-map-marker-alt me-1 icon-blue"></i> West Asia</h6>
-                            </div>
-
-                            <ul class="selling-points">
-                                <li>Kuwait City luxury tours</li>
-                                <li>Desert safari packages</li>
-                                <li>Shopping &amp; culture programs</li>
-                            </ul>
-
-                            <a href="destination-detail.html" class="btn btn-rounded color1">View Details</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-xl-4 col-md-6 dest-card-wrap" data-season="summer" data-region="west-asia"
-                    data-nnc="gold">
-                    <div class="routes-box">
-                        <div class="routes-img">
-                            <img src="./assets/img/d6.jpg" alt="Lebanon" class="img-fluid blur-up lazyloaded">
-
-
-                        </div>
-                        <div class="routes-content">
-                            <div class="top-bar">
-                                <h5>Lebanon</h5>
-                                <h6><i class="fas fa-map-marker-alt me-1 icon-blue"></i> West Asia</h6>
-                            </div>
-
-                            <ul class="selling-points">
-                                <li>Beirut city &amp; food tours</li>
-                                <li>Cedar forests &amp; valleys</li>
-                                <li>Baalbek heritage visits</li>
-                            </ul>
-
-                            <a href="destination-detail.html" class="btn btn-rounded color1">View Details</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-xl-4 col-md-6 dest-card-wrap" data-season="winter" data-region="west-asia"
-                    data-nnc="platinum">
-                    <div class="routes-box">
-                        <div class="routes-img">
-                            <img src="./assets/img/d7.jpg" alt="Oman" class="img-fluid blur-up lazyloaded">
-
-
-                        </div>
-                        <div class="routes-content">
-                            <div class="top-bar">
-                                <h5>Oman</h5>
-                                <h6><i class="fas fa-map-marker-alt me-1 icon-blue"></i> West Asia</h6>
-                            </div>
-
-                            <ul class="selling-points">
-                                <li>Muscat &amp; Nizwa heritage tours</li>
-                                <li>Wahiba desert camps</li>
-                                <li>Fjord &amp; coastal cruises</li>
-                            </ul>
-
-                            <a href="destination-detail.html" class="btn btn-rounded color1">View Details</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-xl-4 col-md-6 dest-card-wrap" data-season="winter" data-region="west-asia"
-                    data-nnc="gold">
-                    <div class="routes-box">
-                        <div class="routes-img">
-                            <img src="./assets/img/d8.jpg" alt="Palestine" class="img-fluid blur-up lazyloaded">
-
-
-                        </div>
-                        <div class="routes-content">
-                            <div class="top-bar">
-                                <h5>Palestine</h5>
-                                <h6><i class="fas fa-map-marker-alt me-1 icon-blue"></i> West Asia</h6>
-                            </div>
-
-                            <ul class="selling-points">
-                                <li>Bethlehem &amp; Jericho tours</li>
-                                <li>Religious heritage circuits</li>
-                                <li>Cultural &amp; pilgrimage groups</li>
-                            </ul>
-
-                            <a href="destination-detail.html" class="btn btn-rounded color1">View Details</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-xl-4 col-md-6 dest-card-wrap" data-season="winter" data-region="west-asia"
-                    data-nnc="elite">
-                    <div class="routes-box">
-                        <div class="routes-img">
-                            <img src="./assets/img/d9.jpg" alt="Qatar" class="img-fluid blur-up lazyloaded">
-
-
-                        </div>
-                        <div class="routes-content">
-                            <div class="top-bar">
-                                <h5>Qatar</h5>
-                                <h6><i class="fas fa-map-marker-alt me-1 icon-blue"></i> West Asia</h6>
-                            </div>
-
-                            <ul class="selling-points">
-                                <li>Doha luxury city programs</li>
-                                <li>Desert dune bashing</li>
-                                <li>Museum &amp; cultural tours</li>
-                            </ul>
-
-                            <a href="destination-detail.html" class="btn btn-rounded color1">View Details</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-xl-4 col-md-6 dest-card-wrap" data-season="winter" data-region="west-asia"
-                    data-nnc="elite">
-                    <div class="routes-box">
-                        <div class="routes-img">
-                            <img src="./assets/img/d10.jpg" alt="Saudi Arabia" class="img-fluid blur-up lazyloaded">
-
-
-                        </div>
-                        <div class="routes-content">
-                            <div class="top-bar">
-                                <h5>Saudi Arabia</h5>
-                                <h6><i class="fas fa-map-marker-alt me-1 icon-blue"></i> West Asia</h6>
-                            </div>
-
-                            <ul class="selling-points">
-                                <li>Riyadh &amp; Jeddah city tours</li>
-                                <li>AlUla heritage excursions</li>
-                                <li>Umrah &amp; Hajj group packages</li>
-                            </ul>
-
-                            <a href="destination-detail.html" class="btn btn-rounded color1">View Details</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-xl-4 col-md-6 dest-card-wrap" data-season="summer" data-region="west-asia"
-                    data-nnc="gold">
-                    <div class="routes-box">
-                        <div class="routes-img">
-                            <img src="https://img.magnific.com/free-photo/beautiful-natural-landscape-with-rocky-cliffs-surrounded-by-greenery-bright-sky_181624-25771.jpg?t=st=1781001584~exp=1781005184~hmac=4eb12f2ff132951ded2999a5de39efa4927ceadaea14ab00bf62ae6135ab0216&w=1480" alt="Syria" class="img-fluid blur-up lazyloaded">
-
-
-                        </div>
-                        <div class="routes-content">
-                            <div class="top-bar">
-                                <h5>Syria</h5>
-                                <h6><i class="fas fa-map-marker-alt me-1 icon-blue"></i> West Asia</h6>
-                            </div>
-
-                            <ul class="selling-points">
-                                <li>Damascus old city tours</li>
-                                <li>Palmyra heritage visits</li>
-                                <li>Specialist cultural groups</li>
-                            </ul>
-
-                            <a href="destination-detail.html" class="btn btn-rounded color1">View Details</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-xl-4 col-md-6 dest-card-wrap" data-season="winter" data-region="west-asia"
-                    data-nnc="elite">
-                    <div class="routes-box">
-                        <div class="routes-img">
-                            <img src="https://img.magnific.com/free-photo/emirates-palace-hotel_158595-1972.jpg?t=st=1781001541~exp=1781005141~hmac=7ccb414f36b0c25ecfc94f27672b7d66721319622e0fb4a0a68fc62fb2e28bc6&w=1480" alt="United Arab Emirates"
-                                class="img-fluid blur-up lazyloaded">
-
-
-                        </div>
-                        <div class="routes-content">
-                            <div class="top-bar">
-                                <h5>United Arab Emirates</h5>
-                                <h6><i class="fas fa-map-marker-alt me-1 icon-blue"></i> West Asia</h6>
-                            </div>
-
-                            <ul class="selling-points">
-                                <li>Dubai &amp; Abu Dhabi city combos</li>
-                                <li>Desert safari add-ons</li>
-                                <li>Luxury resort &amp; shopping packages</li>
-                            </ul>
-
-                            <a href="destination-detail.html" class="btn btn-rounded color1">View Details</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-xl-4 col-md-6 dest-card-wrap" data-season="winter" data-region="west-asia"
-                    data-nnc="gold">
-                    <div class="routes-box">
-                        <div class="routes-img">
-                            <img src="https://img.magnific.com/free-photo/ancient-cave-house-near-goreme-cappadocia-turkey_335224-559.jpg?t=st=1781001493~exp=1781005093~hmac=fe1d9f3f54eefceb9db9feb4d5a78efa0446bd70c540a0154d085ef2673c14f1&w=1480" alt="Yemen" class="img-fluid blur-up lazyloaded">
-
-
-                        </div>
-                        <div class="routes-content">
-                            <div class="top-bar">
-                                <h5>Yemen</h5>
-                                <h6><i class="fas fa-map-marker-alt me-1 icon-blue"></i> West Asia</h6>
-                            </div>
-
-                            <ul class="selling-points">
-                                <li>Socotra island expeditions</li>
-                                <li>Old Sana'a heritage tours</li>
-                                <li>Specialist adventure groups</li>
-                            </ul>
-
-                            <a href="destination-detail.html" class="btn btn-rounded color1">View Details</a>
-                        </div>
-                    </div>
-                </div>
-
                 <!-- No results message -->
                 <div class="col-12 text-center py-5" id="noResults" style="display:none !important;">
-                    <i class="fas fa-search no-results-icon"></i>
-                    <h5 class="no-results-heading">No destinations match your filter.</h5>
-                    <p class="no-results-text">Try selecting a different region.</p>
+                    <i class="fas fa-search no-results-icon mb-3 text-muted" style="font-size: 42px;"></i>
+                    <h5 class="no-results-heading font-weight-bold">No destinations match your search or filter.</h5>
+                    <p class="no-results-text text-muted">Try selecting a different region or clearing your search term.</p>
                 </div>
 
             </div>
@@ -968,156 +1010,63 @@
     <!-- DESTINATIONS GRID END -->
 
 
-    <!-- ══════════════ CTA LIGHT BANNER ══════════════ -->
-    <!-- <section class="lb-cta-section">
+    <!-- ══════════════ MINIMAL BRIGHT LIGHT FOOTER ══════════════ -->
+    <footer class="ds-minimal-footer py-5 bg-white">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-7 mb-4 mb-lg-0">
-                    <span class="lb-cta-badge">
-                        <i class="fas fa-star me-1"></i> Wholesale Partners
-                    </span>
-                    <h2 class="lb-cta-heading">
-                        Explore All Wholesale Rates
-                    </h2>
-                    <p class="lb-cta-text">
-                        Request our full destination rate sheet and access exclusive NNC commissions across all our
-                        partner destinations. Dedicated agent support included.
-                    </p>
-                    <div class="cta-btn-group">
-                        <a href="contact-us.html" class="btn btn-rounded color1 btn-cta-lg">
-                            <i class="fas fa-envelope me-2"></i> Contact Us
-                        </a>
-                        <a href="destination-detail.html" class="btn btn-rounded btn-outline-cta">
-                            <i class="fas fa-download me-2"></i> Download Brochure
+            <div class="row g-4 align-items-start justify-content-between">
+                <div class="col-lg-4">
+                    <div class="footer-logo mb-3">
+                        <a href="index.html">
+                            <img src="./assets/img/logo.png" alt="Roland Holidays">
                         </a>
                     </div>
+                    <p class="ds-footer-text mb-3">
+                        Roland Holidays has been a trusted travel partner for over three decades, delivering premium travel solutions, custom itineraries, and dedicated support worldwide.
+                    </p>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="text-secondary text-hover-gold"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-secondary text-hover-gold"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-secondary text-hover-gold"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://api.whatsapp.com/send?phone=919769421051" class="text-secondary text-hover-gold"><i class="fab fa-whatsapp"></i></a>
+                    </div>
                 </div>
-                <div class="col-lg-5">
-                    <div class="lb-cta-card">
-                        <div class="lb-card-top-bar"></div>
-                        <div class="lb-card-icon-wrap">
-                            <i class="fas fa-file-invoice-dollar lb-card-icon-inner"></i>
+                <div class="col-lg-7">
+                    <div class="row g-4">
+                        <div class="col-6 col-md-4">
+                            <h6 class="ds-footer-heading">Destinations</h6>
+                            <ul class="list-unstyled ds-footer-links">
+                                <li><a href="destinations.html?region=india">India Inbound</a></li>
+                                <li><a href="destinations.html?region=southeast-asia">Southeast Asia</a></li>
+                                <li><a href="destinations.html?region=asia-eurasia">Asia &amp; Eurasia</a></li>
+                                <li><a href="destinations.html?region=africa-islands">Africa &amp; Islands</a></li>
+                            </ul>
                         </div>
-                        <h4 class="lb-card-title">Get the Full Rate Sheet</h4>
-                        <p class="lb-card-body">
-                            Receive complete NNC rate sheets for all 10+ destinations directly to your inbox within one
-                            business day.
-                        </p>
-                        <div class="check-list">
-                            <div class="check-list-item">
-                                <i class="fas fa-check-circle check-list-icon"></i>
-                                NNC rates up to 42%+
-                            </div>
-                            <div class="check-list-item">
-                                <i class="fas fa-check-circle check-list-icon"></i>
-                                10+ wholesale destinations
-                            </div>
-                            <div class="check-list-item">
-                                <i class="fas fa-check-circle check-list-icon"></i>
-                                Dedicated agent desk support
-                            </div>
+                        <div class="col-6 col-md-4">
+                            <h6 class="ds-footer-heading">Company</h6>
+                            <ul class="list-unstyled ds-footer-links">
+                                <li><a href="about-us.html">About Us</a></li>
+                                <li><a href="destinations.html">All Destinations</a></li>
+                                <li><a href="testimonials.html">Testimonials</a></li>
+                                <li><a href="contact-us.html">Contact Us</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <h6 class="ds-footer-heading">Contact Support</h6>
+                            <p class="ds-footer-text mb-2"><i class="fas fa-map-marker-alt text-primary me-2"></i> Regus Matatial House, H.T. Parekh Marg, Mumbai – 400020</p>
+                            <p class="ds-footer-text mb-2"><i class="fas fa-phone-alt text-primary me-2"></i> +91 97694-21051</p>
+                            <p class="ds-footer-text mb-0"><i class="fas fa-envelope text-primary me-2"></i> sales1@rolandholidays.com</p>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section> -->
-    <!-- CTA END -->
-
-
-
-    <!-- footer start -->
-    <footer class=" footer-bg bg-size blur-up lazyloaded"
-        style="background-image: url(./assets/img/13.jpg); background-size: cover; background-position: center center; background-repeat: no-repeat; display: block;">
-        <img src="./assets/img/13.jpg" class="img-fluid blur-up lazyload bg-img" alt="" style="display: none;">
-        <div class="footer section-b-space section-t-space">
-            <div class="container">
-                <div class="row order-row">
-                    <div class="col-xl-3 col-md-6 order-cls">
-                        <div class="footer-title mobile-title">
-                            <h5>contact us</h5>
-                        </div>
-                        <div class="footer-content">
-                            <div class="contact-detail">
-                                <div class="footer-logo">
-                                    <img src=".//assets/img/footer-logo.png" alt="" class="img-fluid blur-up lazyloaded"
-                                        data-rle-type="icon">
-                                </div>
-                                <p>Your trusted travel partner since 1990. We specialize in professional travel
-                                    solutions for agents and tour operators worldwide.</p>
-                                <ul class="contact-list">
-                                    <li><i class="fas fa-map-marker-alt"></i> Regus 5th &amp; 6th Floor, Matatial House,
-                                        H.T. Parekh Marg, Backbay Reclamation, Mumbai – 400020</li>
-                                    <li><i class="fas fa-phone-alt"></i> +91 97694-21051</li>
-                                    <li><i class="fas fa-envelope"></i> sales1@rolandholidays.com</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-md-3">
-                        <div class="footer-space">
-                            <div class="footer-title">
-                                <h5>useful links</h5>
-                            </div>
-                            <div class="footer-content">
-                                <div class="footer-links">
-                                    <ul>
-                                        <li><a href="about-us.html">about us</a></li>
-                                        <li><a href="destinations.html">Destinations</a>
-                                        </li>
-                                        
-                                        <li><a href="testimonials.html">Testimonials </a>
-                                        </li>
-                                        <li><a href="contact-us.html"> Contact Us</a></li>
-
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-md-3">
-                        <div class="footer-space">
-                            <div class="footer-title">
-                                <h5>Services</h5>
-                            </div>
-                            <div class="footer-content">
-                                <div class="footer-links">
-                                    <ul>
-                                        <!-- <li><a href="#">Visa Processing</a></li> -->
-                                        <li><a href="#">Customized Group Itineraries &amp; Travel Guides</a></li>
-                                        <li><a href="#"> Land Arrangements</a>
-                                        </li>
-                                        <li><a href="#">Travel Insurance Solutions. </a>
-                                        </li>
-
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-xl-3 col-md-3 order-cls">
-                        <div class="footer-space">
-                            <div class="footer-title">
-                                <h5>quick links</h5>
-                            </div>
-                            <div class="footer-content">
-                                <div class="footer-links">
-                                    <ul>
-                                        <li><a href="destinations.html">Explore Top Destinations</a></li>
-                                        <li><a href="luxury-beach.html">Luxury Beach Packages</a></li>
-                                        <li><a href="testimonials.html">Partner Testimonials</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
+            <hr class="my-4 border-slate-200">
+            <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 text-muted" style="font-size: 13px;">
+                <p class="mb-0">© 2026 Roland Holidays. All rights reserved.</p>
+                <p class="mb-0">Designed with Excellence</p>
             </div>
         </div>
     </footer>
-    <!-- footer end -->
+    <!-- MINIMAL BRIGHT LIGHT FOOTER END -->
 
 
 
@@ -1134,7 +1083,7 @@
     <script src="./assets/js/live-editor.js"></script>
 
     <script>
-    // ── Filter logic ──
+    // ── Region & Season Filter logic ──
     document.querySelectorAll('.region-pill').forEach(function (btn) {
         btn.addEventListener('click', function () {
             document.querySelectorAll('.region-pill').forEach(function (b) { b.classList.remove('active'); });
@@ -1151,13 +1100,30 @@
         });
     });
 
+    // ── Live Search Input Filtering ──
+    var searchInput = document.getElementById('destSearchInput');
+    if (searchInput) {
+        searchInput.addEventListener('input', function() {
+            filterCards();
+        });
+    }
+
+    // ── URL Query Parameters Parsing ──
     (function() {
         var params = new URLSearchParams(window.location.search);
+        var region = params.get('region');
         var season = params.get('season');
+
+        if (region) {
+            document.querySelectorAll('.region-pill').forEach(function(b) { b.classList.remove('active'); });
+            var regBtn = document.querySelector('.region-pill[data-region="' + region + '"]');
+            if (regBtn) { regBtn.classList.add('active'); }
+        }
+
         if (season) {
             document.querySelectorAll('.season-pill').forEach(function(b) { b.classList.remove('active'); });
-            var btn = document.querySelector('.season-pill[data-season="' + season + '"]');
-            if (btn) { btn.classList.add('active'); }
+            var seasBtn = document.querySelector('.season-pill[data-season="' + season + '"]');
+            if (seasBtn) { seasBtn.classList.add('active'); }
         }
         filterCards();
     })();
@@ -1167,22 +1133,34 @@
         var seasonBtn = document.querySelector('.season-pill.active');
         var region = regionBtn ? (regionBtn.dataset.region || 'all') : 'all';
         var season = seasonBtn ? (seasonBtn.dataset.season || 'all') : 'all';
+        var searchQuery = searchInput ? searchInput.value.trim().toLowerCase() : '';
         var visibleCount = 0;
-        document.querySelectorAll('.dest-card-wrap').forEach(function (card) {
-            var regionMatch = region === 'all' || card.dataset.region === region;
-            var seasonMatch = season === 'all' || card.dataset.season === season;
-            if (regionMatch && seasonMatch) { card.style.display = 'block'; visibleCount++; }
-            else { card.style.display = 'none'; }
-        });
-        var noResults = document.getElementById('noResults');
-        if (noResults) { noResults.style.setProperty('display', visibleCount === 0 ? 'block' : 'none', 'important'); }
-        var countEl = document.getElementById('destCount');
-        if (countEl) { countEl.textContent = visibleCount; }
-    }
 
+        document.querySelectorAll('.dest-card-wrap').forEach(function (card) {
+            var cardRegion = card.dataset.region || '';
+            var cardSeason = card.dataset.season || '';
+            var cardText = card.textContent.toLowerCase();
+
+            var regionMatch = region === 'all' || cardRegion === region;
+            var seasonMatch = season === 'all' || cardSeason === season;
+            var searchMatch = searchQuery === '' || cardText.includes(searchQuery);
+
+            if (regionMatch && seasonMatch && searchMatch) {
+                card.style.display = 'block';
+                visibleCount++;
+            } else {
+                card.style.display = 'none';
+            }
+        });
+
+        var noResults = document.getElementById('noResults');
+        if (noResults) {
+            noResults.style.setProperty('display', visibleCount === 0 ? 'block' : 'none', 'important');
+        }
+    }
     </script>
     <script src="./assets/js/sticky.js"></script>
-
+    <!-- Design System JS Engine -->
+    <script src="./assets/js/design-system.js"></script>
 </body>
-
 </html>

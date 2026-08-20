@@ -13,10 +13,7 @@
     <link rel="icon" href="./assets/img/icon.png" type="image/x-icon">
     <title>Contact Us – Roland Holidays | Trade Travel Inquiries</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Playwrite+GB+J:ital,wght@0,100..400;1,100..400&display=swap');
-        h1, h2, h3, h4, h5, h6, .title-label {
-            font-family: 'Playwrite GB J', cursive !important;
-        }
+        h1, h2, h3, h4, h5, h6 { font-family: var(--ds-font-heading); }
     </style>
 
     <!-- Font Awesome -->
@@ -38,6 +35,9 @@
     <!-- Theme -->
     <link rel="stylesheet" type="text/css" href="./assets/style/color5.css">
 
+    <!-- Design System css -->
+    <link rel="stylesheet" type="text/css" href="./assets/style/design-system.css">
+
     <!-- Responsive css -->
     <link rel="stylesheet" type="text/css" href="./assets/style/custom.css">
 
@@ -51,13 +51,12 @@
     <!-- header start -->
     <header class="tour-header">
         <div class="container">
-            <div class="row">
+            <div class="row align-items-center">
                 <div class="col">
                     <div class="menu">
                         <div class="brand-logo">
                             <a href="index.html">
-                                <img src="./assets/img/footer-logo.png" alt="Roland Holidays" class="img-fluid blur-up lazyloaded"
-                                    data-img-id="main_logo" data-edit-scope="global" data-rle-type="icon">
+                                <img src="./assets/img/logo.png" alt="Roland Holidays" class="img-fluid blur-up lazyloaded">
                             </a>
                         </div>
                         <nav>
@@ -66,13 +65,11 @@
                                     <div class="toggle-nav"><i class="fa fa-bars sidebar-bar"></i></div>
                                     <div class="menu-overlay"></div>
                                     <ul class="nav-menu">
-                                        <li class='back-btn'><div class='mobile-back text-end'><span>Back</span><i aria-hidden='true' class='fa fa-angle-right ps-2'></i></div></li>
-                                        <li><a href='index.html' class='nav-link menu-title'>Home</a></li>
-                                        <li><a href='about-us.html' class='nav-link menu-title'>About Us</a></li>
-                                        <li><a href='#' class='nav-link menu-title'>Top Trending Destinations in India <i class="fa fa-angle-down"></i></a><ul class='nav-submenu'><li><a href='destinations.html?season=summer'><span class='drop-icon summer'><i class='fas fa-sun'></i></span> Summer</a></li><li><a href='destinations.html?season=winter'><span class='drop-icon winter'><i class='fas fa-snowflake'></i></span> Winter</a></li></ul></li>
-                                        <li><a href='#' class='nav-link menu-title'>Top Trending Destinations Abroad <i class="fa fa-angle-down"></i></a><ul class='nav-submenu'><li><a href='destinations.html?season=summer'><span class='drop-icon summer'><i class='fas fa-sun'></i></span> Summer</a></li><li><a href='destinations.html?season=winter'><span class='drop-icon winter'><i class='fas fa-snowflake'></i></span> Winter</a></li></ul></li>
-                                        <li><a href='testimonials.html' class='nav-link menu-title'>Testimonials</a></li>
-                                        <li><a href='contact-us.html' class='nav-link menu-title active'>Contact Us</a></li>
+                                        <li><a href="index.html" class="nav-link">Home</a></li>
+                                        <li><a href="about-us.html" class="nav-link">About Us</a></li>
+                                        <li><a href="destinations.html" class="nav-link">Destinations</a></li>
+                                        <li><a href="testimonials.html" class="nav-link">Testimonials</a></li>
+                                        <li><a href="contact-us.html" class="nav-link active">Contact Us</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -90,15 +87,9 @@
         data-bg-editable="true" data-bg-id="contact_breadcrumb_bg"
         style="background:linear-gradient(rgb(0 0 0 / 20%), rgb(0 0 0 / 13%)), url(assets/img/bg/bg-c.jpg); background-size: cover; background-position: center center; background-repeat: no-repeat;">
         <!-- <img src="./assets/img/5.jpg" class="img-fluid blur-up lazyload bg-img" alt="" style="display:none;" data-img-id="contact_breadcrumb_fallback"> -->
-        <div class="breadcrumb-content overlay-black">
+        <div class="breadcrumb-content overlay-black text-center">
             <div>
-                <h2 data-editable="true" data-edit-id="contact_page_title">Contact Us</h2>
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Contact Us</li>
-                    </ol>
-                </nav>
+                <h1 class="ds-page-title mb-0" data-editable="true" data-edit-id="contact_page_title">Contact Our Travel Desk</h1>
             </div>
         </div>
     </section>
@@ -106,20 +97,71 @@
 
 
     <!-- ══════════════ CONTACT FORM + SIDEBAR ══════════════ -->
-    <section class="section-b-space section-t-space">
+    <section class="py-section bg-white">
         <div class="container">
 
             <!-- Section heading -->
             <div class="row mb-5">
                 <div class="col-12 text-center">
-                    <div class="title-3"><span class="title-label" data-editable="true" data-edit-id="contact_sec_tag">Travel Inquiries</span></div>
-                    <h2 class="section-h2-fluid" data-editable="true" data-edit-id="contact_sec_title">
-                        Get in Touch with Our <span style="color:#1E4FA3;">Expert Team</span>
+                    <span class="section-tag mb-1">Travel Inquiries</span>
+                    <h2 class="ds-heading-4xl mb-2" data-editable="true" data-edit-id="contact_sec_title">
+                        Get in Touch with Our <span class="brush-underline-3a">Expert Team</span>
                     </h2>
-                    <p class="section-desc-center" data-editable="true" data-edit-id="contact_sec_desc">
+                    <p class="text-muted max-w-xl mx-auto" data-editable="true" data-edit-id="contact_sec_desc">
                         Whether you're a new agent looking to register or an existing partner with a travel inquiry —
-                        we're here to help.
+                        we're here to help 24/7.
                     </p>
+                </div>
+            </div>
+
+            <!-- Contact Inquiry Form -->
+            <div class="row mb-5 justify-content-center">
+                <div class="col-lg-10">
+                    <div class="ds-card ds-card-glass p-4 p-md-5">
+                        <h4 class="mb-4 text-center font-weight-bold">Submit Your Travel Agent Inquiry</h4>
+                        <form id="contact-inquiry-form" class="row g-3">
+                            <div class="col-md-6 ds-form-group">
+                                <label class="ds-label">Agency / Full Name</label>
+                                <input type="text" class="ds-input" placeholder="e.g. Skyline Travel Agency" required>
+                            </div>
+                            <div class="col-md-6 ds-form-group">
+                                <label class="ds-label">Work Email</label>
+                                <input type="email" class="ds-input" placeholder="agent@agency.com" required>
+                            </div>
+                            <div class="col-md-6 ds-form-group">
+                                <label class="ds-label">Phone / WhatsApp</label>
+                                <input type="tel" class="ds-input" placeholder="+91 98765-43210" required>
+                            </div>
+                            <div class="col-md-6 ds-form-group">
+                                <label class="ds-label">Inquiry Category</label>
+                                <select class="ds-select">
+                                    <option>Group Itinerary Request</option>
+                                    <option>Agent Exclusive Rates</option>
+                                    <option>Visa &amp; Land Support</option>
+                                    <option>General Partner Inquiry</option>
+                                </select>
+                            </div>
+                            <div class="col-12 ds-form-group">
+                                <label class="ds-label">Message Details</label>
+                                <textarea class="ds-textarea" rows="4" placeholder="Provide details about dates, destination, number of pax..."></textarea>
+                            </div>
+                            <div class="col-12 text-center mt-3">
+                                <button type="submit" class="primary-button d-inline-flex">
+                                    <div class="button-item-main">
+                                        <div class="button-text-pill">
+                                            <div class="primay-button-text">Submit Travel Inquiry</div>
+                                            <div class="primay-button-text">Submit Travel Inquiry</div>
+                                        </div>
+                                        <div class="button-arrow-pill">
+                                            <div class="arrow-wrapper">
+                                                <i class="fas fa-paper-plane button-arrow"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
 
@@ -178,96 +220,63 @@
   
    
 
-     <!-- footer start -->
-    <footer class="footer-bg bg-size blur-up lazyloaded"
-        style="background-image: url(./assets/img/13.jpg); background-size: cover; background-position: center center; background-repeat: no-repeat; display: block;">
-        <img src="./assets/img/13.jpg" class="img-fluid blur-up lazyload bg-img" alt="" style="display: none;">
-        <div class="footer section-b-space section-t-space">
-            <div class="container">
-                <div class="row order-row">
-                    <div class="col-xl-3 col-md-6 order-cls">
-                        <div class="footer-title mobile-title">
-                            <h5>contact us</h5>
-                        </div>
-                        <div class="footer-content">
-                            <div class="contact-detail">
-                                <div class="footer-logo">
-                                    <img src=".//assets/img/footer-logo.png" alt="" class="img-fluid blur-up lazyloaded"
-                                        data-rle-type="icon">
-                                </div>
-                                <p>Your trusted travel partner since 1990. We specialize in professional travel solutions for agents and tour operators worldwide.</p>
-                                <ul class="contact-list">
-                                    <li><i class="fas fa-map-marker-alt"></i> Regus 5th &amp; 6th Floor, Matatial House, H.T. Parekh Marg, Backbay Reclamation, Mumbai – 400020</li>
-                                    <li><i class="fas fa-phone-alt"></i> +91 97694-21051</li>
-                                    <li><i class="fas fa-envelope"></i> sales1@rolandholidays.com</li>
-                                </ul>
-                            </div>
-                        </div>
+    <!-- ══════════════ MINIMAL BRIGHT LIGHT FOOTER ══════════════ -->
+    <footer class="ds-minimal-footer py-5 bg-white">
+        <div class="container">
+            <div class="row g-4 align-items-start justify-content-between">
+                <div class="col-lg-4">
+                    <div class="footer-logo mb-3">
+                        <a href="index.html">
+                            <img src="./assets/img/logo.png" alt="Roland Holidays">
+                        </a>
                     </div>
-                    <div class="col-xl-3 col-md-3">
-                        <div class="footer-space">
-                            <div class="footer-title">
-                                <h5>useful links</h5>
-                            </div>
-                            <div class="footer-content">
-                                <div class="footer-links">
-                                    <ul>
-                                        <li><a href="about-us.html">about us</a></li>
-                                        <li><a href="destinations.html">Destinations</a>
-                                        </li>
-                                        
-                                        <li><a href="testimonials.html">Testimonials </a>
-                                        </li>
-                                        <li><a href="contact-us.html"> Contact Us</a></li>
-
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+                    <p class="ds-footer-text mb-3">
+                        Roland Holidays has been a trusted travel partner for over three decades, delivering premium travel solutions, custom itineraries, and dedicated support worldwide.
+                    </p>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="text-secondary text-hover-gold"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-secondary text-hover-gold"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-secondary text-hover-gold"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://api.whatsapp.com/send?phone=919769421051" class="text-secondary text-hover-gold"><i class="fab fa-whatsapp"></i></a>
                     </div>
-                    <div class="col-xl-3 col-md-3">
-                        <div class="footer-space">
-                            <div class="footer-title">
-                                <h5>Services</h5>
-                            </div>
-                            <div class="footer-content">
-                                <div class="footer-links">
-                                    <ul>
-                                          <!-- <li><a href="#">Visa Processing</a></li> -->
-                                        <li><a href="#">Customized Group Itineraries &amp; Travel Guides</a></li>
-                                        <li><a href="#"> Land Arrangements</a>
-                                        </li>
-                                        <li><a href="#">Travel Insurance Solutions. </a>
-                                        </li>
-
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-xl-3 col-md-3 order-cls">
-                        <div class="footer-space">
-                            <div class="footer-title">
-                                <h5>quick links</h5>
-                            </div>
-                            <div class="footer-content">
-                                <div class="footer-links">
-                                    <ul>
-                                        <li><a href="#">Explore Top Destinations</a></li>
-                                        <li><a href="luxury-beach.html">Luxury Beach Packages</a></li>
-                                        <li><a href="#">Partner Testimonials</a> </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
+                <div class="col-lg-7">
+                    <div class="row g-4">
+                        <div class="col-6 col-md-4">
+                            <h6 class="ds-footer-heading">Destinations</h6>
+                            <ul class="list-unstyled ds-footer-links">
+                                <li><a href="destinations.html?region=india">India Inbound</a></li>
+                                <li><a href="destinations.html?region=southeast-asia">Southeast Asia</a></li>
+                                <li><a href="destinations.html?region=asia-eurasia">Asia &amp; Eurasia</a></li>
+                                <li><a href="destinations.html?region=africa-islands">Africa &amp; Islands</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-4">
+                            <h6 class="ds-footer-heading">Company</h6>
+                            <ul class="list-unstyled ds-footer-links">
+                                <li><a href="about-us.html">About Us</a></li>
+                                <li><a href="destinations.html">All Destinations</a></li>
+                                <li><a href="testimonials.html">Testimonials</a></li>
+                                <li><a href="contact-us.html">Contact Us</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <h6 class="ds-footer-heading">Contact Support</h6>
+                            <p class="ds-footer-text mb-2"><i class="fas fa-map-marker-alt text-primary me-2"></i> Regus Matatial House, H.T. Parekh Marg, Mumbai – 400020</p>
+                            <p class="ds-footer-text mb-2"><i class="fas fa-phone-alt text-primary me-2"></i> +91 97694-21051</p>
+                            <p class="ds-footer-text mb-0"><i class="fas fa-envelope text-primary me-2"></i> sales1@rolandholidays.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4 border-slate-200">
+            <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 text-muted" style="font-size: 13px;">
+                <p class="mb-0">© 2026 Roland Holidays. All rights reserved.</p>
+                <p class="mb-0">Designed with Excellence</p>
             </div>
         </div>
     </footer>
-    <!-- footer end -->
+    <!-- MINIMAL BRIGHT LIGHT FOOTER END -->
 
 
     <!-- ══════════════ SCRIPTS ══════════════ -->
@@ -313,6 +322,8 @@
         });
     </script>
     <script src="./assets/js/sticky.js"></script>
+    <!-- Design System JS Engine -->
+    <script src="./assets/js/design-system.js"></script>
 
 </body>
 

@@ -7,6 +7,8 @@
     <!-- Theme CSS -->
     <link rel="stylesheet" type="text/css" href="./assets/style/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="./assets/style/color5.css">
+    <!-- Design System CSS -->
+    <link rel="stylesheet" type="text/css" href="./assets/style/design-system.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" />
     <style>
         .login-page {
@@ -59,22 +61,34 @@
         <div class="login-card">
             <div class="login-header">
                 <div class="logo-wrapper">
-                    <img src="./assets/img/footer-logo.png" alt="Logo">
+                    <img src="./assets/img/logo.png" alt="Roland Holidays Logo">
                 </div>
                 <h3 class="mb-0">Admin Portal</h3>
                 <p class="text-muted">Enter credentials to access editor</p>
             </div>
             <div id="errorMessage" class="error-msg">Invalid Credentials!</div>
             <form id="loginForm">
-                <div class="form-group">
-                    <label>Email Address</label>
-                    <input type="email" id="email" class="form-control" placeholder="admin123@gmail.com" required>
+                <div class="ds-form-group">
+                    <label class="ds-label">Email Address</label>
+                    <input type="email" id="email" class="ds-input" placeholder="admin123@gmail.com" required>
                 </div>
-                <div class="form-group">
-                    <label>Password</label>
-                    <input type="password" id="password" class="form-control" placeholder="••••••••" required>
+                <div class="ds-form-group">
+                    <label class="ds-label">Password</label>
+                    <input type="password" id="password" class="ds-input" placeholder="••••••••" required>
                 </div>
-                <button type="submit" class="btn-login">Login as Admin</button>
+                <button type="submit" class="primary-button w-100 mt-2">
+                    <div class="button-item-main">
+                        <div class="button-text-pill">
+                            <div class="primay-button-text">Login to Admin Portal</div>
+                            <div class="primay-button-text">Login to Admin Portal</div>
+                        </div>
+                        <div class="button-arrow-pill">
+                            <div class="arrow-wrapper">
+                                <i class="fas fa-lock button-arrow"></i>
+                            </div>
+                        </div>
+                    </div>
+                </button>
             </form>
             <div class="mt-4 text-center">
                 <a href="index.html" class="text-muted"><i class="fas fa-arrow-left"></i> Back to Home</a>
@@ -98,5 +112,7 @@
             }
         };
     </script>
+    <!-- Design System JS Engine -->
+    <script src="./assets/js/design-system.js"></script>
 </body>
 </html>

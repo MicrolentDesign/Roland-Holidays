@@ -1,13 +1,19 @@
 @charset "UTF-8";
+
+/* ==========================================================================
+   PARENT MASTER DESIGN SYSTEM IMPORT
+   ========================================================================== */
+@import url('./design-system.css');
+
 /*=====================
 01. General css start
 ==========================*/
 body {
-  font-family: Nunito, sans-serif;
+  font-family: var(--ds-font-sans);
   position: relative;
-  background: white;
+  background: var(--ds-bg-main);
   font-size: 14px;
-  color: black;
+  color: var(--ds-text-primary);
 }
 
 h1,
@@ -16,7 +22,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: Nunito, sans-serif;
+  font-family: var(--ds-font-heading);
   font-weight: normal;
 }
 

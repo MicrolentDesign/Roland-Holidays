@@ -1,43 +1,23 @@
 /* =============================================================
    Roland Holidays – Custom CSS
-   Combines: all page component styles + mobile/tablet responsive
+   Combines: design system tokens + page component styles + mobile/tablet responsive
    ============================================================= */
+
+@import url('./design-system.css');
 
 /* ─────────────────────────────────────────────────────────────
-   CSS VARIABLES
+   CSS VARIABLES & TOKENS MAPPING
 ───────────────────────────────────────────────────────────── */
 :root {
-    --blue:       #7fb4d4;
-    --blue-dark:  #5a9abf;
-    --blue-light: rgba(127,180,212,0.12);
-    --navy:       #1a2a3a;
-    --navy-deep:  #0d1f2d;
-    --gold:       #7fb4d4;
-    --gold-light: rgba(127,180,212,0.12);
+    --blue:       var(--ds-color-sky);
+    --blue-dark:  var(--ds-color-secondary);
+    --blue-light: var(--ds-color-sky-light);
+    --navy:       var(--ds-color-navy-surface);
+    --navy-deep:  var(--ds-color-navy);
+    --gold:       var(--ds-color-gold);
+    --gold-light: var(--ds-color-gold-light);
+    --primary:    var(--ds-color-primary);
 }
-
-
-/* =============================================================
-   SECTION TAG / PILL  (shared across pages)
-   ============================================================= */
-.section-tag {
-   font-size: 14px;
-    color: white;
-    background-color: #7fb4d4;
-    text-transform: capitalize;
-    padding: 4px 18px 6px;
-    line-height: 1;
-    font-family: Work Sans;
-    font-weight: 600;
-    width: fit-content;
-    margin: auto;
-    margin-bottom: 10px;
-}
-.section-tag.blue {
-    background: rgba(127,180,212,0.12);
-    color: var(--blue);
-}
-
 
 /* =============================================================
    PREVENT HORIZONTAL SCROLL
@@ -2320,17 +2300,18 @@ width: 20px; height: 20px; cursor: pointer; }
 }
 
 /* ── Header ── */    
-header.tour-header { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: linear-gradient(180deg, rgba(0,0,0,0.45) 0%, transparent 100%); }
+header.tour-header { position: sticky !important; top: 0; left: 0; right: 0; z-index: 1000 !important; background: #FFFFFF !important; border-bottom: 1px solid #E2E8F0 !important; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05) !important; }
 header.tour-header .container { max-width: 100%; padding: 0 40px; }
 header .menu { display: flex; align-items: center; justify-content: space-between; }
-header .brand-logo img { height: 52px; width: auto; }
+header .brand-logo img { max-height: 85px !important; height: 85px !important; width: auto !important; }
 header .main-navbar { flex: 1; }
 header .main-navbar .nav-menu > li { margin-right: 0; }
-header .main-navbar .nav-menu > li > a { color: #fff !important; font-size: 14px; font-weight: 600; letter-spacing: 0.06em;  padding: 24px 10px; position: relative; transition: color 0.25s;font-family: Nunito, sans-serif; }
-header .main-navbar .nav-menu > li > a::after { content: ''; position: absolute; bottom: 16px; left: 10px; right: 10px; height: 2px; background: #E53935; transform: scaleX(0); transition: transform 0.25s ease; border-radius: 2px; }
-header .main-navbar .nav-menu > li > a:hover::after, header .main-navbar .nav-menu > li > a.active::after { transform: scaleX(1); }
-header .main-navbar .nav-menu > li > a:hover, header .main-navbar .nav-menu > li > a.active { color: #fff !important; }
-header.tour-header.sticky { position: fixed; top: 0; background: rgb(0 0 0 / 15%); backdrop-filter: blur(12px); box-shadow: 0 2px 20px rgba(0,0,0,0.1); animation: slideDown 0.3s ease; }
+header .main-navbar .nav-menu > li > a { color: #1E293B !important; font-size: 16px !important; font-weight: 600 !important; letter-spacing: 0.01em; padding: 10px 0; position: relative; transition: color 0.25s ease; font-family: 'Ubuntu', sans-serif !important; text-decoration: none !important; }
+header .main-navbar .nav-menu > li > a::before,
+header .main-navbar .nav-menu > li > a::after { display: none !important; content: none !important; }
+header .main-navbar .nav-menu > li > a:hover { color: #1E4FA3 !important; text-decoration: none !important; }
+header .main-navbar .nav-menu > li > a.active { color: #1E4FA3 !important; border-bottom: 3px solid #D4AF37 !important; }
+header.tour-header.sticky { position: fixed; top: 0; background: #FFFFFF !important; box-shadow: 0 4px 20px rgba(0,0,0,0.06) !important; animation: slideDown 0.3s ease; }
 @keyframes slideDown { from { transform: translateY(-100%); } to { transform: translateY(0); } }
 
 
@@ -2544,5 +2525,62 @@ header .main-navbar .nav-menu > li .nav-submenu li a .drop-icon {
     .vhero { height: 80vh; }
     .vhero-stats { padding: 12px 16px; border-radius: 16px; }
     .vhero-stat { padding: 0 14px; }
+}
+
+/* ══════════════ 100% DEAD-CENTER HERO PAGE TITLES (SITE-WIDE) ══════════════ */
+.breadcrumb-section {
+    position: relative !important;
+    overflow: hidden !important;
+    height: 380px !important;
+    min-height: 380px !important;
+    max-height: 380px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.breadcrumb-section .breadcrumb-content {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    width: 100% !important;
+    height: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.breadcrumb-section .breadcrumb-content > div {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: transparent !important;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    width: 100% !important;
+}
+
+.ds-page-title,
+.breadcrumb-section .breadcrumb-content h1,
+.breadcrumb-section .breadcrumb-content h2 {
+    font-family: 'Ubuntu', sans-serif !important;
+    font-size: 56px !important;
+    font-weight: 800 !important;
+    line-height: 1.15 !important;
+    letter-spacing: -0.02em !important;
+    color: #FFFFFF !important;
+    text-align: center !important;
+    margin: 0 auto 10px auto !important;
+    padding: 0 !important;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4) !important;
 }
 

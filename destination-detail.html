@@ -25,6 +25,9 @@
     <link rel="stylesheet" type="text/css" href="./assets/style/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="./assets/style/color5.css">
 
+    <!-- Design System css -->
+    <link rel="stylesheet" type="text/css" href="./assets/style/design-system.css">
+
     <!-- Responsive css -->
     <link rel="stylesheet" type="text/css" href="./assets/style/custom.css">
 
@@ -38,12 +41,12 @@
     <!-- ══════════════ HEADER ══════════════ -->
     <header class="tour-header">
         <div class="container">
-            <div class="row">
+            <div class="row align-items-center">
                 <div class="col">
                     <div class="menu">
                         <div class="brand-logo">
                             <a href="index.html">
-                                <img src="./assets/img/footer-logo.png" alt="Roland Holidays" class="img-fluid blur-up lazyloaded" data-img-id="main_logo" data-edit-scope="global">
+                                <img src="./assets/img/logo.png" alt="Roland Holidays" class="img-fluid blur-up lazyloaded">
                             </a>
                         </div>
                         <nav>
@@ -52,13 +55,11 @@
                                     <div class="toggle-nav"><i class="fa fa-bars sidebar-bar"></i></div>
                                     <div class="menu-overlay"></div>
                                     <ul class="nav-menu">
-                                        <li class='back-btn'><div class='mobile-back text-end'><span>Back</span><i aria-hidden='true' class='fa fa-angle-right ps-2'></i></div></li>
-                                        <li><a href='index.html' class='nav-link menu-title'>Home</a></li>
-                                        <li><a href='about-us.html' class='nav-link menu-title'>About Us</a></li>
-                                        <li><a href='#' class='nav-link menu-title'>Top Trending Destinations in India <i class="fa fa-angle-down"></i></a><ul class='nav-submenu'><li><a href='destinations.html?season=summer'><span class='drop-icon summer'><i class='fas fa-sun'></i></span> Summer</a></li><li><a href='destinations.html?season=winter'><span class='drop-icon winter'><i class='fas fa-snowflake'></i></span> Winter</a></li></ul></li>
-                                        <li><a href='#' class='nav-link menu-title'>Top Trending Destinations Abroad <i class="fa fa-angle-down"></i></a><ul class='nav-submenu'><li><a href='destinations.html?season=summer'><span class='drop-icon summer'><i class='fas fa-sun'></i></span> Summer</a></li><li><a href='destinations.html?season=winter'><span class='drop-icon winter'><i class='fas fa-snowflake'></i></span> Winter</a></li></ul></li>
-                                        <li><a href='testimonials.html' class='nav-link menu-title'>Testimonials</a></li>
-                                        <li><a href='contact-us.html' class='nav-link menu-title'>Contact Us</a></li>
+                                        <li><a href="index.html" class="nav-link">Home</a></li>
+                                        <li><a href="about-us.html" class="nav-link">About Us</a></li>
+                                        <li><a href="destinations.html" class="nav-link active">Destinations</a></li>
+                                        <li><a href="testimonials.html" class="nav-link">Testimonials</a></li>
+                                        <li><a href="contact-us.html" class="nav-link">Contact Us</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -76,16 +77,16 @@
         data-bg-editable="true" data-bg-id="dest_detail_hero_bg"
        style="background:linear-gradient(rgb(0 0 0 / 20%), rgb(0 0 0 / 13%)), url(assets/img/qwe.png); background-size: cover; background-position: center center; background-repeat: no-repeat;">
         <!-- <img src="./assets/img/inner-bg.jpg" class="img-fluid blur-up lazyload bg-img" alt="" style="display:none;" data-img-id="dest_detail_hero_fallback"> -->
-        <div class="breadcrumb-content overlay-black">
+        <div class="breadcrumb-content overlay-black text-center">
             <div>
-                <h2 data-editable="true" data-edit-id="dest_detail_page_title">India – Destination Guide</h2>
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                        <li class="breadcrumb-item"><a href="destinations.html">Destinations</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">India</li>
-                    </ol>
-                </nav>
+                <h1 class="ds-page-title" id="destHeaderTitle" data-editable="true" data-edit-id="dest_detail_page_title">India – Destination Guide</h1>
+                <ul class="ds-subpage-breadcrumb mt-2">
+                    <li><a href="index.html"><i class="fas fa-home me-1"></i> Home</a></li>
+                    <li class="separator"><i class="fas fa-chevron-right"></i></li>
+                    <li><a href="destinations.html">Destinations</a></li>
+                    <li class="separator"><i class="fas fa-chevron-right"></i></li>
+                    <li class="active-item" id="breadcrumbActiveItem">India Inbound</li>
+                </ul>
             </div>
         </div>
     </section>
@@ -115,20 +116,193 @@
                     <!-- ══════ OVERVIEW ══════ -->
                     <div id="overview" class="mb-5 pt-2">
                         <div>
-                            <h2 class="section-h2-fluid" data-editable="true" data-edit-id="dd_over_h2">India for Travel Agents – <span style="color:#1E4FA3;">Why It Sells</span></h2>
-                            <p data-editable="true" data-edit-id="dd_over_p">India is one of the world's most diverse and rewarding destinations. As a Roland Holidays partner, you gain access to expertly crafted itineraries covering ancient heritage sites, vibrant cities, and breathtaking natural landscapes.</p>
+                            <h2 class="section-h2-fluid" data-editable="true" data-edit-id="dd_over_h2">Destination Overview &amp; <span class="brush-underline">Sightseeing Directory</span></h2>
+                            <p data-editable="true" data-edit-id="dd_over_p">Explore top attractions, iconic landmarks, and curated activities across major regions. Select activities below to build a custom travel plan tailored to your preferences.</p>
                         </div>
-                        <p class="dd-body-text">
-                            India's vast territory spans the snow-capped Himalayas, golden Rajasthan deserts, lush Kerala backwaters, and the world's most iconic cultural landmarks. From the majestic Taj Mahal in Agra to the serene temples of Varanasi, every corner of India offers a unique and memorable experience for your clients.
-                        </p>
-                        <p class="dd-body-text">
-                            As a Roland Holidays partner, you benefit from our carefully curated India packages designed for both leisure and cultural travellers. Our experienced India desk provides end-to-end support — from visa assistance and domestic flight coordination to guided tours and heritage hotel arrangements — ensuring every trip runs smoothly for your clients.
-                        </p>
-                        <p class="dd-body-text dd-body-text--last">
-                            Whether your clients want to explore the palaces of Rajasthan, cruise the Kerala backwaters, witness the ghats of Varanasi, or experience the beaches of Goa, Roland Holidays has a tailor-made India itinerary to match every travel style and budget.
-                        </p>
                     </div>
                     <!-- OVERVIEW END -->
+
+                    <!-- ══════════════════════════════════════════════════════════
+                         LEVEL 3 & 4: SIGHTSEEING DIRECTORY & CUSTOM PLAN BUILDER
+                         ══════════════════════════════════════════════════════════ -->
+                    <div class="ds-builder-card mb-5">
+                        <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
+                            <div>
+                                <span class="section-tag mb-1">Interactive Custom Plan Generator</span>
+                                <h3 class="ds-heading-3xl">Create Your <span class="brush-underline">Custom Travel Plan</span></h3>
+                                <p class="text-muted mb-0">Select specific spots &amp; activities across cities to build your personalized itinerary.</p>
+                            </div>
+                            <span class="ds-badge ds-badge-gold" id="builderCountBadge"><i class="fas fa-check-circle me-1"></i> <span id="spotCountText">0 Spots Selected</span></span>
+                        </div>
+
+                        <!-- Sightseeing Spot Selection Grid -->
+                        <div class="row g-3 mb-4" id="spotsGrid">
+                            <!-- Spot 1 -->
+                            <div class="col-md-6 col-lg-4">
+                                <div class="ds-spot-card" onclick="toggleSpotSelection(this, 'Grand Palace & Wat Phra Kaew')">
+                                    <div class="ds-spot-checkbox"><i class="fas fa-check"></i></div>
+                                    <div class="ds-spot-info">
+                                        <div class="ds-spot-title">Grand Palace &amp; Wat Phra Kaew</div>
+                                        <div class="ds-spot-desc">Royal residence &amp; Emerald Buddha carving • Bangkok</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Spot 2 -->
+                            <div class="col-md-6 col-lg-4">
+                                <div class="ds-spot-card" onclick="toggleSpotSelection(this, 'Phi Phi Islands Speedboat')">
+                                    <div class="ds-spot-checkbox"><i class="fas fa-check"></i></div>
+                                    <div class="ds-spot-info">
+                                        <div class="ds-spot-title">Phi Phi Islands &amp; Maya Bay</div>
+                                        <div class="ds-spot-desc">Full-day speedboat, Pileh Lagoon &amp; Maya Bay • Phuket</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Spot 3 -->
+                            <div class="col-md-6 col-lg-4">
+                                <div class="ds-spot-card" onclick="toggleSpotSelection(this, 'Chao Phraya Dinner Cruise')">
+                                    <div class="ds-spot-checkbox"><i class="fas fa-check"></i></div>
+                                    <div class="ds-spot-info">
+                                        <div class="ds-spot-title">Chao Phraya Sunset Dinner Cruise</div>
+                                        <div class="ds-spot-desc">Evening river cruise with international buffet • Bangkok</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Spot 4 -->
+                            <div class="col-md-6 col-lg-4">
+                                <div class="ds-spot-card" onclick="toggleSpotSelection(this, 'Coral Island Watersports')">
+                                    <div class="ds-spot-checkbox"><i class="fas fa-check"></i></div>
+                                    <div class="ds-spot-info">
+                                        <div class="ds-spot-title">Coral Island (Koh Larn) Speedboat</div>
+                                        <div class="ds-spot-desc">Parasailing, banana boat &amp; Indian lunch • Pattaya</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Spot 5 -->
+                            <div class="col-md-6 col-lg-4">
+                                <div class="ds-spot-card" onclick="toggleSpotSelection(this, 'Carnival Magic Illumination Park')">
+                                    <div class="ds-spot-checkbox"><i class="fas fa-check"></i></div>
+                                    <div class="ds-spot-info">
+                                        <div class="ds-spot-title">Carnival Magic Night Park</div>
+                                        <div class="ds-spot-desc">40-acre light display &amp; Guinness world records • Phuket</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Spot 6 -->
+                            <div class="col-md-6 col-lg-4">
+                                <div class="ds-spot-card" onclick="toggleSpotSelection(this, 'Amber Fort & City Palace')">
+                                    <div class="ds-spot-checkbox"><i class="fas fa-check"></i></div>
+                                    <div class="ds-spot-info">
+                                        <div class="ds-spot-title">Amber Fort &amp; City Palace</div>
+                                        <div class="ds-spot-desc">Royal fort, Sheesh Mahal &amp; Elephant ride • Jaipur (India)</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Summary & Quote Request Panel -->
+                        <div class="ds-builder-summary-panel">
+                            <div class="row align-items-center g-3">
+                                <div class="col-lg-7">
+                                    <h5 class="text-white mb-2 font-weight-bold">Selected Custom Activities:</h5>
+                                    <div id="selectedChipsWrapper" class="d-flex flex-wrap gap-2 mb-3">
+                                        <span class="text-white-50 text-small">Click any attraction card above to add to your custom itinerary...</span>
+                                    </div>
+                                    <div class="row g-2">
+                                        <div class="col-6 col-sm-4">
+                                            <input type="number" id="builderPax" class="ds-input bg-white text-dark py-2" placeholder="Pax Count (e.g. 4)" min="1" value="2">
+                                        </div>
+                                        <div class="col-6 col-sm-4">
+                                            <select id="builderHotel" class="ds-select bg-white text-dark py-2">
+                                                <option>5★ Luxury Resort</option>
+                                                <option>4★ Superior Hotel</option>
+                                                <option>3★ Boutique Stay</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-12 col-sm-4">
+                                            <input type="text" id="builderDate" class="ds-input bg-white text-dark py-2" placeholder="Travel Month (e.g. Nov 2026)">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-5 text-lg-end mt-3 mt-lg-0 d-flex flex-column gap-2">
+                                    <button type="button" onclick="sendCustomPlanToWhatsApp()" class="primary-button ds-btn-whatsapp w-100">
+                                        <div class="button-item-main">
+                                            <div class="button-text-pill">
+                                                <div class="primay-button-text">Send Custom Plan to WhatsApp</div>
+                                                <div class="primay-button-text">Send Custom Plan to WhatsApp</                                     <button type="button" onclick="submitCustomPlanQuote()" class="primary-button ds-btn-kinetic-gold w-100">
+                                        <div class="button-item-main">
+                                            <div class="button-text-pill">
+                                                <div class="primay-button-text">Email Custom Quote</div>
+                                                <div class="primay-button-text">Email Custom Quote</div>
+                                            </div>
+                                            <div class="button-arrow-pill">
+                                                <div class="arrow-wrapper">
+                                                    <i class="fas fa-paper-plane button-arrow"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <script>
+                        const selectedSpots = new Set();
+
+                        function toggleSpotSelection(card, spotName) {
+                            if (selectedSpots.has(spotName)) {
+                                selectedSpots.delete(spotName);
+                                card.classList.remove('selected');
+                            } else {
+                                selectedSpots.add(spotName);
+                                card.classList.add('selected');
+                            }
+                            updateBuilderSummary();
+                        }
+
+                        function updateBuilderSummary() {
+                            const count = selectedSpots.size;
+                            document.getElementById('spotCountText').textContent = count + (count === 1 ? ' Spot Selected' : ' Spots Selected');
+                            
+                            const wrapper = document.getElementById('selectedChipsWrapper');
+                            if (count === 0) {
+                                wrapper.innerHTML = '<span class="text-white-50 text-small">Click any attraction card above to add to your custom itinerary...</span>';
+                            } else {
+                                wrapper.innerHTML = Array.from(selectedSpots).map(s => `<span class="ds-selected-chip"><i class="fas fa-check text-warning"></i> ${s}</span>`).join('');
+                            }
+                        }
+
+                        function sendCustomPlanToWhatsApp() {
+                            if (selectedSpots.size === 0) {
+                                alert('Please select at least 1 visiting point or activity to create your custom itinerary!');
+                                return;
+                            }
+                            const pax = document.getElementById('builderPax').value || 2;
+                            const hotel = document.getElementById('builderHotel').value;
+                            const month = document.getElementById('builderDate').value || 'Upcoming Season';
+                            
+                            const spotsList = Array.from(selectedSpots).map(s => `• ${s}`).join('\n');
+                            
+                            const message = `*Custom Travel Plan Request (Roland Holidays)*\n\n*Selected Visiting Points & Activities:*\n${spotsList}\n\n*Trip Specifications:*\n- Pax Count: ${pax} Guests\n- Hotel Preference: ${hotel}\n- Travel Month: ${month}\n\nPlease provide net pricing and availability.`;
+                            
+                            const encoded = encodeURIComponent(message);
+                            const whatsappUrl = `https://api.whatsapp.com/send?phone=919769421051&text=${encoded}`;
+                            window.open(whatsappUrl, '_blank');
+                        }
+
+                        function submitCustomPlanQuote() {
+                            if (selectedSpots.size === 0) {
+                                alert('Please select at least 1 sightseeing spot or activity to generate a custom itinerary plan!');
+                                return;
+                            }
+                            const pax = document.getElementById('builderPax').value || 2;
+                            const hotel = document.getElementById('builderHotel').value;
+                            const month = document.getElementById('builderDate').value || 'Upcoming Season';
+                            
+                            const summaryText = `Custom Itinerary Plan Request:\n- Spots: ${Array.from(selectedSpots).join(', ')}\n- Pax: ${pax} Guests\n- Hotel Tier: ${hotel}\n- Travel Month: ${month}`;
+                            alert(`Success! Your Custom Travel Plan has been generated.\n\n${summaryText}\n\nOur team (sales1@rolandholidays.com) will send your net rates within 2 hours!`);
+                        }
+                    </script>
 
 
                     <!-- ══════ HOLIDAYS ══════ -->
@@ -292,32 +466,32 @@
 
                         <div class="dest-gallery">
                             <div class="gallery-item" onclick="openLightbox(0)">
-                                <img src="https://img.magnific.com/premium-photo/people-swimming-pool_1099000-15083.jpg?w=1480" alt="Taj Mahal, Agra" loading="lazy">
+                                <img src="./assets/img/d1.jpg" alt="Taj Mahal, Agra" loading="lazy">
                                 <div class="gallery-overlay"><span class="gallery-btn"><i class="fas fa-search-plus"></i></span></div>
                                 <div class="gallery-caption-bar">Taj Mahal, Agra</div>
                             </div>
                             <div class="gallery-item" onclick="openLightbox(1)">
-                                <img src="https://img.magnific.com/premium-photo/hawa-mahal-palace-jaipur_78361-570.jpg?w=1480" alt="Jaipur – Pink City" loading="lazy">
+                                <img src="./assets/img/d2.jpg" alt="Jaipur – Pink City" loading="lazy">
                                 <div class="gallery-overlay"><span class="gallery-btn"><i class="fas fa-search-plus"></i></span></div>
                                 <div class="gallery-caption-bar">Jaipur – Pink City</div>
                             </div>
                             <div class="gallery-item" onclick="openLightbox(2)">
-                                <img src="https://img.magnific.com/premium-photo/houseboat-kerala-backwaters-india_163782-10017.jpg?w=1480" alt="Kerala Backwaters" loading="lazy">
+                                <img src="./assets/img/d3.jpg" alt="Kerala Backwaters" loading="lazy">
                                 <div class="gallery-overlay"><span class="gallery-btn"><i class="fas fa-search-plus"></i></span></div>
                                 <div class="gallery-caption-bar">Kerala Backwaters</div>
                             </div>
                             <div class="gallery-item" onclick="openLightbox(3)">
-                                <img src="https://img.magnific.com/premium-photo/varanasi-ghats_78361-1091.jpg?w=1480" alt="Varanasi Ghats" loading="lazy">
+                                <img src="./assets/img/d4.jpg" alt="Varanasi Ghats" loading="lazy">
                                 <div class="gallery-overlay"><span class="gallery-btn"><i class="fas fa-search-plus"></i></span></div>
                                 <div class="gallery-caption-bar">Varanasi Ghats</div>
                             </div>
                             <div class="gallery-item" onclick="openLightbox(4)">
-                                <img src="https://img.magnific.com/premium-photo/shanti-stupa-hilltop-changpa-leh-district-ladakh-region-india_29285-2069.jpg?w=1480" alt="Ladakh" loading="lazy">
+                                <img src="./assets/img/d5.jpg" alt="Ladakh" loading="lazy">
                                 <div class="gallery-overlay"><span class="gallery-btn"><i class="fas fa-search-plus"></i></span></div>
                                 <div class="gallery-caption-bar">Ladakh</div>
                             </div>
                             <div class="gallery-item" onclick="openLightbox(5)">
-                                <img src="https://img.magnific.com/free-photo/road-down-hill_1353-247.jpg?t=st=1781069245~exp=1781072845~hmac=6d4c8299648cb6fc2b1475a16b50464484b9e83b2f923a98f3beb73e6bc087c8&w=1480" alt="Shillong (Meghalaya)" loading="lazy">
+                                <img src="./assets/img/d6.jpg" alt="Shillong (Meghalaya)" loading="lazy">
                                 <div class="gallery-overlay"><span class="gallery-btn"><i class="fas fa-search-plus"></i></span></div>
                                 <div class="gallery-caption-bar">Shillong (Meghalaya)</div>
                             </div>
@@ -420,85 +594,63 @@
 
 
     <!-- footer start -->
-    <footer class="footer-bg bg-size blur-up lazyloaded"
-        style="background-image: url(./assets/img/13.jpg); background-size: cover; background-position: center center; background-repeat: no-repeat; display: block;">
-        <img src="./assets/img/13.jpg" class="img-fluid blur-up lazyload bg-img" alt="" style="display: none;">
-        <div class="footer section-b-space section-t-space">
-            <div class="container">
-                <div class="row order-row">
-                    <div class="col-xl-3 col-md-6 order-cls">
-                        <div class="footer-title mobile-title">
-                            <h5>contact us</h5>
-                        </div>
-                        <div class="footer-content">
-                            <div class="contact-detail">
-                                <div class="footer-logo">
-                                    <img src=".//assets/img/footer-logo.png" alt="" class="img-fluid blur-up lazyloaded" data-rle-type="icon">
-                                </div>
-                                <p>Your trusted travel partner since 1990. We specialize in professional travel solutions for agents and tour operators worldwide.</p>
-                                <ul class="contact-list">
-                                    <li><i class="fas fa-map-marker-alt"></i> Regus 5th &amp; 6th Floor, Matatial House, H.T. Parekh Marg, Backbay Reclamation, Mumbai – 400020</li>
-                                    <li><i class="fas fa-phone-alt"></i> +91 97694-21051</li>
-                                    <li><i class="fas fa-envelope"></i> sales1@rolandholidays.com</li>
-                                </ul>
-                            </div>
-                        </div>
+    <!-- ══════════════ MINIMAL BRIGHT LIGHT FOOTER ══════════════ -->
+    <footer class="ds-minimal-footer py-5 bg-white">
+        <div class="container">
+            <div class="row g-4 align-items-start justify-content-between">
+                <div class="col-lg-4">
+                    <div class="footer-logo mb-3">
+                        <a href="index.html">
+                            <img src="./assets/img/logo.png" alt="Roland Holidays">
+                        </a>
                     </div>
-                    <div class="col-xl-3 col-md-3">
-                        <div class="footer-space">
-                            <div class="footer-title">
-                                <h5>useful links</h5>
-                            </div>
-                            <div class="footer-content">
-                                <div class="footer-links">
-                                    <ul>
-                                        <li><a href="about-us.html">about us</a></li>
-                                        <li><a href="destinations.html">Destinations</a></li>
-                                        
-                                        <li><a href="testimonials.html">Testimonials</a></li>
-                                        <li><a href="contact-us.html">Contact Us</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+                    <p class="ds-footer-text mb-3">
+                        Roland Holidays has been a trusted travel partner for over three decades, delivering premium travel solutions, custom itineraries, and dedicated support worldwide.
+                    </p>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="text-secondary text-hover-gold"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-secondary text-hover-gold"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-secondary text-hover-gold"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://api.whatsapp.com/send?phone=919769421051" class="text-secondary text-hover-gold"><i class="fab fa-whatsapp"></i></a>
                     </div>
-                    <div class="col-xl-3 col-md-3">
-                        <div class="footer-space">
-                            <div class="footer-title">
-                                <h5>Services</h5>
-                            </div>
-                            <div class="footer-content">
-                                <div class="footer-links">
-                                    <ul>
-                                        <li><a href="#">Customized Group Itineraries & Travel Guides</a></li>
-                                        <li><a href="#">Land Arrangements</a></li>
-                                        <li><a href="#">Travel Insurance Solutions</a></li>
-                                    </ul>
-                                </div>
-                            </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="row g-4">
+                        <div class="col-6 col-md-4">
+                            <h6 class="ds-footer-heading">Destinations</h6>
+                            <ul class="list-unstyled ds-footer-links">
+                                <li><a href="destinations.html?region=india">India Inbound</a></li>
+                                <li><a href="destinations.html?region=southeast-asia">Southeast Asia</a></li>
+                                <li><a href="destinations.html?region=asia-eurasia">Asia &amp; Eurasia</a></li>
+                                <li><a href="destinations.html?region=africa-islands">Africa &amp; Islands</a></li>
+                            </ul>
                         </div>
-                    </div>
-                    <div class="col-xl-3 col-md-3 order-cls">
-                        <div class="footer-space">
-                            <div class="footer-title">
-                                <h5>quick links</h5>
-                            </div>
-                            <div class="footer-content">
-                                <div class="footer-links">
-                                    <ul>
-                                        <li><a href="#">Explore Top Destinations</a></li>
-                                        <li><a href="#">Luxury Beach Packages</a></li>
-                                        <li><a href="#">Partner Testimonials</a></li>
-                                    </ul>
-                                </div>
-                            </div>
+                        <div class="col-6 col-md-4">
+                            <h6 class="ds-footer-heading">Company</h6>
+                            <ul class="list-unstyled ds-footer-links">
+                                <li><a href="about-us.html">About Us</a></li>
+                                <li><a href="destinations.html">All Destinations</a></li>
+                                <li><a href="testimonials.html">Testimonials</a></li>
+                                <li><a href="contact-us.html">Contact Us</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <h6 class="ds-footer-heading">Contact Support</h6>
+                            <p class="ds-footer-text mb-2"><i class="fas fa-map-marker-alt text-primary me-2"></i> Mumbai – 400020</p>
+                            <p class="ds-footer-text mb-2"><i class="fas fa-phone-alt text-primary me-2"></i> +91 97694-21051</p>
+                            <p class="ds-footer-text mb-0"><i class="fas fa-envelope text-primary me-2"></i> sales1@rolandholidays.com</p>
                         </div>
                     </div>
                 </div>
             </div>
+            <hr class="my-4 border-slate-200">
+            <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 text-muted" style="font-size: 13px;">
+                <p class="mb-0">© 2026 Roland Holidays. All rights reserved.</p>
+                <p class="mb-0">Designed with Excellence</p>
+            </div>
         </div>
     </footer>
-    <!-- footer end -->
+    <!-- MINIMAL BRIGHT LIGHT FOOTER END -->
 
 
     <!-- ══════════════ SCRIPTS ══════════════ -->
@@ -596,14 +748,24 @@
             openLightbox(currentIndex);
         }
 
-        document.addEventListener('keydown', function(e) {
-            var lb = document.getElementById('galleryLightbox');
-            if (lb.style.display === 'flex') {
-                if (e.key === 'Escape') closeLightbox();
-                if (e.key === 'ArrowLeft') prevImage();
-                if (e.key === 'ArrowRight') nextImage();
+        // Dynamic Breadcrumb & Header Title Parser
+        (function() {
+            var params = new URLSearchParams(window.location.search);
+            var state = params.get('state');
+            var country = params.get('country');
+            var headerTitle = document.getElementById('destHeaderTitle');
+            var breadcrumbItem = document.getElementById('breadcrumbActiveItem');
+
+            if (state) {
+                var stateName = state.charAt(0).toUpperCase() + state.slice(1);
+                if (headerTitle) headerTitle.textContent = stateName + ' (India) – Custom Plan & Guide';
+                if (breadcrumbItem) breadcrumbItem.textContent = stateName + ' (India)';
+            } else if (country) {
+                var countryName = country.charAt(0).toUpperCase() + country.slice(1);
+                if (headerTitle) headerTitle.textContent = countryName + ' – Custom Plan & Guide';
+                if (breadcrumbItem) breadcrumbItem.textContent = countryName;
             }
-        });
+        })();
     </script>
 
     <!-- ══════════════ GALLERY LIGHTBOX ══════════════ -->
@@ -621,5 +783,7 @@
         <div class="lightbox-backdrop" onclick="closeLightbox()"></div>
     </div>
 
+    <!-- Design System JS Engine -->
+    <script src="./assets/js/design-system.js"></script>
 </body>
 </html>

@@ -14,16 +14,8 @@
     <link rel="icon" href="./assets/img/icon.png" type="image/x-icon">
     <title>Roland Holidays – Trade Travel Partner</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Playwrite+GB+J:ital,wght@0,100..400;1,100..400&display=swap');
-
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6,
-        .title-label {
-            font-family: 'Playwrite GB J', cursive !important;
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--ds-font-heading);
         }
 
         /* ── Hero Section ── */
@@ -144,6 +136,9 @@
     <!-- Theme css -->
     <link rel="stylesheet" type="text/css" href="./assets/style/color5.css">
 
+    <!-- Design System css -->
+    <link rel="stylesheet" type="text/css" href="./assets/style/design-system.css">
+
     <!-- Responsive css -->
     <link rel="stylesheet" type="text/css" href="./assets/style/custom.css">
 
@@ -158,13 +153,12 @@
     <!-- header start -->
     <header class="tour-header">
         <div class="container">
-            <div class="row">
+            <div class="row align-items-center">
                 <div class="col">
                     <div class="menu">
                         <div class="brand-logo">
-                            <a href="#">
-                                <img src="./assets/img/footer-logo.png" alt="" class="img-fluid blur-up lazyloaded"
-                                    data-img-id="main_logo" data-edit-scope="global" data-rle-type="icon">
+                            <a href="index.html">
+                                <img src="./assets/img/logo.png" alt="Roland Holidays" class="img-fluid blur-up lazyloaded">
                             </a>
                         </div>
                         <nav>
@@ -173,13 +167,11 @@
                                     <div class="toggle-nav"><i class="fa fa-bars sidebar-bar"></i></div>
                                     <div class="menu-overlay"></div>
                                     <ul class="nav-menu">
-                                        <li class='back-btn'><div class='mobile-back text-end'><span>Back</span><i aria-hidden='true' class='fa fa-angle-right ps-2'></i></div></li>
-                                        <li><a href='index.html' class='nav-link menu-title active'>Home</a></li>
-                                        <li><a href='about-us.html' class='nav-link menu-title'>About Us</a></li>
-                                        <li><a href='#' class='nav-link menu-title'>Top Trending Destinations in India <i class="fa fa-angle-down"></i></a><ul class='nav-submenu'><li><a href='destinations.html?season=summer'><span class='drop-icon summer'><i class='fas fa-sun'></i></span> Summer</a></li><li><a href='destinations.html?season=winter'><span class='drop-icon winter'><i class='fas fa-snowflake'></i></span> Winter</a></li></ul></li>
-                                        <li><a href='#' class='nav-link menu-title'>Top Trending Destinations Abroad <i class="fa fa-angle-down"></i></a><ul class='nav-submenu'><li><a href='destinations.html?season=summer'><span class='drop-icon summer'><i class='fas fa-sun'></i></span> Summer</a></li><li><a href='destinations.html?season=winter'><span class='drop-icon winter'><i class='fas fa-snowflake'></i></span> Winter</a></li></ul></li>
-                                        <li><a href='testimonials.html' class='nav-link menu-title'>Testimonials</a></li>
-                                        <li><a href='contact-us.html' class='nav-link menu-title'>Contact Us</a></li>
+                                        <li><a href="index.html" class="nav-link active">Home</a></li>
+                                        <li><a href="about-us.html" class="nav-link">About Us</a></li>
+                                        <li><a href="destinations.html" class="nav-link">Destinations</a></li>
+                                        <li><a href="testimonials.html" class="nav-link">Testimonials</a></li>
+                                        <li><a href="contact-us.html" class="nav-link">Contact Us</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -189,30 +181,11 @@
             </div>
         </div>
     </header>
-    <!--  header end -->
+    <!-- header end -->
 
 
-    <!--home section start-->
-    <section class="home_effect effect-cls pt-0 position-relative">
-        <div class="snow" count="30"> </div>
-        <div class="effect_image">
-            <img src="./assets/img/2.png" alt="">
-            <div class="effect_content">
-                <div class="hero-text-box">
-                    <h1 data-editable="true" data-edit-id="hero_title">
-                        <span style="color:#E53935;">Roland </span>
-                        <span style="color:#265dff;">Holidays,</span> <br>
-                        <span>Trusted Worldwide</span>
-                    </h1>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--home section end-->
-
-
-    <!-- ══════════════ HERO SECTION 2 — VIDEO BG ══════════════ -->
-    <section class="vhero mt-5">
+    <!-- ══════════════ UNIFIED AVENORA MASTER HERO SECTION ══════════════ -->
+    <section class="vhero pt-0">
         <!-- Background video -->
         <video class="vhero-video" autoplay muted loop playsinline>
             <source src="./assets/img/sea3.mp4" type="video/mp4">
@@ -221,437 +194,452 @@
         <div class="vhero-overlay"></div>
 
         <!-- Content -->
-        <div class="vhero-content">
-            <p class="vhero-eyebrow"><span class="vhero-dot"></span> Explore the World with Roland Holidays</p>
-            <h2 class="vhero-title">Your Dream <span style="color:#E53935;">Destination</span><br>Is One Call <span style="color:#7ec8f7;">Away</span></h2>
-            <p class="vhero-sub">Tailor-made holidays, expert guidance, and unforgettable memories — from India's heritage trails to the beaches of the Maldives.</p>
+        <div class="vhero-content py-5">
+            <p class="vhero-eyebrow"><span class="vhero-dot"></span> Curated Global &amp; India Inbound Holidays</p>
+            <h1 class="vhero-title text-white ds-heading-5xl">Discover World-Class Travel Packages With <span class="brush-underline-3a">Roland Holidays</span></h1>
+            <p class="vhero-sub max-w-xl text-white-50 mt-3">Tailor-made holidays, expert land arrangements, and 24/7 dedicated support from India's heritage trails to the beaches of Bali &amp; the Maldives.</p>
           
-            <div class="vhero-btns">
-                <a href="destinations.html" class="vhero-btn-fill">Explore Destinations</a>
-                <a href="contact-us.html" class="vhero-btn-ghost">Contact Us</a>
+            <div class="vhero-btns mt-4 d-flex gap-3 flex-wrap justify-content-center">
+                <a href="destinations.html" class="primary-button">
+                    <div class="button-item-main">
+                        <div class="button-text-pill">
+                            <div class="primay-button-text">Explore All Destinations</div>
+                            <div class="primay-button-text">Explore All Destinations</div>
+                        </div>
+                        <div class="button-arrow-pill">
+                            <div class="arrow-wrapper">
+                                <i class="fas fa-compass button-arrow"></i>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href="contact-us.html" class="ds-btn-kinetic ds-btn-kinetic-gold">
+                    <div class="button-item-main">
+                        <div class="button-text-pill">
+                            <div class="primay-button-text">Get In Touch With Us</div>
+                            <div class="primay-button-text">Get In Touch With Us</div>
+                        </div>
+                        <div class="button-arrow-pill">
+                            <div class="arrow-wrapper">
+                                <i class="fas fa-paper-plane button-arrow"></i>
+                            </div>
+                        </div>
+                    </div>
+                </a>
             </div>
         </div>
     </section>
-    <!-- HERO SECTION 2 END -->
+    <!-- HERO SECTION END -->
 
-    <!-- search section start-->
-    <section class="section-b-space pt-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="search_section">
-                        <div class="title-3 detail-title">
-                            <h2 class="mb-0 pb-0" data-editable="true" data-edit-id="search_title_1">Your Reliable
-                                Trade <span style="color:#1E4FA3;">Travel Partner</span></h2>
-                            <h2 class="mt-0 pt-0 mb-0" data-editable="true" data-edit-id="search_title_2">Competitive
-                                Rates
-                                &amp; Dedicated <span style="color:#1E4FA3;">Agent Support</span></h2>
-                            <p data-editable="true" data-edit-id="search_description">Roland Holidays has been a pioneer
-                                in professional travel solutions for over three decades.
-                                As one of the region's most trusted professional travel partners, we have built our
-                                reputation
-                                on delivering unbeatable exclusive rates, comprehensive destination knowledge, and
-                                unwavering support to travel agents and tour operators worldwide. Our long-standing
-                                heritage means you benefit from deep supplier relationships, exclusive pricing, and a
-                                dedicated team committed to making every itinerary a success.</p>
+    <!-- FLOATING 3-SEGMENT SEARCH PILL BAR (WonderLand / Avenora Style) -->
+    <div class="container position-relative" style="margin-top: -35px; z-index: 20;">
+        <div class="ds-search-pill-bar">
+            <div class="ds-search-segment">
+                <i class="fas fa-map-marker-alt ds-search-icon"></i>
+                <input type="text" class="ds-search-input" placeholder="Search Country or State (e.g. Bali, Rajasthan, Thailand)">
+            </div>
+            <div class="ds-search-segment">
+                <i class="fas fa-calendar-alt ds-search-icon"></i>
+                <input type="text" class="ds-search-input" placeholder="Travel Month / Season">
+            </div>
+            <div class="ds-search-segment">
+                <i class="fas fa-user-friends ds-search-icon"></i>
+                <input type="text" class="ds-search-input" placeholder="2 Travelers / Pax">
+            </div>
+            <a href="destinations.html" class="primary-button">
+                <div class="button-item-main">
+                    <div class="button-text-pill">
+                        <div class="primay-button-text">Filter Tours</div>
+                        <div class="primay-button-text">Filter Tours</div>
+                    </div>
+                    <div class="button-arrow-pill">
+                        <div class="arrow-wrapper">
+                            <i class="fas fa-search button-arrow"></i>
                         </div>
-                        <!-- <div class="book-table single-table input-radius-cls">
-                            <div class="table-form classic-form p-0">
-                                <form>
-                                    <div class="row w-100">
-                                        <div class="form-group col p-0">
-                                            <input type="text" class="form-control" id="exampleFormControlInput1"
-                                                placeholder="Starting from">
-                                            <img src="./assets/img/table-no.png" class="img-fluid blur-up lazyloaded"
-                                                alt="" data-rle-type="icon">
-                                        </div>
-                                        <div class="form-group col p-0">
-                                            <input type="text" class="form-control" placeholder="Going to">
-                                            <img src="./assets/img/table-no.png" class="img-fluid blur-up lazyloaded"
-                                                alt="" data-rle-type="icon">
-                                        </div>
-                                        <div class="form-group col p-0">
-                                            <div role="wrapper"
-                                                class="gj-datepicker gj-datepicker-bootstrap gj-unselectable input-group">
-                                                <input type="date" placeholder="During Date" class="form-control"
-                                                    id="datepicker">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <a href="#" class="btn btn-rounded color1">search</a>
-                                </form>
-                            </div>
-                        </div> -->
                     </div>
                 </div>
+            </a>
+        </div>
+    </div>
+
+    <!-- STADIUM OVAL ARCH CATEGORIES SECTION (Level 1 Branching Hub) -->
+    <section class="py-section bg-white">
+        <div class="container text-center">
+            <span class="section-tag mb-1">Global &amp; India Destination Portfolio</span>
+            <h2 class="ds-heading-4xl mb-2">Explore Destinations by <span class="brush-underline">Region &amp; Country</span></h2>
+            <p class="text-muted mb-5">Select a destination hub to view state-wise attractions, city visits, and build your custom itinerary.</p>
+
+            <div class="ds-grid ds-grid-4 mb-5">
+                <!-- 1. INDIA INBOUND -->
+                <a href="destination-detail.html?state=rajasthan" class="ds-category-arch">
+                    <img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=600&q=80" alt="India Inbound" class="ds-category-arch-img">
+                    <span class="ds-category-arch-name">India Inbound</span>
+                    <small class="text-muted d-block mt-1">Rajasthan • Kerala • Himachal • Goa</small>
+                </a>
+                
+                <!-- 2. SOUTHEAST ASIA -->
+                <a href="destination-detail.html?country=thailand" class="ds-category-arch">
+                    <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=600&q=80" alt="Southeast Asia" class="ds-category-arch-img">
+                    <span class="ds-category-arch-name">Southeast Asia</span>
+                    <small class="text-muted d-block mt-1">Thailand • Bali DMC • Vietnam • Singapore</small>
+                </a>
+
+                <!-- 3. ASIA & EURASIA -->
+                <a href="destination-detail.html?country=maldives" class="ds-category-arch">
+                    <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=600&q=80" alt="Asia & Eurasia" class="ds-category-arch-img">
+                    <span class="ds-category-arch-name">Asia &amp; Eurasia</span>
+                    <small class="text-muted d-block mt-1">Maldives • Türkiye • Georgia • Azerbaijan</small>
+                </a>
+
+                <!-- 4. AFRICA & ISLANDS -->
+                <a href="destination-detail.html?country=mauritius" class="ds-category-arch">
+                    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80" alt="Africa & Islands" class="ds-category-arch-img">
+                    <span class="ds-category-arch-name">Africa &amp; Islands</span>
+                    <small class="text-muted d-block mt-1">Mauritius • Seychelles • Kenya • Tanzania</small>
+                </a>
+            </div>
+
+            <!-- VIEW ALL DESTINATIONS CTA BUTTON -->
+            <div class="mt-4">
+                <a href="destinations.html" class="primary-button ds-btn-kinetic-gold d-inline-flex">
+                    <div class="button-item-main">
+                        <div class="button-text-pill">
+                            <div class="primay-button-text">View All Destinations</div>
+                            <div class="primay-button-text">View All Destinations</div>
+                        </div>
+                        <div class="button-arrow-pill">
+                            <div class="arrow-wrapper"><i class="fas fa-arrow-right button-arrow"></i></div>
+                        </div>
+                    </div>
+                </a>
             </div>
         </div>
     </section>
-    <!-- search section end-->
 
+    <!-- ══════════════ COMPREHENSIVE TRAVEL SERVICES SECTION ══════════════ -->
+    <section class="py-section position-relative text-white" style="background: linear-gradient(rgba(13, 31, 45, 0.88), rgba(13, 31, 45, 0.92)), url(./assets/img/inner-bg2.jpg) center/cover no-repeat;">
+        <div class="container text-center position-relative" style="z-index: 2;">
+            <span class="section-tag text-warning mb-1">Our Core Expertise</span>
+            <h2 class="ds-heading-4xl text-white mb-2">Comprehensive <span class="brush-underline-3a">Travel Services</span></h2>
+            <p class="text-white-50 max-w-xl mx-auto mb-5">Over three decades of delivering hand-crafted itineraries, ground logistics, luxury resort bookings, and 24/7 dedicated support.</p>
 
-
-    <!--section start-->
-    <section class="padding-cls pb-5 parallax-img bg-size blur-up lazyloaded" data-bg-editable="true"
-        data-bg-id="featured_bg"
-        style="background-image: url(./assets/img/3.jpg); background-size: cover; background-position: center center; background-repeat: no-repeat; display: block;">
-        <img src="./assets/img/3.jpg" class="img-fluid blur-up lazyload bg-img" alt="" style="display: none;"
-            data-img-id="featured_bg_fallback">
-        <div class="menu-section">
-            <div class="container">
-                <div class="title-3">
-                    <span class="title-label">Travel Solutions</span>
-                    <h2>Your Complete <span style="color:#1E4FA3;">Travel</span> <span
-                            style="color:#1E4FA3;">Partner</span></h2>
-                </div>
-                <div class="row">
-
-                    <!-- <div class="col-lg-3 col-md-6 mb-4">
-                        <div class="service-card-new">
-                            <div class="service-card-img">
-                                <img src="./assets/img/s1.jpg" data-bg-editable="true" class="img-fluid blur-up lazyloaded"
-                                    alt="Visa Processing" data-img-id="service_1_img">
-                            </div>
-                            <div class="service-card-body">
-                                <h4 data-editable="true" data-edit-id="service_1_title">Visa Processing</h4>
-                                <p>Fast, reliable visa support for your clients' worldwide travel needs.</p>
-                            </div>
-                        </div>
-                    </div> -->
-
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="service-card-new">
-                            <div class="service-card-img">
-                                <img src="./assets/img/s2.jpg" class="img-fluid blur-up lazyloaded"
-                                    alt="Customized Group Itineraries">
-                            </div>
-                            <div class="service-card-body">
-                                <h4>Customized Group Itineraries &amp; Travel Guides</h4>
-                                <p>Tailored group packages and destination guides crafted for every budget.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="service-card-new">
-                            <div class="service-card-img">
-                                <img src="./assets/img/s3.jpg" class="img-fluid blur-up lazyloaded"
-                                    alt="Land Arrangements">
-                            </div>
-                            <div class="service-card-body">
-                                <h4>Land Arrangements</h4>
-                                <p>Hotels, transfers, and ground logistics handled end-to-end.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="service-card-new">
-                            <div class="service-card-img">
-                                <img src="./assets/img/s4.jpg" class="img-fluid blur-up lazyloaded"
-                                    alt="Travel Insurance Solutions">
-                            </div>
-                            <div class="service-card-body">
-                                <h4>Travel Insurance Solutions</h4>
-                                <p>Comprehensive coverage options to protect every journey.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--section end-->
-
-
-    <!-- type section start-->
-    <section class="small-section">
-        <div class="title-3">
-            <span class="title-label">Quick Links</span>
-            <h2>Explore Our <span style="color:#1E4FA3;">Travel Offerings</span></h2>
-        </div>
-        <div class="container">
-            <div class="row justify-content-center">
-
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <a href="destinations.html" class="explore-card-new">
-                        <div class="explore-img-wrap">
-                            <img src="./assets/img/q1.jpg" class="img-fluid blur-up lazyloaded bg-img"
-                                alt="Explore Top Destinations">
-                            <div class="explore-card-overlay">
-                                <h5>Explore Top Destinations</h5>
-                                <span>Discover <i class="fas fa-arrow-right ms-1"></i></span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <a href="luxury-beach.html" class="explore-card-new">
-                        <div class="explore-img-wrap">
-                            <img src="./assets/img/q2.jpg" class="img-fluid blur-up lazyloaded"
-                                alt="Luxury Beach Packages">
-                            <div class="explore-card-overlay">
-                                <h5>Luxury Beach Packages</h5>
-                                <span>Discover <i class="fas fa-arrow-right ms-1"></i></span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <a href="testimonials.html" class="explore-card-new">
-                        <div class="explore-img-wrap">
-                            <img src="./assets/img/q3.jpg" class="img-fluid blur-up lazyloaded"
-                                alt="Partner Testimonials">
-                            <div class="explore-card-overlay">
-                                <h5>Partner Testimonials</h5>
-                                <span>Discover <i class="fas fa-arrow-right ms-1"></i></span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-
-            </div>
-        </div>
-    </section>
-    <!-- type section end-->
-
-
-    <!-- partner testimonials video section start -->
-    <section class="small-section bg-inner">
-        <div class="container">
-
-            <!-- Section header — matches Rica .title-3 style -->
-            <div class="row align-items-end mb-5">
-                <div class="col-lg-12">
-                    <div class="title-3 title-3-left text-center">
-                        <span class="title-label">Partner Stories</span>
-                        <h2>What Our <span style="color:#1E4FA3;">Partners Say</span></h2>
-                        <p class="section-subtitle text-center " style="margin: auto;">
-                            Hear directly from travel agents and tour operators who have grown their business with
-                            Roland Holidays.
-                        </p>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- Video cards -->
             <div class="row g-4">
-
-                <!-- Card 1 – Sarah Mitchell -->
-                <div class="col-xl-4 col-lg-6">
-                    <div class="video-testimonial-card position-relative">
-                        <div class="video-ratio" data-video-editable="true" data-video-id="testimonial_1_video">
-                            <iframe src="/assets/img/sea.mp4"
-                                title="Sarah Mitchell – Dream Getaways | Roland Holidays Partner Review"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen loading="lazy">
-                            </iframe>
+                <!-- Service 1 -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="ds-service-card bg-white rounded-4 overflow-hidden shadow-lg h-100 text-start d-flex flex-column">
+                        <div class="position-relative overflow-hidden" style="height: 180px;">
+                            <img src="./assets/img/ab1.jpg" class="img-fluid w-100 h-100 object-fit-cover" alt="Customized Group Itineraries">
+                            <span class="position-absolute top-3 start-3 bg-white p-2 rounded-circle shadow-sm" style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-map-marked-alt text-primary"></i>
+                            </span>
                         </div>
-                        <div class="card-body">
-                            <div class="agent-meta">
-                                <img src="./assets/img/pr2.jpg" alt="Sarah Mitchell" class="agent-avatar">
-                                <div>
-                                    <p class="agent-name" data-editable="true" data-edit-id="testimonial_1_name">Sarah
-                                        Mitchell</p>
-                                    <p class="agent-agency" data-editable="true" data-edit-id="testimonial_1_agency">
-                                        Dream Getaways</p>
-                                </div>
-
+                        <div class="p-4 d-flex flex-column flex-grow-1 justify-content-between">
+                            <div>
+                                <h6 class="font-weight-bold text-dark mb-2">Customized Itineraries</h6>
+                                <p class="text-secondary text-small mb-0" style="line-height: 1.5;">Tailored group packages, private tour guides, and curated sightseeing itineraries for every traveler.</p>
                             </div>
+                        </div>
+                    </div>
+                </div>
 
+                <!-- Service 2 -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="ds-service-card bg-white rounded-4 overflow-hidden shadow-lg h-100 text-start d-flex flex-column">
+                        <div class="position-relative overflow-hidden" style="height: 180px;">
+                            <img src="./assets/img/s2.jpg" class="img-fluid w-100 h-100 object-fit-cover" alt="Ground Logistics & Transfers">
+                            <span class="position-absolute top-3 start-3 bg-white p-2 rounded-circle shadow-sm" style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-shuttle-van text-primary"></i>
+                            </span>
+                        </div>
+                        <div class="p-4 d-flex flex-column flex-grow-1 justify-content-between">
+                            <div>
+                                <h6 class="font-weight-bold text-dark mb-2">Ground Logistics</h6>
+                                <p class="text-secondary text-small mb-0" style="line-height: 1.5;">Airport pickups, private luxury chauffeurs, speedboat transfers, and end-to-end ground coordination.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="ds-service-card bg-white rounded-4 overflow-hidden shadow-lg h-100 text-start d-flex flex-column">
+                        <div class="position-relative overflow-hidden" style="height: 180px;">
+                            <img src="./assets/img/l1.jpg" class="img-fluid w-100 h-100 object-fit-cover" alt="Luxury Hotel & Resort Bookings">
+                            <span class="position-absolute top-3 start-3 bg-white p-2 rounded-circle shadow-sm" style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-hotel text-primary"></i>
+                            </span>
+                        </div>
+                        <div class="p-4 d-flex flex-column flex-grow-1 justify-content-between">
+                            <div>
+                                <h6 class="font-weight-bold text-dark mb-2">Resort &amp; Hotel Bookings</h6>
+                                <p class="text-secondary text-small mb-0" style="line-height: 1.5;">Hand-picked 4-star, 5-star, luxury pool villas, and heritage palaces at exclusive rates.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="ds-service-card bg-white rounded-4 overflow-hidden shadow-lg h-100 text-start d-flex flex-column">
+                        <div class="position-relative overflow-hidden" style="height: 180px;">
+                            <img src="./assets/img/s4.jpg" class="img-fluid w-100 h-100 object-fit-cover" alt="Visa & Travel Protection">
+                            <span class="position-absolute top-3 start-3 bg-white p-2 rounded-circle shadow-sm" style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-passport text-primary"></i>
+                            </span>
+                        </div>
+                        <div class="p-4 d-flex flex-column flex-grow-1 justify-content-between">
+                            <div>
+                                <h6 class="font-weight-bold text-dark mb-2">Visa &amp; Travel Protection</h6>
+                                <p class="text-secondary text-small mb-0" style="line-height: 1.5;">Fast-track visa guidance, document assistance, and comprehensive travel insurance plans.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════ TRAVEL OFFERINGS SECTION ══════════════ -->
+    <section class="py-section bg-white">
+        <div class="container text-center">
+            <span class="section-tag mb-1">Quick Links</span>
+            <h2 class="ds-heading-4xl mb-4">Explore Our <span class="brush-underline-3a">Travel Offerings</span></h2>
+            
+            <div class="row g-4 justify-content-center">
+                <!-- Offering 1 -->
+                <div class="col-lg-4 col-md-6">
+                    <a href="destinations.html" class="ds-offer-card d-block text-decoration-none">
+                        <div class="position-relative overflow-hidden rounded-4 shadow-sm">
+                            <img src="./assets/img/q1.jpg" class="img-fluid w-100 object-fit-cover" style="height: 240px;" alt="Explore Top Destinations">
+                            <div class="position-absolute inset-0 bg-dark-overlay d-flex flex-column justify-content-end p-4 text-start">
+                                <h5 class="text-white font-weight-bold mb-1">Explore Top Destinations</h5>
+                                <span class="text-warning text-small">Discover All Regions <i class="fas fa-arrow-right ms-1"></i></span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Offering 2 -->
+                <div class="col-lg-4 col-md-6">
+                    <a href="luxury-beach.html" class="ds-offer-card d-block text-decoration-none">
+                        <div class="position-relative overflow-hidden rounded-4 shadow-sm">
+                            <img src="./assets/img/q2.jpg" class="img-fluid w-100 object-fit-cover" style="height: 240px;" alt="Luxury Beach Packages">
+                            <div class="position-absolute inset-0 bg-dark-overlay d-flex flex-column justify-content-end p-4 text-start">
+                                <h5 class="text-white font-weight-bold mb-1">Luxury Beach Packages</h5>
+                                <span class="text-warning text-small">Discover Island Resorts <i class="fas fa-arrow-right ms-1"></i></span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Offering 3 -->
+                <div class="col-lg-4 col-md-6">
+                    <a href="testimonials.html" class="ds-offer-card d-block text-decoration-none">
+                        <div class="position-relative overflow-hidden rounded-4 shadow-sm">
+                            <img src="./assets/img/q3.jpg" class="img-fluid w-100 object-fit-cover" style="height: 240px;" alt="Partner Testimonials">
+                            <div class="position-absolute inset-0 bg-dark-overlay d-flex flex-column justify-content-end p-4 text-start">
+                                <h5 class="text-white font-weight-bold mb-1">Partner Testimonials</h5>
+                                <span class="text-warning text-small">Read Client Stories <i class="fas fa-arrow-right ms-1"></i></span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- TRAVEL OFFERINGS SECTION END -->
+
+
+    <!-- ══════════════ PARTNER STORIES TESTIMONIALS SECTION ══════════════ -->
+    <section class="py-section bg-slate-50">
+        <div class="container text-center">
+            <span class="section-tag mb-1">Partner Stories</span>
+            <h2 class="ds-heading-4xl mb-2">What Our <span class="brush-underline-3b">Partners Say</span></h2>
+            <p class="text-muted max-w-xl mx-auto mb-5">Hear directly from travel agents and tour operators who have grown their business with Roland Holidays.</p>
+
+            <div class="row g-4">
+                <!-- Card 1 – Sarah Mitchell -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="ds-testimonial-card bg-white p-4 rounded-4 shadow-sm h-100 text-start d-flex flex-column justify-content-between">
+                        <div>
+                            <div class="d-flex text-warning mb-3" style="font-size: 13px;">
+                                <i class="fas fa-star me-1"></i><i class="fas fa-star me-1"></i><i class="fas fa-star me-1"></i><i class="fas fa-star me-1"></i><i class="fas fa-star me-1"></i>
+                            </div>
+                            <p class="text-secondary mb-4" style="font-size: 14px; line-height: 1.6;">
+                                "Roland Holidays has been instrumental in helping us scale our international package sales. Their Bali DMC and Thailand desks offer unmatched rates and seamless land execution."
+                            </p>
+                        </div>
+                        <div class="d-flex align-items-center gap-3 pt-3 border-top">
+                            <img src="./assets/img/pr2.jpg" alt="Sarah Mitchell" class="rounded-circle object-fit-cover" style="width: 48px; height: 48px;">
+                            <div>
+                                <h6 class="mb-0 font-weight-bold text-dark">Sarah Mitchell</h6>
+                                <span class="text-muted text-small">Dream Getaways</span>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Card 2 – James Okafor -->
-                <div class="col-xl-4 col-lg-6">
-                    <div class="video-testimonial-card">
-                        <div class="video-ratio" data-video-editable="true" data-video-id="index_test_video_2">
-                            <iframe src="/assets/img/sea3.mp4"
-                                title="James Okafor – Elite Tours | Roland Holidays Partner Review"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen loading="lazy">
-                            </iframe>
-                        </div>
-                        <div class="card-body">
-                            <div class="agent-meta">
-                                <img src="./assets/img/pr1.jpg" alt="James Okafor" class="agent-avatar">
-                                <div>
-                                    <p class="agent-name">James Okafor</p>
-                                    <p class="agent-agency">Elite Tours</p>
-                                </div>
-
+                <div class="col-lg-4 col-md-6">
+                    <div class="ds-testimonial-card bg-white p-4 rounded-4 shadow-sm h-100 text-start d-flex flex-column justify-content-between">
+                        <div>
+                            <div class="d-flex text-warning mb-3" style="font-size: 13px;">
+                                <i class="fas fa-star me-1"></i><i class="fas fa-star me-1"></i><i class="fas fa-star me-1"></i><i class="fas fa-star me-1"></i><i class="fas fa-star me-1"></i>
                             </div>
-
+                            <p class="text-secondary mb-4" style="font-size: 14px; line-height: 1.6;">
+                                "The custom plan generator and fast turnarounds from sales support are incredible. Our clients love the luxury beach itineraries in the Maldives and Seychelles."
+                            </p>
+                        </div>
+                        <div class="d-flex align-items-center gap-3 pt-3 border-top">
+                            <img src="./assets/img/pr1.jpg" alt="James Okafor" class="rounded-circle object-fit-cover" style="width: 48px; height: 48px;">
+                            <div>
+                                <h6 class="mb-0 font-weight-bold text-dark">James Okafor</h6>
+                                <span class="text-muted text-small">Elite Tours</span>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Card 3 – Priya Nair -->
-                <div class="col-xl-4 col-lg-6">
-                    <div class="video-testimonial-card">
-                        <div class="video-ratio" data-video-editable="true" data-video-id="index_test_video_3">
-                            <iframe src="/assets/img/sea2.mp4"
-                                title="Priya Nair – Horizon Travel | Roland Holidays Partner Review"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen loading="lazy">
-                            </iframe>
-                        </div>
-                        <div class="card-body">
-                            <div class="agent-meta">
-                                <img src="./assets/img/2.jpg" alt="Priya Nair" class="agent-avatar">
-                                <div>
-                                    <p class="agent-name">Priya Nair</p>
-                                    <p class="agent-agency">Horizon Travel</p>
-                                </div>
-
+                <div class="col-lg-4 col-md-6">
+                    <div class="ds-testimonial-card bg-white p-4 rounded-4 shadow-sm h-100 text-start d-flex flex-column justify-content-between">
+                        <div>
+                            <div class="d-flex text-warning mb-3" style="font-size: 13px;">
+                                <i class="fas fa-star me-1"></i><i class="fas fa-star me-1"></i><i class="fas fa-star me-1"></i><i class="fas fa-star me-1"></i><i class="fas fa-star me-1"></i>
                             </div>
-
+                            <p class="text-secondary mb-4" style="font-size: 14px; line-height: 1.6;">
+                                "Three decades of trust speaks for itself. Their India Inbound itineraries for Rajasthan and Kerala backwaters are crafted to perfection for our groups."
+                            </p>
+                        </div>
+                        <div class="d-flex align-items-center gap-3 pt-3 border-top">
+                            <img src="./assets/img/2.jpg" alt="Priya Nair" class="rounded-circle object-fit-cover" style="width: 48px; height: 48px;">
+                            <div>
+                                <h6 class="mb-0 font-weight-bold text-dark">Priya Nair</h6>
+                                <span class="text-muted text-small">Horizon Travel</span>
+                            </div>
                         </div>
                     </div>
                 </div>
-
             </div>
-            <div class="text-center my-5">
 
-                <a href="testimonials.html" class="btn btn-rounded color1 btn-view-stories">
-                    View All Stories <i class="fas fa-arrow-right ms-2"></i>
+            <div class="mt-5">
+                <a href="testimonials.html" class="primary-button ds-btn-kinetic-gold d-inline-flex">
+                    <div class="button-item-main">
+                        <div class="button-text-pill">
+                            <div class="primay-button-text">View All Partner Stories</div>
+                            <div class="primay-button-text">View All Partner Stories</div>
+                        </div>
+                        <div class="button-arrow-pill">
+                            <div class="arrow-wrapper"><i class="fas fa-arrow-right button-arrow"></i></div>
+                        </div>
+                    </div>
                 </a>
             </div>
         </div>
     </section>
-    <!-- partner testimonials video section end -->
+    <!-- PARTNER STORIES TESTIMONIALS SECTION END -->
 
 
-    <!-- primary CTA section start -->
-
-    <section class="app-section padding-cls full-banner parallax-img bg-size blur-up lazyloaded"
-        style="background-image: url(./assets/img/bg3.jpg); background-size: cover; background-position: center bottom; background-repeat: no-repeat; display: block;">
-        <img src="./assets/img/bg3.jpg" alt="" class="img-fluid blur-up lazyload bg-img"
-            style="display: none;">
+    <!-- ══════════════ VIDEO CTA BANNER SECTION ══════════════ -->
+    <section class="py-section bg-white">
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="app-box rounded25 text-center">
-                        <div>
-                            <h2>Ready to <span style="color:#E53935;">Partner with Us?</span></h2>
-                            <p>Join hundreds of travel agents and tour operators who trust Roland Holidays for their
-                                travel needs. Explore our destinations, discover exclusive luxury beach packages, or
-                                request tailored trade rates today.
-
-                            </p>
-                            <div class="app-buttons">
-                                <a href="destinations.html" class="btn btn-rounded color1 mb-2"> View
-                                    Destinations</a>
-                                <a href="luxury-beach.html" class="btn btn-rounded color1 mb-2"> Luxury
-                                    Beach Packages</a>
-
-                                <!-- <a href="#" class="btn btn-rounded color1 mb-2"> Request
-                                    Trade Rates</a> -->
+            <div class="ds-video-cta-card text-center text-white py-5 px-4 position-relative">
+                <video class="ds-video-cta-bg" autoplay muted loop playsinline>
+                    <source src="./assets/img/sea3.mp4" type="video/mp4">
+                </video>
+                <div class="ds-video-cta-overlay"></div>
+                <div class="position-relative py-4" style="z-index: 2;">
+                    <span class="section-tag text-warning mb-2"><i class="fas fa-plane-departure me-1"></i> Start Your Journey</span>
+                    <h2 class="ds-heading-5xl text-white mb-3">Ready to Experience <span class="brush-underline-3a">Unforgettable Travel?</span></h2>
+                    <p class="max-w-xl mx-auto text-white-50 fs-5 mb-4">Discover hand-crafted itineraries, curated luxury beach resorts, and 24/7 dedicated support for every destination.</p>
+                    <div class="d-flex justify-content-center gap-3 flex-wrap">
+                        <a href="destinations.html" class="primary-button">
+                            <div class="button-item-main">
+                                <div class="button-text-pill">
+                                    <div class="primay-button-text">Explore Destinations</div>
+                                    <div class="primay-button-text">Explore Destinations</div>
+                                </div>
+                                <div class="button-arrow-pill">
+                                    <div class="arrow-wrapper"><i class="fas fa-compass button-arrow"></i></div>
+                                </div>
                             </div>
-                        </div>
+                        </a>
+                        <a href="contact-us.html" class="ds-btn-kinetic ds-btn-kinetic-gold">
+                            <div class="button-item-main">
+                                <div class="button-text-pill">
+                                    <div class="primay-button-text">Contact Our Desk</div>
+                                    <div class="primay-button-text">Contact Our Desk</div>
+                                </div>
+                                <div class="button-arrow-pill">
+                                    <div class="arrow-wrapper"><i class="fas fa-paper-plane button-arrow"></i></div>
+                                </div>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- primary CTA section end -->
+    <!-- VIDEO CTA BANNER SECTION END -->
 
 
-    <!-- footer start -->
-    <footer class="footer-bg bg-size blur-up lazyloaded"
-        style="background-image: url(./assets/img/13.jpg); background-size: cover; background-position: center center; background-repeat: no-repeat; display: block;">
-        <img src="./assets/img/13.jpg" class="img-fluid blur-up lazyload bg-img" alt="" style="display: none;">
-        <div class="footer section-b-space section-t-space">
-            <div class="container">
-                <div class="row order-row">
-                    <div class="col-xl-3 col-md-6 order-cls">
-                        <div class="footer-title mobile-title">
-                            <h5>contact us</h5>
-                        </div>
-                        <div class="footer-content">
-                            <div class="contact-detail">
-                                <div class="footer-logo">
-                                    <img src=".//assets/img/footer-logo.png" alt="" class="img-fluid blur-up lazyloaded"
-                                        data-rle-type="icon">
-                                </div>
-                                <p>Roland Holidays has been a trusted travel partner for over three decades, delivering premium travel solutions, exclusive rates, and dedicated support to travel agents worldwide.</p>
-                                <ul class="contact-list">
-                                    <li><i class="fas fa-map-marker-alt"></i> Regus 5th &amp; 6th Floor, Matatial House, H.T. Parekh Marg, Mumbai – 400020</li>
-                                    <li><i class="fas fa-phone-alt"></i> +91 97694-21051</li>
-                                    <li><i class="fas fa-envelope"></i> sales1@rolandholidays.com</li>
-                                </ul>
-                            </div>
-                        </div>
+    <!-- ══════════════ MINIMAL BRIGHT LIGHT FOOTER ══════════════ -->
+    <footer class="ds-minimal-footer py-5 bg-white">
+        <div class="container">
+            <div class="row g-4 align-items-start justify-content-between">
+                <div class="col-lg-4">
+                    <div class="footer-logo mb-3">
+                        <a href="index.html">
+                            <img src="./assets/img/logo.png" alt="Roland Holidays">
+                        </a>
                     </div>
-                    <div class="col-xl-3 col-md-3">
-                        <div class="footer-space">
-                            <div class="footer-title">
-                                <h5>useful links</h5>
-                            </div>
-                            <div class="footer-content">
-                                <div class="footer-links">
-                                    <ul>
-                                        <li><a href="about-us.html">about us</a></li>
-                                        <li><a href="destinations.html">Destinations</a>
-                                        </li>
-                                        
-                                        <li><a href="testimonials.html">Testimonials </a>
-                                        </li>
-                                        <li><a href="contact-us.html"> Contact Us</a></li>
-
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+                    <p class="ds-footer-text mb-3">
+                        Roland Holidays has been a trusted travel partner for over three decades, delivering premium travel solutions, custom itineraries, and dedicated support worldwide.
+                    </p>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="text-secondary text-hover-gold"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-secondary text-hover-gold"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-secondary text-hover-gold"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://api.whatsapp.com/send?phone=919769421051" class="text-secondary text-hover-gold"><i class="fab fa-whatsapp"></i></a>
                     </div>
-                    <div class="col-xl-3 col-md-3">
-                        <div class="footer-space">
-                            <div class="footer-title">
-                                <h5>Services</h5>
-                            </div>
-                            <div class="footer-content">
-                                <div class="footer-links">
-                                    <ul>
-                                        <!-- <li><a href="#">Visa Processing</a></li> -->
-                                        <li><a href="#">Customized Group Itineraries &amp; Travel Guides</a></li>
-                                        <li><a href="#"> Land Arrangements</a>
-                                        </li>
-                                        <li><a href="#">Travel Insurance Solutions. </a>
-                                        </li>
-
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-xl-3 col-md-3 order-cls">
-                        <div class="footer-space">
-                            <div class="footer-title">
-                                <h5>quick links</h5>
-                            </div>
-                            <div class="footer-content">
-                                <div class="footer-links">
-                                    <ul>
-                                        <li><a href="destinations.html">Explore Top Destinations</a></li>
-                                        <li><a href="luxury-beach.html">Luxury Beach Packages</a></li>
-                                        <li><a href="testimonials.html">Partner Testimonials</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
+                <div class="col-lg-7">
+                    <div class="row g-4">
+                        <div class="col-6 col-md-4">
+                            <h6 class="ds-footer-heading">Destinations</h6>
+                            <ul class="list-unstyled ds-footer-links">
+                                <li><a href="destinations.html?region=india">India Inbound</a></li>
+                                <li><a href="destinations.html?region=southeast-asia">Southeast Asia</a></li>
+                                <li><a href="destinations.html?region=asia-eurasia">Asia &amp; Eurasia</a></li>
+                                <li><a href="destinations.html?region=africa-islands">Africa &amp; Islands</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-4">
+                            <h6 class="ds-footer-heading">Company</h6>
+                            <ul class="list-unstyled ds-footer-links">
+                                <li><a href="about-us.html">About Us</a></li>
+                                <li><a href="destinations.html">All Destinations</a></li>
+                                <li><a href="testimonials.html">Testimonials</a></li>
+                                <li><a href="contact-us.html">Contact Us</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <h6 class="ds-footer-heading">Contact Support</h6>
+                            <p class="ds-footer-text mb-2"><i class="fas fa-map-marker-alt text-primary me-2"></i> Mumbai – 400020</p>
+                            <p class="ds-footer-text mb-2"><i class="fas fa-phone-alt text-primary me-2"></i> +91 97694-21051</p>
+                            <p class="ds-footer-text mb-0"><i class="fas fa-envelope text-primary me-2"></i> sales1@rolandholidays.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4 border-slate-200">
+            <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 text-muted" style="font-size: 13px;">
+                <p class="mb-0">© 2026 Roland Holidays. All rights reserved.</p>
+                <p class="mb-0">Designed with Excellence</p>
             </div>
         </div>
     </footer>
-    <!-- footer end -->
+    <!-- MINIMAL BRIGHT LIGHT FOOTER END -->
 
 
     <!-- jQuery (agar already nahi hai) -->
@@ -723,6 +711,8 @@
     <script src="./assets/js/nav.js"></script>
     <script src="./assets/js/live-editor.js"></script>
     <script src="./assets/js/sticky.js"></script>
+    <!-- Design System JS Engine -->
+    <script src="./assets/js/design-system.js"></script>
 
 
 </body>

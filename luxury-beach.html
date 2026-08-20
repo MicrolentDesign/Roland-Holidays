@@ -26,6 +26,9 @@
     <link rel="stylesheet" type="text/css" href="./assets/style/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="./assets/style/color5.css">
 
+    <!-- Design System css -->
+    <link rel="stylesheet" type="text/css" href="./assets/style/design-system.css">
+
     <!-- Responsive css -->
     <link rel="stylesheet" type="text/css" href="./assets/style/custom.css">
 
@@ -39,14 +42,12 @@
     <!-- ══════════════ HEADER ══════════════ -->
     <header class="tour-header">
         <div class="container">
-            <div class="row">
+            <div class="row align-items-center">
                 <div class="col">
                     <div class="menu">
                         <div class="brand-logo">
                             <a href="index.html">
-                                <img src="./assets/img/footer-logo.png" alt="Roland Holidays"
-                                    class="img-fluid blur-up lazyloaded" data-img-id="main_logo"
-                                    data-edit-scope="global">
+                                <img src="./assets/img/logo.png" alt="Roland Holidays" class="img-fluid blur-up lazyloaded">
                             </a>
                         </div>
                         <nav>
@@ -55,13 +56,11 @@
                                     <div class="toggle-nav"><i class="fa fa-bars sidebar-bar"></i></div>
                                     <div class="menu-overlay"></div>
                                     <ul class="nav-menu">
-                                        <li class='back-btn'><div class='mobile-back text-end'><span>Back</span><i aria-hidden='true' class='fa fa-angle-right ps-2'></i></div></li>
-                                        <li><a href='index.html' class='nav-link menu-title'>Home</a></li>
-                                        <li><a href='about-us.html' class='nav-link menu-title'>About Us</a></li>
-                                        <li><a href='#' class='nav-link menu-title'>Top Trending Destinations in India <i class="fa fa-angle-down"></i></a><ul class='nav-submenu'><li><a href='destinations.html?season=summer'><span class='drop-icon summer'><i class='fas fa-sun'></i></span> Summer</a></li><li><a href='destinations.html?season=winter'><span class='drop-icon winter'><i class='fas fa-snowflake'></i></span> Winter</a></li></ul></li>
-                                        <li><a href='#' class='nav-link menu-title'>Top Trending Destinations Abroad <i class="fa fa-angle-down"></i></a><ul class='nav-submenu'><li><a href='destinations.html?season=summer'><span class='drop-icon summer'><i class='fas fa-sun'></i></span> Summer</a></li><li><a href='destinations.html?season=winter'><span class='drop-icon winter'><i class='fas fa-snowflake'></i></span> Winter</a></li></ul></li>
-                                        <li><a href='testimonials.html' class='nav-link menu-title'>Testimonials</a></li>
-                                        <li><a href='contact-us.html' class='nav-link menu-title'>Contact Us</a></li>
+                                        <li><a href="index.html" class="nav-link">Home</a></li>
+                                        <li><a href="about-us.html" class="nav-link">About Us</a></li>
+                                        <li><a href="destinations.html" class="nav-link active">Destinations</a></li>
+                                        <li><a href="testimonials.html" class="nav-link">Testimonials</a></li>
+                                        <li><a href="contact-us.html" class="nav-link">Contact Us</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -79,15 +78,9 @@
         style="background:linear-gradient(rgb(0 0 0 / 20%), rgb(0 0 0 / 13%)), url(assets/img/bg/bg-l.jpg); background-size: cover; background-position: center center; background-repeat: no-repeat;">
         <!-- <img src="./assets/img/7.jpg" class="img-fluid blur-up lazyload bg-img" alt="" style="display:none;"
             data-img-id="lux_hero_fallback"> -->
-        <div class="breadcrumb-content overlay-black">
+        <div class="breadcrumb-content overlay-black text-center">
             <div>
-                <h2 data-editable="true" data-edit-id="lux_page_title">Luxury Beach Packages</h2>
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Luxury Beach</li>
-                    </ol>
-                </nav>
+                <h1 class="ds-page-title mb-0" data-editable="true" data-edit-id="lux_page_title">Luxury Beach Resorts &amp; Packages</h1>
             </div>
         </div>
     </section>
@@ -1007,97 +1000,63 @@
         }
     </script>
 
-    <!-- footer start -->
-    <footer class="footer-bg bg-size blur-up lazyloaded"
-        style="background-image: url(./assets/img/13.jpg); background-size: cover; background-position: center center; background-repeat: no-repeat; display: block;">
-        <img src="./assets/img/13.jpg" class="img-fluid blur-up lazyload bg-img" alt="" style="display: none;">
-        <div class="footer section-b-space section-t-space">
-            <div class="container">
-                <div class="row order-row">
-                    <div class="col-xl-3 col-md-6 order-cls">
-                        <div class="footer-title mobile-title">
-                            <h5>contact us</h5>
-                        </div>
-                        <div class="footer-content">
-                            <div class="contact-detail">
-                                <div class="footer-logo">
-                                    <img src=".//assets/img/footer-logo.png" alt="" class="img-fluid blur-up lazyloaded"
-                                        data-rle-type="icon">
-                                </div>
-                                <p>Roland Holidays has been a trusted travel partner for over three decades, delivering premium travel solutions, exclusive rates, and dedicated support to travel agents worldwide.</p>
-                                <ul class="contact-list">
-                                    <li><i class="fas fa-map-marker-alt"></i> Regus 5th &amp; 6th Floor, Matatial House, H.T. Parekh Marg, Mumbai – 400020</li>
-                                    <li><i class="fas fa-phone-alt"></i> +91 97694-21051</li>
-                                    <li><i class="fas fa-envelope"></i> sales1@rolandholidays.com</li>
-                                </ul>
-                            </div>
-                        </div>
+    <!-- ══════════════ MINIMAL BRIGHT LIGHT FOOTER ══════════════ -->
+    <footer class="ds-minimal-footer py-5 bg-white">
+        <div class="container">
+            <div class="row g-4 align-items-start justify-content-between">
+                <div class="col-lg-4">
+                    <div class="footer-logo mb-3">
+                        <a href="index.html">
+                            <img src="./assets/img/logo.png" alt="Roland Holidays">
+                        </a>
                     </div>
-                    <div class="col-xl-3 col-md-3">
-                        <div class="footer-space">
-                            <div class="footer-title">
-                                <h5>useful links</h5>
-                            </div>
-                            <div class="footer-content">
-                                <div class="footer-links">
-                                    <ul>
-                                        <li><a href="about-us.html">about us</a></li>
-                                        <li><a href="destinations.html">Destinations</a>
-                                        </li>
-                                        <li><a href="luxury-beach.html"> Luxury Beaches</a>
-                                        </li>
-                                        <li><a href="testimonials.html">Testimonials </a>
-                                        </li>
-                                        <li><a href="contact-us.html"> Contact Us</a></li>
-
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+                    <p class="ds-footer-text mb-3">
+                        Roland Holidays has been a trusted travel partner for over three decades, delivering premium travel solutions, custom itineraries, and dedicated support worldwide.
+                    </p>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="text-secondary text-hover-gold"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-secondary text-hover-gold"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-secondary text-hover-gold"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://api.whatsapp.com/send?phone=919769421051" class="text-secondary text-hover-gold"><i class="fab fa-whatsapp"></i></a>
                     </div>
-                    <div class="col-xl-3 col-md-3">
-                        <div class="footer-space">
-                            <div class="footer-title">
-                                <h5>Services</h5>
-                            </div>
-                            <div class="footer-content">
-                                <div class="footer-links">
-                                    <ul>
-                                          <!-- <li><a href="#">Visa Processing</a></li> -->
-                                        <li><a href="#">Customized Group Itineraries &amp; Travel Guides</a></li>
-                                        <li><a href="#"> Land Arrangements</a>
-                                        </li>
-                                        <li><a href="#">Travel Insurance Solutions. </a>
-                                        </li>
-
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-xl-3 col-md-3 order-cls">
-                        <div class="footer-space">
-                            <div class="footer-title">
-                                <h5>quick links</h5>
-                            </div>
-                            <div class="footer-content">
-                                <div class="footer-links">
-                                    <ul>
-                                        <li><a href="destinations.html">Explore Top Destinations</a></li>
-                                        <li><a href="luxury-beach.html">Luxury Beach Packages</a></li>
-                                        <li><a href="testimonials.html">Partner Testimonials</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
+                <div class="col-lg-7">
+                    <div class="row g-4">
+                        <div class="col-6 col-md-4">
+                            <h6 class="ds-footer-heading">Destinations</h6>
+                            <ul class="list-unstyled ds-footer-links">
+                                <li><a href="destinations.html?region=india">India Inbound</a></li>
+                                <li><a href="destinations.html?region=southeast-asia">Southeast Asia</a></li>
+                                <li><a href="destinations.html?region=asia-eurasia">Asia &amp; Eurasia</a></li>
+                                <li><a href="destinations.html?region=africa-islands">Africa &amp; Islands</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-4">
+                            <h6 class="ds-footer-heading">Company</h6>
+                            <ul class="list-unstyled ds-footer-links">
+                                <li><a href="about-us.html">About Us</a></li>
+                                <li><a href="destinations.html">All Destinations</a></li>
+                                <li><a href="testimonials.html">Testimonials</a></li>
+                                <li><a href="contact-us.html">Contact Us</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <h6 class="ds-footer-heading">Contact Support</h6>
+                            <p class="ds-footer-text mb-2"><i class="fas fa-map-marker-alt text-primary me-2"></i> Regus Matatial House, H.T. Parekh Marg, Mumbai – 400020</p>
+                            <p class="ds-footer-text mb-2"><i class="fas fa-phone-alt text-primary me-2"></i> +91 97694-21051</p>
+                            <p class="ds-footer-text mb-0"><i class="fas fa-envelope text-primary me-2"></i> sales1@rolandholidays.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4 border-slate-200">
+            <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 text-muted" style="font-size: 13px;">
+                <p class="mb-0">© 2026 Roland Holidays. All rights reserved.</p>
+                <p class="mb-0">Designed with Excellence</p>
             </div>
         </div>
     </footer>
-    <!-- footer end -->
+    <!-- MINIMAL BRIGHT LIGHT FOOTER END -->
 
 
 
@@ -1165,6 +1124,8 @@
     <script src="./assets/js/nav.js"></script>
     <script src="./assets/js/live-editor.js"></script>
     <script src="./assets/js/sticky.js"></script>
+    <!-- Design System JS Engine -->
+    <script src="./assets/js/design-system.js"></script>
 
 </body>
 
