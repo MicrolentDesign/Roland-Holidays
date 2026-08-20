@@ -2584,3 +2584,44 @@ header .main-navbar .nav-menu > li .nav-submenu li a .drop-icon {
     text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4) !important;
 }
 
+/* ══════════════ CARD KINETIC BUTTON ARROW ICON ALIGNMENT ══════════════ */
+.routes-box .primary-button, 
+.routes-box .ds-btn-kinetic {
+    width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 6px 6px 6px 18px !important;
+}
+
+.routes-box .button-arrow-pill {
+    width: 36px !important;
+    height: 36px !important;
+    min-width: 36px !important;
+    border-radius: 50% !important;
+    background-color: #1E4FA3 !important;
+    color: #FFFFFF !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease !important;
+}
+
+.routes-box .button-arrow-pill .button-arrow {
+    font-size: 13px !important;
+    color: #FFFFFF !important;
+    display: inline-block !important;
+}
+
+.routes-box .primary-button:hover .button-arrow-pill,
+.routes-box .ds-btn-kinetic:hover .button-arrow-pill {
+    background-color: #FFFFFF !important;
+    color: #1E4FA3 !important;
+}
+
+.routes-box .primary-button:hover .button-arrow-pill .button-arrow,
+.routes-box .ds-btn-kinetic:hover .button-arrow-pill .button-arrow {
+    color: #1E4FA3 !important;
+}
+
