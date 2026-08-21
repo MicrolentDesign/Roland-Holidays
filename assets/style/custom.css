@@ -2790,3 +2790,64 @@ section:not(.breadcrumb-section):not(.hero-section):not(.header-top-bar) {
     color: #D4AF37 !important;
 }
 
+/* ══════════════ MOBILE RESPONSIVE OPTIMIZATION OVERHAUL ══════════════ */
+@media (max-width: 767px) {
+    /* Responsive card heights & padding */
+    .routes-box .routes-img {
+        height: 200px !important;
+    }
+    
+    .routes-box .routes-content {
+        padding: 18px !important;
+    }
+
+    .routes-box .routes-content .top-bar h5 {
+        font-size: 17px !important;
+    }
+
+    .primary-button.ds-btn-kinetic {
+        padding: 8px 12px !important;
+    }
+
+    .primary-button.ds-btn-kinetic .primay-button-text {
+        font-size: 11px !important;
+    }
+
+    /* Mobile footer alignment */
+    .ds-minimal-footer {
+        padding-top: 40px !important;
+        padding-bottom: 40px !important;
+        text-align: left !important;
+    }
+
+    .ds-footer-heading {
+        margin-top: 12px !important;
+        margin-bottom: 12px !important;
+    }
+}
+
+/* Glassmorphism Mobile Navigation Drawer */
+@media (max-width: 991px) {
+    .main-navbar {
+        background: rgba(13, 31, 45, 0.96) !important;
+        backdrop-filter: blur(12px) !important;
+        -webkit-backdrop-filter: blur(12px) !important;
+    }
+
+    .main-navbar .nav-menu li a {
+        color: #FFFFFF !important;
+        font-size: 16px !important;
+        font-weight: 600 !important;
+        padding: 14px 20px !important;
+        border-radius: 10px !important;
+        display: block !important;
+        min-height: 48px !important;
+    }
+
+    .main-navbar .nav-menu li a.active,
+    .main-navbar .nav-menu li a:hover {
+        background: rgba(30, 79, 163, 0.25) !important;
+        color: #D4AF37 !important;
+    }
+}
+

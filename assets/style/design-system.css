@@ -1126,6 +1126,13 @@ section:not(.breadcrumb-section):not(.hero-section):not(.header-top-bar) {
     .ds-segmented-track {
         width: 100% !important;
         justify-content: flex-start !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        padding: 4px !important;
+        scrollbar-width: none;
+    }
+    .ds-segmented-track::-webkit-scrollbar {
+        display: none;
     }
 }
 
@@ -1138,7 +1145,9 @@ section:not(.breadcrumb-section):not(.hero-section):not(.header-top-bar) {
 .ds-footer-heading {
     color: #0F172A !important;
     font-weight: 700 !important;
-    font-size: 16px !important;
+    font-size: 15px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.04em !important;
     margin-bottom: 16px !important;
 }
 
@@ -1148,19 +1157,26 @@ section:not(.breadcrumb-section):not(.hero-section):not(.header-top-bar) {
     line-height: 1.6 !important;
 }
 
+.ds-footer-links {
+    padding-left: 0 !important;
+    list-style: none !important;
+    margin-bottom: 0 !important;
+}
+
 .ds-footer-links li {
-    margin-bottom: 10px;
+    margin-bottom: 10px !important;
 }
 
 .ds-footer-links a {
     color: #475569 !important;
-    text-decoration: none;
-    font-size: 14px;
-    transition: color 0.3s ease;
+    text-decoration: none !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    transition: color 0.25s ease !important;
 }
 
 .ds-footer-links a:hover,
 .text-hover-gold:hover {
-    color: var(--ds-color-primary) !important;
+    color: #1E4FA3 !important;
 }
 
