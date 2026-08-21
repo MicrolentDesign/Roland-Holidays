@@ -84,7 +84,7 @@ function initMobileDrawer() {
         if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
     }
 
-    // 2. Enhance Navigation Links with Luxury Icons & Chevrons
+    // 2. Enhance Navigation Links with Clean Icons (No Overlapping Arrows)
     const iconMap = {
         'home': 'fas fa-home',
         'about': 'fas fa-compass',
@@ -99,7 +99,7 @@ function initMobileDrawer() {
             if (!link.querySelector('.nav-link-left')) {
                 const text = link.textContent.trim();
                 const lower = text.toLowerCase();
-                let iconClass = 'fas fa-chevron-right';
+                let iconClass = 'fas fa-circle';
                 for (const [key, icon] of Object.entries(iconMap)) {
                     if (lower.includes(key)) {
                         iconClass = icon;
@@ -111,7 +111,6 @@ function initMobileDrawer() {
                         <span class="nav-link-icon"><i class="${iconClass}"></i></span>
                         <span class="nav-link-text">${text}</span>
                     </div>
-                    <i class="fas fa-chevron-right nav-arrow"></i>
                 `;
             }
         });

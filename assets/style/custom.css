@@ -2823,28 +2823,38 @@ section:not(.breadcrumb-section):not(.hero-section):not(.header-top-bar) {
     }
 }
 
-/* Glassmorphism Mobile Navigation Drawer */
+/* Clean Minimal Light Theme Mobile Navigation Drawer */
 @media (max-width: 991px) {
-    .main-navbar {
-        background: rgba(13, 31, 45, 0.96) !important;
-        backdrop-filter: blur(12px) !important;
-        -webkit-backdrop-filter: blur(12px) !important;
+    .main-navbar,
+    header .main-navbar .nav-menu {
+        background: #FFFFFF !important;
+        border-left: 1px solid #E2E8F0 !important;
+        box-shadow: -10px 0 40px rgba(15, 23, 42, 0.15) !important;
     }
 
-    .main-navbar .nav-menu li a {
-        color: #FFFFFF !important;
-        font-size: 16px !important;
+    .main-navbar .nav-menu li a,
+    header .main-navbar .nav-menu > li > a {
+        color: #1E293B !important;
+        font-size: 15px !important;
         font-weight: 600 !important;
-        padding: 14px 20px !important;
+        padding: 12px 14px !important;
         border-radius: 10px !important;
-        display: block !important;
-        min-height: 48px !important;
+        background: transparent !important;
+        display: flex !important;
+        align-items: center !important;
+    }
+
+    .main-navbar .nav-menu li a:hover {
+        background: #F8FAFC !important;
+        color: #1E4FA3 !important;
     }
 
     .main-navbar .nav-menu li a.active,
-    .main-navbar .nav-menu li a:hover {
-        background: rgba(30, 79, 163, 0.25) !important;
-        color: #D4AF37 !important;
+    header .main-navbar .nav-menu > li > a.active {
+        background: rgba(30, 79, 163, 0.08) !important;
+        color: #1E4FA3 !important;
+        font-weight: 700 !important;
+        border-left: 3px solid #1E4FA3 !important;
     }
 }
 
