@@ -96,7 +96,7 @@
                 <i class="fas fa-user-friends ds-search-icon"></i>
                 <input type="text" class="ds-search-input" placeholder="Agent Pax Count">
             </div>
-            <a href="#destGrid" class="primary-button">
+            <a href="#destGrid" class="primary-button" id="filterToursBtn">
                 <div class="button-item-main">
                     <div class="button-text-pill">
                         <div class="primay-button-text">Filter Tours</div>
@@ -607,8 +607,9 @@
     <script src="./assets/js/live-editor.js"></script>
 
     <script>
-    // ── Hardware-Accelerated Sliding Glider Engine ──
+    // ── Hardware-Accelerated Sliding Glider Engine (Desktop min-width: 992px) ──
     function moveGlider(trackId, gliderId, activeClass) {
+        if (window.innerWidth < 992) return; // On mobile, solid active chip badges are used
         var track = document.getElementById(trackId);
         var glider = document.getElementById(gliderId);
         if (!track || !glider) return;
@@ -633,6 +634,9 @@
         btn.addEventListener('click', function () {
             document.querySelectorAll('.region-pill').forEach(function (b) { b.classList.remove('active'); });
             this.classList.add('active');
+            if (window.innerWidth < 992) {
+                this.scrollIntoView({ behavior: 'smooth', inline: 'nearest', block: 'nearest' });
+            }
             updateGliders();
             filterCards();
         });
@@ -642,16 +646,31 @@
         btn.addEventListener('click', function () {
             document.querySelectorAll('.season-pill').forEach(function (b) { b.classList.remove('active'); });
             this.classList.add('active');
+            if (window.innerWidth < 992) {
+                this.scrollIntoView({ behavior: 'smooth', inline: 'nearest', block: 'nearest' });
+            }
             updateGliders();
             filterCards();
         });
     });
 
-    // ── Live Search Input Filtering ──
+    // ── Live Search Input & Button Filtering ──
     var searchInput = document.getElementById('destSearchInput');
     if (searchInput) {
         searchInput.addEventListener('input', function() {
             filterCards();
+        });
+    }
+
+    var filterBtn = document.getElementById('filterToursBtn');
+    if (filterBtn) {
+        filterBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            filterCards();
+            var target = document.getElementById('destGrid');
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
         });
     }
 

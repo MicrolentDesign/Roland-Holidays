@@ -11,10 +11,7 @@
     <link rel="icon" href="./assets/img/icon.png" type="image/x-icon">
     <title>India – Destination Guide | Roland Holidays</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Playwrite+GB+J:ital,wght@0,100..400;1,100..400&display=swap');
-        h1, h2, h3, h4, h5, h6, .title-label {
-            font-family: 'Playwrite GB J', cursive !important;
-        }
+        h1, h2, h3, h4, h5, h6 { font-family: var(--ds-font-heading); }
     </style>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" />
@@ -228,7 +225,16 @@
                                         <div class="button-item-main">
                                             <div class="button-text-pill">
                                                 <div class="primay-button-text">Send Custom Plan to WhatsApp</div>
-                                                <div class="primay-button-text">Send Custom Plan to WhatsApp</                                     <button type="button" onclick="submitCustomPlanQuote()" class="primary-button ds-btn-kinetic-gold w-100">
+                                                <div class="primay-button-text">Send Custom Plan to WhatsApp</div>
+                                            </div>
+                                            <div class="button-arrow-pill">
+                                                <div class="arrow-wrapper">
+                                                    <i class="fab fa-whatsapp button-arrow"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </button>
+                                    <button type="button" onclick="submitCustomPlanQuote()" class="primary-button ds-btn-kinetic-gold w-100">
                                         <div class="button-item-main">
                                             <div class="button-text-pill">
                                                 <div class="primay-button-text">Email Custom Quote</div>
@@ -517,21 +523,22 @@
 
                         <div class="row g-4">
                             <div class="col-xl-4 col-lg-6">
-                                <div class="video-testimonial-card position-relative">
-                                    <span class="featured-ribbon"><i class="fas fa-star me-1"></i> Featured</span>
-                                    <div class="video-ratio" data-video-editable="true" data-video-id="testimonial_1_video">
-                                        <iframe src="assets/img/sea.mp4"
-                                            title="Sarah Mitchell – Dream Getaways | Roland Holidays Partner Review"
-                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                            allowfullscreen loading="lazy">
-                                        </iframe>
+                                <div class="video-testimonial-card position-relative rounded-4 overflow-hidden shadow-sm bg-white border">
+                                    <span class="featured-ribbon position-absolute top-3 start-3 bg-warning text-dark px-3 py-1 rounded-pill font-weight-bold" style="z-index: 5; font-size: 12px;"><i class="fas fa-star me-1"></i> Featured</span>
+                                    <div class="position-relative overflow-hidden ds-video-test-wrap">
+                                        <video class="w-100 h-100 object-fit-cover" controls playsinline poster="https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=800&q=80&fm=webp">
+                                            <source src="./assets/img/sea.mp4" type="video/mp4">
+                                        </video>
                                     </div>
-                                    <div class="card-body">
-                                        <div class="agent-meta">
-                                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80&fm=webp" alt="Sarah Mitchell" class="agent-avatar" loading="lazy">
+                                    <div class="card-body p-3">
+                                        <div class="agent-meta d-flex align-items-center gap-3">
+                                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80&fm=webp" alt="Sarah Mitchell" class="rounded-circle object-fit-cover" style="width: 44px; height: 44px;" loading="lazy">
                                             <div>
-                                                <p class="agent-name" data-editable="true" data-edit-id="testimonial_1_name">Sarah Mitchell</p>
-                                                <p class="agent-agency" data-editable="true" data-edit-id="testimonial_1_agency">Dream Getaways</p>
+                                                <h6 class="agent-name mb-0 font-weight-bold text-dark" data-editable="true" data-edit-id="testimonial_1_name">Sarah Mitchell</h6>
+                                                <span class="agent-agency text-muted text-small" data-editable="true" data-edit-id="testimonial_1_agency">Dream Getaways Travel Agency</span>
+                                            </div>
+                                            <div class="ms-auto text-warning" style="font-size: 11px;">
+                                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                                             </div>
                                         </div>
                                     </div>
@@ -539,20 +546,21 @@
                             </div>
 
                             <div class="col-xl-4 col-lg-6">
-                                <div class="video-testimonial-card">
-                                    <div class="video-ratio" data-video-editable="true" data-video-id="dd_test_video_2">
-                                        <iframe src="assets/img/sea3.mp4"
-                                            title="James Okafor – Elite Tours | Roland Holidays Partner Review"
-                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                            allowfullscreen loading="lazy">
-                                        </iframe>
+                                <div class="video-testimonial-card position-relative rounded-4 overflow-hidden shadow-sm bg-white border">
+                                    <div class="position-relative overflow-hidden ds-video-test-wrap">
+                                        <video class="w-100 h-100 object-fit-cover" controls playsinline poster="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=800&q=80&fm=webp">
+                                            <source src="./assets/img/sea3.mp4" type="video/mp4">
+                                        </video>
                                     </div>
-                                    <div class="card-body">
-                                        <div class="agent-meta">
-                                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=200&q=80&fm=webp" alt="James Okafor" class="agent-avatar" loading="lazy">
+                                    <div class="card-body p-3">
+                                        <div class="agent-meta d-flex align-items-center gap-3">
+                                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80&fm=webp" alt="James Okafor" class="rounded-circle object-fit-cover" style="width: 44px; height: 44px;" loading="lazy">
                                             <div>
-                                                <p class="agent-name">James Okafor</p>
-                                                <p class="agent-agency">Elite Tours</p>
+                                                <h6 class="agent-name mb-0 font-weight-bold text-dark">James Okafor</h6>
+                                                <span class="agent-agency text-muted text-small">Elite Tours International</span>
+                                            </div>
+                                            <div class="ms-auto text-warning" style="font-size: 11px;">
+                                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                                             </div>
                                         </div>
                                     </div>
@@ -560,20 +568,21 @@
                             </div>
 
                             <div class="col-xl-4 col-lg-6">
-                                <div class="video-testimonial-card">
-                                    <div class="video-ratio" data-video-editable="true" data-video-id="dd_test_video_3">
-                                        <iframe src="assets/img/sea2.mp4"
-                                            title="Priya Nair – Horizon Travel | Roland Holidays Partner Review"
-                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                            allowfullscreen loading="lazy">
-                                        </iframe>
+                                <div class="video-testimonial-card position-relative rounded-4 overflow-hidden shadow-sm bg-white border">
+                                    <div class="position-relative overflow-hidden ds-video-test-wrap">
+                                        <video class="w-100 h-100 object-fit-cover" controls playsinline poster="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80&fm=webp">
+                                            <source src="./assets/img/sea2.mp4" type="video/mp4">
+                                        </video>
                                     </div>
-                                    <div class="card-body">
-                                        <div class="agent-meta">
-                                            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=200&q=80&fm=webp" alt="Priya Nair" class="agent-avatar" loading="lazy">
+                                    <div class="card-body p-3">
+                                        <div class="agent-meta d-flex align-items-center gap-3">
+                                            <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=300&q=80&fm=webp" alt="Priya Nair" class="rounded-circle object-fit-cover" style="width: 44px; height: 44px;" loading="lazy">
                                             <div>
-                                                <p class="agent-name">Priya Nair</p>
-                                                <p class="agent-agency">Horizon Travel</p>
+                                                <h6 class="agent-name mb-0 font-weight-bold text-dark">Priya Nair</h6>
+                                                <span class="agent-agency text-muted text-small">Horizon Travel Solutions</span>
+                                            </div>
+                                            <div class="ms-auto text-warning" style="font-size: 11px;">
+                                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                                             </div>
                                         </div>
                                     </div>

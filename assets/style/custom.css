@@ -2636,8 +2636,8 @@ header .main-navbar .nav-menu > li .nav-submenu li a .drop-icon {
 .partner-section,
 .padding-cls,
 section:not(.breadcrumb-section):not(.hero-section):not(.header-top-bar) {
-    padding-top: 100px !important;
-    padding-bottom: 100px !important;
+    padding-top: clamp(2.25rem, 5dvh, 5rem) !important;
+    padding-bottom: clamp(2.25rem, 5dvh, 5rem) !important;
 }
 
 @media (max-width: 1199px) {
@@ -2653,8 +2653,8 @@ section:not(.breadcrumb-section):not(.hero-section):not(.header-top-bar) {
     .partner-section,
     .padding-cls,
     section:not(.breadcrumb-section):not(.hero-section):not(.header-top-bar) {
-        padding-top: 80px !important;
-        padding-bottom: 80px !important;
+        padding-top: clamp(2rem, 4dvh, 4rem) !important;
+        padding-bottom: clamp(2rem, 4dvh, 4rem) !important;
     }
 }
 
@@ -2671,8 +2671,8 @@ section:not(.breadcrumb-section):not(.hero-section):not(.header-top-bar) {
     .partner-section,
     .padding-cls,
     section:not(.breadcrumb-section):not(.hero-section):not(.header-top-bar) {
-        padding-top: 60px !important;
-        padding-bottom: 60px !important;
+        padding-top: clamp(1.75rem, 3.5dvh, 3rem) !important;
+        padding-bottom: clamp(1.75rem, 3.5dvh, 3rem) !important;
     }
 }
 

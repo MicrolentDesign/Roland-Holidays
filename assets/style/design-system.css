@@ -1236,8 +1236,8 @@ header .main-navbar .nav-menu > li > a::after,
 .partner-section,
 .padding-cls,
 section:not(.breadcrumb-section):not(.hero-section):not(.header-top-bar) {
-    padding-top: 100px !important;
-    padding-bottom: 100px !important;
+    padding-top: clamp(2.25rem, 5dvh, 5rem) !important;
+    padding-bottom: clamp(2.25rem, 5dvh, 5rem) !important;
 }
 
 @media (max-width: 1199px) {
@@ -1253,8 +1253,8 @@ section:not(.breadcrumb-section):not(.hero-section):not(.header-top-bar) {
     .partner-section,
     .padding-cls,
     section:not(.breadcrumb-section):not(.hero-section):not(.header-top-bar) {
-        padding-top: 80px !important;
-        padding-bottom: 80px !important;
+        padding-top: clamp(2rem, 4dvh, 4rem) !important;
+        padding-bottom: clamp(2rem, 4dvh, 4rem) !important;
     }
 }
 
@@ -1271,8 +1271,107 @@ section:not(.breadcrumb-section):not(.hero-section):not(.header-top-bar) {
     .partner-section,
     .padding-cls,
     section:not(.breadcrumb-section):not(.hero-section):not(.header-top-bar) {
-        padding-top: 60px !important;
-        padding-bottom: 60px !important;
+        padding-top: clamp(1.75rem, 3.5dvh, 3rem) !important;
+        padding-bottom: clamp(1.75rem, 3.5dvh, 3rem) !important;
+    }
+}
+
+/* Dynamic Viewport Responsive Scaling for Compact Viewports & Landscapes */
+@media (max-height: 750px) {
+    .py-section,
+    .section-t-space,
+    .section-b-space,
+    .section-space,
+    .routes-section,
+    .about-section,
+    .services-section,
+    .testimonial-section,
+    .video_section,
+    .partner-section,
+    .padding-cls,
+    section:not(.breadcrumb-section):not(.hero-section):not(.header-top-bar) {
+        padding-top: clamp(1.25rem, 3dvh, 2.25rem) !important;
+        padding-bottom: clamp(1.25rem, 3dvh, 2.25rem) !important;
+    }
+    .breadcrumb-section {
+        min-height: clamp(180px, 30dvh, 260px) !important;
+    }
+    .ds-card-glass,
+    .ds-team-card,
+    .ds-testimonial-card,
+    .video-testimonial-card {
+        padding: clamp(14px, 2dvh, 20px) !important;
+    }
+    .ds-heading-4xl {
+        font-size: clamp(1.5rem, 4dvh, 2rem) !important;
+    }
+}
+
+@media (max-height: 560px) {
+    .py-section,
+    .section-t-space,
+    .section-b-space,
+    .section-space,
+    .routes-section,
+    .about-section,
+    .services-section,
+    .testimonial-section,
+    .video_section,
+    .partner-section,
+    .padding-cls,
+    section:not(.breadcrumb-section):not(.hero-section):not(.header-top-bar) {
+        padding-top: clamp(0.75rem, 2dvh, 1.5rem) !important;
+        padding-bottom: clamp(0.75rem, 2dvh, 1.5rem) !important;
+    }
+    .breadcrumb-section {
+        min-height: clamp(140px, 25dvh, 180px) !important;
+    }
+    .section-tag {
+        margin-bottom: 2px !important;
+        padding: 2px 8px !important;
+        font-size: 10px !important;
+    }
+}
+
+/* Fluid Viewport Card Media Containers */
+.ds-story-gallery-box {
+    height: clamp(240px, 40dvh, 380px);
+}
+@media (max-height: 750px) {
+    .ds-story-gallery-box {
+        height: clamp(180px, 32dvh, 260px);
+    }
+}
+@media (max-height: 560px) {
+    .ds-story-gallery-box {
+        height: clamp(140px, 28dvh, 200px);
+    }
+}
+
+.ds-team-img-wrap {
+    height: clamp(200px, 28dvh, 260px);
+}
+@media (max-height: 750px) {
+    .ds-team-img-wrap {
+        height: clamp(150px, 22dvh, 200px);
+    }
+}
+
+.ds-service-img-wrap {
+    height: clamp(150px, 22dvh, 200px);
+}
+@media (max-height: 750px) {
+    .ds-service-img-wrap {
+        height: clamp(120px, 18dvh, 160px);
+    }
+}
+
+.ds-video-test-wrap {
+    height: clamp(160px, 24dvh, 220px);
+}
+@media (max-height: 750px) {
+    .ds-video-test-wrap {
+        height: clamp(130px, 18dvh, 170px);
     }
 }
 
@@ -1398,19 +1497,43 @@ section:not(.breadcrumb-section):not(.hero-section):not(.header-top-bar) {
     .ds-filter-console {
         flex-direction: column !important;
         align-items: stretch !important;
-        padding: 12px !important;
-        gap: 12px !important;
+        padding: 10px 12px !important;
+        gap: 10px !important;
     }
     .ds-segmented-track {
-        width: 100% !important;
-        justify-content: flex-start !important;
+        display: flex !important;
+        flex-wrap: nowrap !important;
         overflow-x: auto !important;
         -webkit-overflow-scrolling: touch !important;
-        padding: 4px !important;
-        scrollbar-width: none;
+        width: 100% !important;
+        justify-content: flex-start !important;
+        gap: 6px !important;
+        padding: 6px !important;
+        border-radius: 12px !important;
+        scrollbar-width: none !important;
+        -ms-overflow-style: none !important;
     }
     .ds-segmented-track::-webkit-scrollbar {
-        display: none;
+        display: none !important;
+    }
+    .region-pill, 
+    .season-pill {
+        flex: 0 0 auto !important;
+        white-space: nowrap !important;
+        padding: 8px 16px !important;
+        font-size: 13px !important;
+        border-radius: 8px !important;
+        transition: all 0.2s ease !important;
+    }
+    /* Mobile Direct Active State: ensure active pill is 100% crisp, highlighted, with solid brand background */
+    .region-pill.active,
+    .season-pill.active {
+        background: #1E4FA3 !important;
+        color: #FFFFFF !important;
+        box-shadow: 0 2px 8px rgba(30, 79, 163, 0.3) !important;
+    }
+    .ds-glider {
+        display: none !important;
     }
 }
 

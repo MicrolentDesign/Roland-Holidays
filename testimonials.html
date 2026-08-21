@@ -11,10 +11,7 @@
     <link rel="icon" href="./assets/img/icon.png" type="image/x-icon">
     <title>Partner Testimonials – Roland Holidays | Agent Stories</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Playwrite+GB+J:ital,wght@0,100..400;1,100..400&display=swap');
-        h1, h2, h3, h4, h5, h6, .title-label {
-            font-family: 'Playwrite GB J', cursive !important;
-        }
+        h1, h2, h3, h4, h5, h6 { font-family: var(--ds-font-heading); }
     </style>
 
     <!-- Font Awesome -->
@@ -117,18 +114,18 @@
             <!-- Video Testimonials Row -->
             <div class="row g-4">
 
-                <!-- Video 1 – Rates -->
+                <!-- Video 1 – Rates & Groups -->
                 <div class="col-xl-4 col-lg-6" data-category="rates groups">
                     <div class="video-testimonial-card position-relative rounded-4 overflow-hidden shadow-sm bg-white border">
                         <span class="featured-ribbon position-absolute top-3 start-3 bg-warning text-dark px-3 py-1 rounded-pill font-weight-bold" style="z-index: 5; font-size: 12px;"><i class="fas fa-star me-1"></i> Featured</span>
-                        <div class="position-relative overflow-hidden" style="height: 220px;">
-                            <video class="w-100 h-100 object-fit-cover" controls playsinline poster="./assets/img/ab1.jpg">
+                        <div class="position-relative overflow-hidden ds-video-test-wrap">
+                            <video class="w-100 h-100 object-fit-cover" controls playsinline poster="https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=800&q=80&fm=webp">
                                 <source src="./assets/img/sea.mp4" type="video/mp4">
                             </video>
                         </div>
                         <div class="p-4">
                             <div class="d-flex align-items-center gap-3">
-                                <img src="./assets/img/pr2.jpg" alt="Sarah Mitchell" class="rounded-circle object-fit-cover" style="width: 48px; height: 48px;">
+                                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80&fm=webp" alt="Sarah Mitchell" class="rounded-circle object-fit-cover" style="width: 48px; height: 48px;">
                                 <div>
                                     <h6 class="mb-0 font-weight-bold text-dark" data-editable="true" data-edit-id="test_1_agent_name">Sarah Mitchell</h6>
                                     <span class="text-muted text-small" data-editable="true" data-edit-id="test_1_agent_agency">Dream Getaways Travel Agency</span>
@@ -141,17 +138,17 @@
                     </div>
                 </div>
 
-                <!-- Video 2 – Support -->
+                <!-- Video 2 – Support & Visas -->
                 <div class="col-xl-4 col-lg-6" data-category="support visa">
                     <div class="video-testimonial-card position-relative rounded-4 overflow-hidden shadow-sm bg-white border">
-                        <div class="position-relative overflow-hidden" style="height: 220px;">
-                            <video class="w-100 h-100 object-fit-cover" controls playsinline poster="./assets/img/s2.jpg">
+                        <div class="position-relative overflow-hidden ds-video-test-wrap">
+                            <video class="w-100 h-100 object-fit-cover" controls playsinline poster="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=800&q=80&fm=webp">
                                 <source src="./assets/img/sea3.mp4" type="video/mp4">
                             </video>
                         </div>
                         <div class="p-4">
                             <div class="d-flex align-items-center gap-3">
-                                <img src="./assets/img/2.jpg" alt="James Okafor" class="rounded-circle object-fit-cover" style="width: 48px; height: 48px;">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80&fm=webp" alt="James Okafor" class="rounded-circle object-fit-cover" style="width: 48px; height: 48px;">
                                 <div>
                                     <h6 class="mb-0 font-weight-bold text-dark" data-editable="true" data-edit-id="test_2_agent_name">James Okafor</h6>
                                     <span class="text-muted text-small" data-editable="true" data-edit-id="test_2_agent_agency">Elite Tours International</span>
@@ -164,10 +161,29 @@
                     </div>
                 </div>
 
-                <!-- Video 3 – Luxury Beach -->
+                <!-- Video 3 – Luxury Beach & Operations -->
                 <div class="col-xl-4 col-lg-6" data-category="luxury rates">
+                    <div class="video-testimonial-card position-relative rounded-4 overflow-hidden shadow-sm bg-white border">
+                        <div class="position-relative overflow-hidden ds-video-test-wrap">
+                            <video class="w-100 h-100 object-fit-cover" controls playsinline poster="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80&fm=webp">
+                                <source src="./assets/img/sea2.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="p-4">
+                            <div class="d-flex align-items-center gap-3">
+                                <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=300&q=80&fm=webp" alt="Priya Nair" class="rounded-circle object-fit-cover" style="width: 48px; height: 48px;">
+                                <div>
+                                    <h6 class="mb-0 font-weight-bold text-dark" data-editable="true" data-edit-id="test_3_agent_name">Priya Nair</h6>
+                                    <span class="text-muted text-small" data-editable="true" data-edit-id="test_3_agent_agency">Horizon Travel Solutions</span>
+                                </div>
+                                <div class="ms-auto text-warning" style="font-size: 12px;">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-             </div>
+            </div>
         </div>
     </section>
     <!-- VIDEO TESTIMONIALS END -->
@@ -193,7 +209,7 @@
                         <span class="big-quote">"</span>
                         <p>"The NNC structure Roland Holidays offered us was unlike anything else in the market. We went from struggling with margins to consistently delivering value to clients while growing our own profit per booking by 30%. Their rates are genuinely competitive."</p>
                         <div class="author-row">
-                            <img src="./assets/img/9.jpg" alt="Ahmed Al-Rashidi" class="author-avatar">
+                            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=200&q=80&fm=webp" alt="Ahmed Al-Rashidi" class="author-avatar" loading="lazy">
                             <div>
                                 <p class="author-name">Ahmed Al-Rashidi</p>
                                 <p class="author-role">Gulf Star Travel Agency, Dubai</p>
@@ -214,7 +230,7 @@
                         <span class="big-quote">"</span>
                         <p>"What sets Roland Holidays apart is the human element. Our dedicated account manager knows our business, anticipates our needs, and is always reachable — even on weekends for urgent group situations. That level of support is priceless in this industry."</p>
                         <div class="author-row">
-                            <img src="./assets/img/10.jpg" alt="Ananya Krishnan" class="author-avatar">
+                            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&q=80&fm=webp" alt="Ananya Krishnan" class="author-avatar" loading="lazy">
                             <div>
                                 <p class="author-name">Ananya Krishnan</p>
                                 <p class="author-role">Sapphire Tours, Singapore</p>
@@ -235,7 +251,7 @@
                         <span class="big-quote">"</span>
                         <p>"In 12 years of partnership, Roland Holidays has never once let a group down on the ground. Hotels, transfers, guides — everything is executed exactly as quoted. That reliability is what lets us sell with confidence and build client loyalty."</p>
                         <div class="author-row">
-                            <img src="./assets/img/6.jpg" alt="Fatimah Binti Hassan" class="author-avatar">
+                            <img src="https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?auto=format&fit=crop&w=200&q=80&fm=webp" alt="Fatimah Binti Hassan" class="author-avatar" loading="lazy">
                             <div>
                                 <p class="author-name">Fatimah Binti Hassan</p>
                                 <p class="author-role">Tropicana Travel, Kuala Lumpur</p>
@@ -256,7 +272,7 @@
                         <span class="big-quote">"</span>
                         <p>"We shifted our entire group portfolio to Roland Holidays two years ago. Our revenue per group trip has increased by 40% and client re-booking rates are at an all-time high. The combination of exclusive rates and flawless operations simply cannot be matched."</p>
                         <div class="author-row">
-                            <img src="./assets/img/7.jpg" alt="Elena Vasquez" class="author-avatar">
+                            <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=200&q=80&fm=webp" alt="Elena Vasquez" class="author-avatar" loading="lazy">
                             <div>
                                 <p class="author-name">Elena Vasquez</p>
                                 <p class="author-role">Viva Viajes, Mexico City</p>
@@ -277,7 +293,7 @@
                         <span class="big-quote">"</span>
                         <p>"Visa processing was always the most stressful part of running groups. Since partnering with Roland Holidays, that stress has vanished. They handle bulk applications for 80+ pax with 100% accuracy, and their express service saved one of our groups last minute."</p>
                         <div class="author-row">
-                            <img src="./assets/img/8.jpg" alt="David Osei" class="author-avatar">
+                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80&fm=webp" alt="David Osei" class="author-avatar" loading="lazy">
                             <div>
                                 <p class="author-name">David Osei</p>
                                 <p class="author-role">AfriTravel Group, Accra</p>
@@ -298,7 +314,7 @@
                         <span class="big-quote">"</span>
                         <p>"Our luxury segment clients expect perfection. Roland Holidays delivers it — from Maldives water villa exclusives to private Seychelles charters. The exclusive rates for 5-star beach properties are exceptional, and every booking comes with meticulous ground support."</p>
                         <div class="author-row">
-                            <img src="./assets/img/4.jpg" alt="Charlotte Beaumont" class="author-avatar">
+                            <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=200&q=80&fm=webp" alt="Charlotte Beaumont" class="author-avatar" loading="lazy">
                             <div>
                                 <p class="author-name">Charlotte Beaumont</p>
                                 <p class="author-role">The Luxury Travel Co., London</p>
@@ -402,52 +418,7 @@
                     { breakpoint: 768,  settings: { slidesToShow: 1 } }
                 ]
             });
-
-            $('.slide-1').slick({
-                infinite: true, speed: 600, slidesToShow: 1, slidesToScroll: 1,
-                autoplay: true, autoplaySpeed: 5000, dots: false, arrows: true,
-                fade: true, cssEase: 'linear'
-            });
-
-            $('.pill-btn').on('click', function () {
-                $('.pill-btn').removeClass('active');
-                $(this).addClass('active');
-                var filter = $(this).data('filter');
-                if (filter === 'all') {
-                    $('[data-category]').closest('.col-xl-6').show();
-                } else {
-                    $('[data-category]').closest('.col-xl-6').each(function () {
-                        var cats = $(this).find('[data-category]').data('category') || '';
-                        if (cats.includes(filter)) { $(this).show(); } else { $(this).hide(); }
-                    });
-                }
-            });
-
-            var currentRating = 0;
-            $('.star-input').on('mouseover', function () {
-                var val = $(this).data('val');
-                $('.star-input').each(function () { $(this).css('color', $(this).data('val') <= val ? '#ffcc33' : '#ddd'); });
-            }).on('mouseout', function () {
-                $('.star-input').each(function () { $(this).css('color', $(this).data('val') <= currentRating ? '#ffcc33' : '#ddd'); });
-            }).on('click', function () {
-                currentRating = $(this).data('val');
-                $('#t-rating').val(currentRating);
-                $('.star-input').each(function () { $(this).css('color', $(this).data('val') <= currentRating ? '#ffcc33' : '#ddd'); });
-            });
-
-            $('#testimonial-submit-form').on('submit', function (e) {
-                e.preventDefault();
-                var btn = $(this).find('[type="submit"]');
-                btn.html('<i class="fas fa-spinner fa-spin me-2"></i> Submitting...').prop('disabled', true);
-                setTimeout(function () {
-                    btn.html('<i class="fas fa-check me-2"></i> Testimonial Submitted – Thank You!').css('background', '#27ae60');
-                    setTimeout(function () {
-                        btn.html('<i class="fas fa-paper-plane me-2"></i> Submit My Testimonial').css('background', '').prop('disabled', false);
-                    }, 4000);
-                }, 1800);
-            });
         });
-
     </script>
     <script src="./assets/js/sticky.js"></script>
     <!-- Design System JS Engine -->
