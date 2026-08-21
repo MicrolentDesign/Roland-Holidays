@@ -115,45 +115,29 @@
     <!-- ══════════════ DESTINATIONS GRID ══════════════ -->
     <section class="routes-section small-section bg-inner">
         <div class="container">
-            <!-- ══════════════ MASTER SEGMENTED FILTER CONSOLE (Inspired by Ref UI + DS v3.2) ══════════════ -->
+            <!-- ══════════════ CLEAN SEGMENTED FILTER CONSOLE (DS v3.2) ══════════════ -->
             <div class="ds-filter-console mb-5">
-                <!-- Left: Region Segmented Pill Bar -->
-                <div class="ds-filter-group-wrap">
-                    <span class="ds-filter-meta-label"><i class="fas fa-compass text-primary me-2"></i> Region Hub</span>
+                <!-- Row 1: Region Hub -->
+                <div class="ds-filter-row">
+                    <span class="ds-filter-label">Region Hub</span>
                     <div class="ds-segmented-track">
-                        <button class="region-pill active" data-region="all">
-                            <i class="fas fa-globe-asia me-1.5 pill-icon"></i>All Portfolio
-                        </button>
-                        <button class="region-pill" data-region="india">
-                            <i class="fas fa-archway me-1.5 pill-icon"></i>India Inbound
-                        </button>
-                        <button class="region-pill" data-region="southeast-asia">
-                            <i class="fas fa-torii-gate me-1.5 pill-icon"></i>Southeast Asia
-                        </button>
-                        <button class="region-pill" data-region="asia-eurasia">
-                            <i class="fas fa-landmark me-1.5 pill-icon"></i>Asia &amp; Eurasia
-                        </button>
-                        <button class="region-pill" data-region="africa-islands">
-                            <i class="fas fa-island-tropical me-1.5 pill-icon"></i>Africa &amp; Islands
-                        </button>
+                        <button class="region-pill active" data-region="all">All Portfolio</button>
+                        <button class="region-pill" data-region="india">India Inbound</button>
+                        <button class="region-pill" data-region="southeast-asia">Southeast Asia</button>
+                        <button class="region-pill" data-region="asia-eurasia">Asia &amp; Eurasia</button>
+                        <button class="region-pill" data-region="africa-islands">Africa &amp; Islands</button>
                     </div>
                 </div>
 
-                <div class="ds-filter-divider d-none d-xl-block"></div>
+                <div class="ds-filter-row-divider"></div>
 
-                <!-- Right: Season Segmented Pill Bar -->
-                <div class="ds-filter-group-wrap">
-                    <span class="ds-filter-meta-label"><i class="fas fa-cloud-sun text-warning me-2"></i> Season</span>
+                <!-- Row 2: Season -->
+                <div class="ds-filter-row">
+                    <span class="ds-filter-label">Season</span>
                     <div class="ds-segmented-track">
-                        <button class="season-pill active" data-season="all">
-                            <i class="fas fa-calendar-alt me-1.5 pill-icon"></i>All Seasons
-                        </button>
-                        <button class="season-pill" data-season="summer">
-                            <i class="fas fa-sun me-1.5 pill-icon text-warning"></i>Summer Peak
-                        </button>
-                        <button class="season-pill" data-season="winter">
-                            <i class="fas fa-snowflake me-1.5 pill-icon text-info"></i>Winter Season
-                        </button>
+                        <button class="season-pill active" data-season="all">All Seasons</button>
+                        <button class="season-pill" data-season="summer">Summer Peak</button>
+                        <button class="season-pill" data-season="winter">Winter Season</button>
                     </div>
                 </div>
             </div>
