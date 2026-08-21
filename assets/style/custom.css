@@ -593,12 +593,13 @@ body.nav-open {
 .sidebar-header p { color: #7fb4d4; font-size: 12px; margin: 4px 0 0; font-weight: 600; }
 
 .dest-card-wrap { display: flex; flex-direction: column; }
-.routes-section .routes-box { border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); display: flex; flex-direction: column; height: 100%; }
-.routes-section .routes-box .routes-img { border-radius: 16px 16px 0 0; overflow: hidden; position: relative; height: 240px; flex-shrink: 0; }
-.routes-section .routes-box .routes-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-.routes-section .routes-box .routes-content { border-radius: 0 0 16px 16px; padding: 20px; display: flex; flex-direction: column; flex: 1; }
-.routes-section .routes-box .routes-content .btn.btn-rounded.color1 { margin-top: auto; }
-.routes-section .routes-box .routes-content .top-bar h5 { font-size: 16px; }
+.routes-box { border-radius: 20px !important; background: #FFFFFF !important; border: 1px solid #E2E8F0 !important; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05) !important; display: flex !important; flex-direction: column !important; height: 100% !important; overflow: hidden !important; transition: transform 0.3s ease, box-shadow 0.3s ease !important; }
+.routes-box:hover { transform: translateY(-8px) !important; box-shadow: 0 18px 40px rgba(30, 79, 163, 0.12) !important; }
+.routes-box .routes-img { border-radius: 20px 20px 0 0 !important; overflow: hidden !important; position: relative !important; height: 240px !important; flex-shrink: 0 !important; }
+.routes-box .routes-img img { position: absolute !important; top: 0 !important; left: 0 !important; width: 100% !important; height: 100% !important; object-fit: cover !important; }
+.routes-box .routes-content { border-radius: 0 0 20px 20px !important; padding: 24px !important; display: flex !important; flex-direction: column !important; flex: 1 !important; justify-content: space-between !important; background: #FFFFFF !important; }
+.routes-box .routes-content .top-bar h5 { font-size: 18px !important; font-weight: 700 !important; color: #0F172A !important; margin-bottom: 4px !important; }
+.routes-box .routes-content .top-bar h6 { font-size: 13px !important; font-weight: 600 !important; color: #1E4FA3 !important; }
 
 /* ── Destinations grid: card action area ── */
 .routes-section .routes-box .routes-content .btn.btn-rounded.color1 {
