@@ -4,11 +4,53 @@
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
+    initPageLoader();
     initKineticButtons();
     initScrollReveals();
     initMobileDrawer();
     initWebpOptimizer();
 });
+
+/**
+ * 0. Clean Minimal Logo Loader Engine
+ */
+function initPageLoader() {
+    let loader = document.getElementById('dsPageLoader');
+    if (!loader) {
+        loader = document.createElement('div');
+        loader.id = 'dsPageLoader';
+        loader.className = 'ds-page-loader';
+        loader.innerHTML = `
+            <div class="ds-loader-content">
+                <div class="ds-loader-brand">
+                    <img src="./assets/img/logo.png" alt="Roland Holidays" class="ds-loader-logo">
+                    <div class="ds-loader-ring"></div>
+                </div>
+                <div class="ds-loader-bar">
+                    <div class="ds-loader-progress"></div>
+                </div>
+            </div>
+        `;
+        document.body.prepend(loader);
+    }
+
+    function removeLoader() {
+        if (!loader) return;
+        loader.classList.add('loaded');
+        setTimeout(() => {
+            if (loader && loader.parentNode) loader.remove();
+        }, 500);
+    }
+
+    if (document.readyState === 'complete') {
+        setTimeout(removeLoader, 180);
+    } else {
+        window.addEventListener('load', () => {
+            setTimeout(removeLoader, 200);
+        });
+        setTimeout(removeLoader, 800);
+    }
+}
 
 /**
  * Automatic WebP Image Optimization Engine

@@ -290,24 +290,132 @@ header .main-navbar .nav-menu > li > a::after,
     border-bottom-color: var(--ds-color-gold) !important;
 }
 
-/* Hide mobile controls on desktop */
+/* ══════════════ DESKTOP WEB HEADER PERFECTION ══════════════ */
 @media (min-width: 992px) {
     .toggle-nav,
     .mobile-close-btn,
     .mobile-back,
-    .back-btn {
+    .back-btn,
+    .ds-drawer-header,
+    .ds-drawer-footer,
+    .menu-overlay {
+        display: none !important;
+    }
+
+    header.tour-header {
+        background: #FFFFFF !important;
+        box-shadow: 0 2px 16px rgba(15, 23, 42, 0.04) !important;
+        position: relative !important;
+        z-index: 100 !important;
+    }
+
+    header .menu {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        width: 100% !important;
+        padding: 10px 0 !important;
+    }
+
+    header .brand-logo img {
+        max-height: 54px !important;
+        width: auto !important;
+    }
+
+    header .main-navbar {
+        position: static !important;
+        width: auto !important;
+        height: auto !important;
+        background: transparent !important;
+        box-shadow: none !important;
+        border: none !important;
+        padding: 0 !important;
+        display: flex !important;
+        align-items: center !important;
+        overflow: visible !important;
+    }
+
+    header .main-navbar #mainnav {
+        display: flex !important;
+        align-items: center !important;
+    }
+
+    header .main-navbar .nav-menu {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 36px !important;
+        list-style: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        background: transparent !important;
+        position: static !important;
+        width: auto !important;
+        height: auto !important;
+        border: none !important;
+        box-shadow: none !important;
+        overflow: visible !important;
+    }
+
+    header .main-navbar .nav-menu > li {
+        margin: 0 !important;
+        padding: 0 !important;
+        width: auto !important;
+        border: none !important;
+    }
+
+    header .main-navbar .nav-menu > li > a {
+        font-family: var(--ds-font-sans) !important;
+        font-size: 16px !important;
+        font-weight: 600 !important;
+        color: #1E293B !important;
+        text-decoration: none !important;
+        padding: 8px 0 !important;
+        border-radius: 0 !important;
+        background: transparent !important;
+        display: inline-block !important;
+        border-bottom: 3px solid transparent !important;
+        border-left: none !important;
+        transition: color 0.2s ease, border-color 0.2s ease !important;
+    }
+
+    header .main-navbar .nav-menu > li > a:hover {
+        color: var(--ds-color-primary) !important;
+        background: transparent !important;
+    }
+
+    header .main-navbar .nav-menu > li > a.active {
+        color: var(--ds-color-primary) !important;
+        border-bottom-color: var(--ds-color-gold) !important;
+        background: transparent !important;
+    }
+
+    header .main-navbar .nav-menu > li > a .nav-link-icon,
+    header .main-navbar .nav-menu > li > a .nav-arrow,
+    header .main-navbar .nav-menu > li > a .sub-arrow {
         display: none !important;
     }
 }
 
-/* Mobile Drawer Overlay & Toggle Button */
+/* ══════════════ MOBILE HEADER & DRAWER ══════════════ */
 @media (max-width: 991px) {
+    header.tour-header {
+        background: #FFFFFF !important;
+        box-shadow: 0 2px 12px rgba(15, 23, 42, 0.05) !important;
+    }
+
     header .menu {
         display: flex !important;
         align-items: center !important;
         justify-content: space-between !important;
         width: 100% !important;
         position: relative !important;
+        padding: 6px 0 !important;
+    }
+
+    header .brand-logo img {
+        max-height: 52px !important;
+        width: auto !important;
     }
 
     .toggle-nav {
@@ -315,8 +423,8 @@ header .main-navbar .nav-menu > li > a::after,
         align-items: center !important;
         justify-content: center !important;
         cursor: pointer !important;
-        width: 42px !important;
-        height: 42px !important;
+        width: 44px !important;
+        height: 44px !important;
         padding: 0 !important;
         background: #F8FAFC !important;
         border: 1.5px solid #CBD5E1 !important;
@@ -324,7 +432,7 @@ header .main-navbar .nav-menu > li > a::after,
         box-shadow: 0 2px 6px rgba(0,0,0,0.06) !important;
         z-index: 100 !important;
         position: absolute !important;
-        right: 15px !important;
+        right: 0 !important;
         top: 50% !important;
         transform: translateY(-50%) !important;
         margin: 0 !important;
@@ -333,7 +441,7 @@ header .main-navbar .nav-menu > li > a::after,
     .toggle-nav i,
     .toggle-nav .sidebar-bar {
         color: #0F172A !important;
-        font-size: 18px !important;
+        font-size: 20px !important;
         display: block !important;
     }
     
@@ -1358,4 +1466,106 @@ section:not(.breadcrumb-section):not(.hero-section):not(.header-top-bar) {
 .text-hover-gold:hover {
     color: #1E4FA3 !important;
     transform: translateX(3px);
+}
+
+/* ══════════════ SITE-WIDE CLEAN PAGE TRANSITIONS ══════════════ */
+body {
+    animation: dsPageFadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes dsPageFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(4px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ══════════════ CLEAN MINIMAL LOGO LOADER ══════════════ */
+.ds-page-loader {
+    position: fixed;
+    inset: 0;
+    background: #FFFFFF;
+    z-index: 9999999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.ds-page-loader.loaded {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.ds-loader-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+}
+
+.ds-loader-brand {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+}
+
+.ds-loader-logo {
+    max-height: 56px;
+    width: auto;
+    animation: dsLoaderPulse 1.5s ease-in-out infinite alternate;
+}
+
+.ds-loader-ring {
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    border: 2px solid #F1F5F9;
+    border-top-color: #1E4FA3;
+    border-right-color: #D4AF37;
+    animation: dsLoaderSpin 0.9s linear infinite;
+}
+
+.ds-loader-bar {
+    width: 120px;
+    height: 3px;
+    background: #F1F5F9;
+    border-radius: 99px;
+    overflow: hidden;
+    position: relative;
+}
+
+.ds-loader-progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 40%;
+    background: linear-gradient(90deg, #1E4FA3, #D4AF37);
+    border-radius: 99px;
+    animation: dsLoaderSlide 1.3s ease-in-out infinite;
+}
+
+@keyframes dsLoaderPulse {
+    0% { transform: scale(0.96); opacity: 0.9; }
+    100% { transform: scale(1.04); opacity: 1; }
+}
+
+@keyframes dsLoaderSpin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes dsLoaderSlide {
+    0% { left: -40%; width: 30%; }
+    50% { left: 35%; width: 50%; }
+    100% { left: 100%; width: 30%; }
 }
