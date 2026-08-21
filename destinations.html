@@ -115,32 +115,24 @@
     <!-- ══════════════ DESTINATIONS GRID ══════════════ -->
     <section class="routes-section small-section bg-inner">
         <div class="container">
-            <!-- ══════════════ CLEAN SEGMENTED FILTER CONSOLE WITH SMOOTH GLIDER ══════════════ -->
+            <!-- ══════════════ INLINE SEGMENTED FILTER CONSOLE (NO LABELS, HARDWARE-ACCELERATED GLIDER) ══════════════ -->
             <div class="ds-filter-console mb-5">
-                <!-- Row 1: Region Hub -->
-                <div class="ds-filter-row">
-                    <span class="ds-filter-label">Region Hub</span>
-                    <div class="ds-segmented-track" id="regionTrack">
-                        <div class="ds-glider" id="regionGlider"></div>
-                        <button class="region-pill active" data-region="all">All Portfolio</button>
-                        <button class="region-pill" data-region="india">India Inbound</button>
-                        <button class="region-pill" data-region="southeast-asia">Southeast Asia</button>
-                        <button class="region-pill" data-region="asia-eurasia">Asia &amp; Eurasia</button>
-                        <button class="region-pill" data-region="africa-islands">Africa &amp; Islands</button>
-                    </div>
+                <!-- Region Track -->
+                <div class="ds-segmented-track" id="regionTrack">
+                    <div class="ds-glider" id="regionGlider"></div>
+                    <button class="region-pill active" data-region="all">All Portfolio</button>
+                    <button class="region-pill" data-region="india">India Inbound</button>
+                    <button class="region-pill" data-region="southeast-asia">Southeast Asia</button>
+                    <button class="region-pill" data-region="asia-eurasia">Asia &amp; Eurasia</button>
+                    <button class="region-pill" data-region="africa-islands">Africa &amp; Islands</button>
                 </div>
 
-                <div class="ds-filter-row-divider"></div>
-
-                <!-- Row 2: Season -->
-                <div class="ds-filter-row">
-                    <span class="ds-filter-label">Season</span>
-                    <div class="ds-segmented-track" id="seasonTrack">
-                        <div class="ds-glider" id="seasonGlider"></div>
-                        <button class="season-pill active" data-season="all">All Seasons</button>
-                        <button class="season-pill" data-season="summer">Summer Peak</button>
-                        <button class="season-pill" data-season="winter">Winter Season</button>
-                    </div>
+                <!-- Season Track -->
+                <div class="ds-segmented-track" id="seasonTrack">
+                    <div class="ds-glider" id="seasonGlider"></div>
+                    <button class="season-pill active" data-season="all">All Seasons</button>
+                    <button class="season-pill" data-season="summer">Summer Peak</button>
+                    <button class="season-pill" data-season="winter">Winter Season</button>
                 </div>
             </div>
 
@@ -615,25 +607,25 @@
     <script src="./assets/js/live-editor.js"></script>
 
     <script>
-    // ── Smooth Sliding Glider Engine ──
+    // ── Hardware-Accelerated Sliding Glider Engine ──
+    function moveGlider(trackId, gliderId, activeClass) {
+        var track = document.getElementById(trackId);
+        var glider = document.getElementById(gliderId);
+        if (!track || !glider) return;
+
+        var activeBtn = track.querySelector('.' + activeClass + '.active');
+        if (activeBtn) {
+            glider.style.width = activeBtn.offsetWidth + 'px';
+            glider.style.transform = 'translateX(' + activeBtn.offsetLeft + 'px)';
+            glider.style.opacity = '1';
+        } else {
+            glider.style.opacity = '0';
+        }
+    }
+
     function updateGliders() {
-        var activeRegionBtn = document.querySelector('#regionTrack .region-pill.active');
-        var regionTrack = document.getElementById('regionTrack');
-        var regionGlider = document.getElementById('regionGlider');
-
-        if (activeRegionBtn && regionTrack && regionGlider) {
-            regionGlider.style.width = activeRegionBtn.offsetWidth + 'px';
-            regionGlider.style.left = activeRegionBtn.offsetLeft + 'px';
-        }
-
-        var activeSeasonBtn = document.querySelector('#seasonTrack .season-pill.active');
-        var seasonTrack = document.getElementById('seasonTrack');
-        var seasonGlider = document.getElementById('seasonGlider');
-
-        if (activeSeasonBtn && seasonTrack && seasonGlider) {
-            seasonGlider.style.width = activeSeasonBtn.offsetWidth + 'px';
-            seasonGlider.style.left = activeSeasonBtn.offsetLeft + 'px';
-        }
+        moveGlider('regionTrack', 'regionGlider', 'region-pill');
+        moveGlider('seasonTrack', 'seasonGlider', 'season-pill');
     }
 
     // ── Region & Season Filter logic ──
@@ -687,8 +679,8 @@
     window.addEventListener('load', updateGliders);
     window.addEventListener('resize', updateGliders);
     document.addEventListener('DOMContentLoaded', updateGliders);
-    setTimeout(updateGliders, 100);
-    setTimeout(updateGliders, 300);
+    setTimeout(updateGliders, 50);
+    setTimeout(updateGliders, 200);
 
     function filterCards() {
         updateGliders();
@@ -710,15 +702,9 @@
 
             if (regionMatch && seasonMatch && searchMatch) {
                 card.style.display = 'block';
-                card.classList.remove('filtering-out');
                 visibleCount++;
             } else {
-                card.classList.add('filtering-out');
-                setTimeout(function() {
-                    if (card.classList.contains('filtering-out')) {
-                        card.style.display = 'none';
-                    }
-                }, 350);
+                card.style.display = 'none';
             }
         });
 
