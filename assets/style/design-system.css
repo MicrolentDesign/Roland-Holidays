@@ -1161,10 +1161,17 @@ section:not(.breadcrumb-section):not(.hero-section):not(.header-top-bar) {
     padding-left: 0 !important;
     list-style: none !important;
     margin-bottom: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
 }
 
 .ds-footer-links li {
-    margin-bottom: 10px !important;
+    display: block !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    clear: both !important;
 }
 
 .ds-footer-links a {
@@ -1172,11 +1179,13 @@ section:not(.breadcrumb-section):not(.hero-section):not(.header-top-bar) {
     text-decoration: none !important;
     font-size: 14px !important;
     font-weight: 500 !important;
-    transition: color 0.25s ease !important;
+    display: inline-block !important;
+    line-height: 1.5 !important;
+    transition: all 0.25s ease !important;
 }
 
 .ds-footer-links a:hover,
 .text-hover-gold:hover {
     color: #1E4FA3 !important;
+    transform: translateX(3px);
 }
-
