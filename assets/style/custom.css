@@ -2625,3 +2625,56 @@ header .main-navbar .nav-menu > li .nav-submenu li a .drop-icon {
     color: #1E4FA3 !important;
 }
 
+/* ══════════════ MASTER COMPREHENSIVE SECTION BREATHING SPACE ══════════════ */
+.py-section,
+.section-t-space,
+.section-b-space,
+.section-space,
+.routes-section,
+.about-section,
+.services-section,
+.testimonial-section,
+.video_section,
+.partner-section,
+.padding-cls,
+section:not(.breadcrumb-section):not(.hero-section):not(.header-top-bar) {
+    padding-top: 100px !important;
+    padding-bottom: 100px !important;
+}
+
+@media (max-width: 1199px) {
+    .py-section,
+    .section-t-space,
+    .section-b-space,
+    .section-space,
+    .routes-section,
+    .about-section,
+    .services-section,
+    .testimonial-section,
+    .video_section,
+    .partner-section,
+    .padding-cls,
+    section:not(.breadcrumb-section):not(.hero-section):not(.header-top-bar) {
+        padding-top: 80px !important;
+        padding-bottom: 80px !important;
+    }
+}
+
+@media (max-width: 767px) {
+    .py-section,
+    .section-t-space,
+    .section-b-space,
+    .section-space,
+    .routes-section,
+    .about-section,
+    .services-section,
+    .testimonial-section,
+    .video_section,
+    .partner-section,
+    .padding-cls,
+    section:not(.breadcrumb-section):not(.hero-section):not(.header-top-bar) {
+        padding-top: 60px !important;
+        padding-bottom: 60px !important;
+    }
+}
+
