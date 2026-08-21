@@ -7,7 +7,54 @@ document.addEventListener('DOMContentLoaded', () => {
     initKineticButtons();
     initScrollReveals();
     initMobileDrawer();
+    initWebpOptimizer();
 });
+
+/**
+ * Automatic WebP Image Optimization Engine
+ */
+function initWebpOptimizer() {
+    function processImages() {
+        var images = document.querySelectorAll('img');
+        images.forEach(function (img) {
+            var src = img.getAttribute('src');
+            if (!src) return;
+
+            // 1. Automatic WebP query parameter injection for Unsplash images
+            if (src.includes('images.unsplash.com')) {
+                if (!src.includes('fm=webp') && !src.includes('format=webp')) {
+                    if (src.includes('?')) {
+                        img.src = src + '&fm=webp&q=80';
+                    } else {
+                        img.src = src + '?auto=format&fit=crop&w=1200&q=80&fm=webp';
+                    }
+                }
+            }
+
+            // 2. Ensure high performance lazy loading & async decoding
+            if (!img.hasAttribute('loading') && !img.classList.contains('no-lazy')) {
+                img.setAttribute('loading', 'lazy');
+            }
+            if (!img.hasAttribute('decoding')) {
+                img.setAttribute('decoding', 'async');
+            }
+        });
+
+        // 3. Process background images for WebP support
+        var bgEditableElements = document.querySelectorAll('[data-bg-editable="true"], [style*="background"]');
+        bgEditableElements.forEach(function (el) {
+            var style = el.getAttribute('style');
+            if (style && style.includes('images.unsplash.com') && !style.includes('fm=webp')) {
+                var updatedStyle = style.replace(/images\.unsplash\.com([^"')\s]+)/g, function(match) {
+                    return match.includes('?') ? match + '&fm=webp&q=80' : match + '?auto=format&fit=crop&w=1600&q=80&fm=webp';
+                });
+                el.setAttribute('style', updatedStyle);
+            }
+        });
+    }
+
+    processImages();
+}
 
 /**
  * Mobile Drawer Menu Handler
