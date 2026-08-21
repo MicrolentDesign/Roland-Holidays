@@ -1038,6 +1038,128 @@ section:not(.breadcrumb-section):not(.hero-section):not(.header-top-bar) {
     z-index: 1;
 }
 
+/* ══════════════ MASTER SEGMENTED FILTER CONSOLE (DS v3.2) ══════════════ */
+.ds-filter-console {
+    background: #FFFFFF !important;
+    border: 1px solid #E2E8F0 !important;
+    box-shadow: 0 14px 40px rgba(15, 23, 42, 0.06), 0 2px 6px rgba(15, 23, 42, 0.03) !important;
+    border-radius: 24px !important;
+    padding: 16px 24px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 20px !important;
+    flex-wrap: wrap !important;
+}
+
+.ds-filter-group-wrap {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    flex-wrap: wrap !important;
+}
+
+.ds-filter-meta-label {
+    font-family: 'Ubuntu', sans-serif !important;
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.08em !important;
+    text-transform: uppercase !important;
+    color: #64748B !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    white-space: nowrap !important;
+}
+
+.ds-segmented-track {
+    background: #F1F5F9 !important;
+    border: 1px solid #E2E8F0 !important;
+    border-radius: 16px !important;
+    padding: 4px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 4px !important;
+    flex-wrap: wrap !important;
+}
+
+.region-pill, 
+.season-pill {
+    background: transparent !important;
+    color: #475569 !important;
+    font-family: 'Ubuntu', sans-serif !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    padding: 8px 16px !important;
+    border-radius: 12px !important;
+    border: 1px solid transparent !important;
+    cursor: pointer !important;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    white-space: nowrap !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.region-pill:hover, 
+.season-pill:hover {
+    background: #FFFFFF !important;
+    color: #0F172A !important;
+    border-color: #CBD5E1 !important;
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04) !important;
+}
+
+.region-pill.active, 
+.season-pill.active {
+    background: #1E4FA3 !important;
+    color: #FFFFFF !important;
+    font-weight: 700 !important;
+    border-color: #1E4FA3 !important;
+    box-shadow: 0 4px 14px rgba(30, 79, 163, 0.28) !important;
+}
+
+.season-pill.active[data-season="summer"] {
+    background: #D4AF37 !important;
+    color: #FFFFFF !important;
+    border-color: #D4AF37 !important;
+    box-shadow: 0 4px 14px rgba(212, 175, 55, 0.3) !important;
+}
+
+.season-pill.active[data-season="winter"] {
+    background: #0284C7 !important;
+    color: #FFFFFF !important;
+    border-color: #0284C7 !important;
+    box-shadow: 0 4px 14px rgba(2, 132, 199, 0.3) !important;
+}
+
+.pill-icon {
+    font-size: 12px !important;
+}
+
+.ds-filter-divider {
+    width: 1px !important;
+    height: 36px !important;
+    background-color: #E2E8F0 !important;
+    align-self: center !important;
+}
+
+@media (max-width: 991px) {
+    .ds-filter-console {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        padding: 16px !important;
+    }
+    .ds-filter-group-wrap {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        width: 100% !important;
+    }
+    .ds-segmented-track {
+        width: 100% !important;
+        justify-content: flex-start !important;
+    }
+}
+
 .ds-minimal-footer {
     background: #FFFFFF !important;
     color: #1E293B !important;
