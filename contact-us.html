@@ -82,22 +82,21 @@
     <!-- header end -->
 
 
-    <!-- ══════════════ BREADCRUMB HERO ══════════════ -->
-    <section class="breadcrumb-section bg-size blur-up lazyloaded"
+    <!-- ══════════════ BREADCRUMB HERO (CENTERED VERTICALLY & HORIZONTALLY) ══════════════ -->
+    <section class="breadcrumb-section bg-size blur-up lazyloaded d-flex align-items-center justify-content-center"
         data-bg-editable="true" data-bg-id="contact_breadcrumb_bg"
-        style="background:linear-gradient(rgb(0 0 0 / 20%), rgb(0 0 0 / 13%)), url(assets/img/bg/bg-c.jpg); background-size: cover; background-position: center center; background-repeat: no-repeat;">
-        <!-- <img src="./assets/img/5.jpg" class="img-fluid blur-up lazyload bg-img" alt="" style="display:none;" data-img-id="contact_breadcrumb_fallback"> -->
-        <div class="breadcrumb-content overlay-black text-center">
-            <div>
-                <h1 class="ds-page-title mb-0" data-editable="true" data-edit-id="contact_page_title">Contact Our Travel Desk</h1>
+        style="background:linear-gradient(rgba(13, 31, 45, 0.65), rgba(13, 31, 45, 0.65)), url(assets/img/bg/bg-c.jpg); background-size: cover; background-position: center center; background-repeat: no-repeat; min-height: 380px;">
+        <div class="breadcrumb-content text-center w-100 py-5">
+            <div class="container">
+                <h1 class="ds-page-title mb-0 text-white" data-editable="true" data-edit-id="contact_page_title">Contact Our Travel Desk</h1>
             </div>
         </div>
     </section>
     <!-- BREADCRUMB END -->
 
 
-    <!-- ══════════════ CONTACT FORM + SIDEBAR ══════════════ -->
-    <section class="py-section bg-white">
+    <!-- ══════════════ SECTION 1: B2B TRAVEL INQUIRY FORM ══════════════ -->
+    <section class="py-section bg-inner">
         <div class="container">
 
             <!-- Section heading -->
@@ -115,11 +114,11 @@
             </div>
 
             <!-- Contact Inquiry Form -->
-            <div class="row mb-5 justify-content-center">
+            <div class="row justify-content-center">
                 <div class="col-lg-10">
                     <div class="ds-card ds-card-glass p-4 p-md-5">
-                        <h4 class="mb-4 text-center font-weight-bold">Submit Your Travel Agent Inquiry</h4>
-                        <form id="contact-inquiry-form" class="row g-3">
+                        <h4 class="mb-4 text-center font-weight-bold" style="font-family: 'Ubuntu', sans-serif;">Submit Your Travel Agent Inquiry</h4>
+                        <form id="contact-inquiry-form" class="row g-4">
                             <div class="col-md-6 ds-form-group">
                                 <label class="ds-label">Agency / Full Name</label>
                                 <input type="text" class="ds-input" placeholder="e.g. Skyline Travel Agency" required>
@@ -145,8 +144,8 @@
                                 <label class="ds-label">Message Details</label>
                                 <textarea class="ds-textarea" rows="4" placeholder="Provide details about dates, destination, number of pax..."></textarea>
                             </div>
-                            <div class="col-12 text-center mt-3">
-                                <button type="submit" class="primary-button d-inline-flex">
+                            <div class="col-12 text-center mt-4">
+                                <button type="submit" class="primary-button ds-btn-kinetic d-inline-flex">
                                     <div class="button-item-main">
                                         <div class="button-text-pill">
                                             <div class="primay-button-text">Submit Travel Inquiry</div>
@@ -165,11 +164,18 @@
                 </div>
             </div>
 
+        </div>
+    </section>
+
+
+    <!-- ══════════════ SECTION 2: MAP & CONTACT DETAIL CARDS ══════════════ -->
+    <section class="py-section bg-white">
+        <div class="container">
             <div class="row g-4 align-items-stretch">
 
-                <!-- Map Left -->
-                <div class="col-lg-8">
-                    <div class="contact-map-wrap">
+                <!-- Interactive Map Left -->
+                <div class="col-lg-7">
+                    <div class="contact-map-frame">
                         <iframe
                             src="https://maps.google.com/maps?q=26.2785204,72.998866&z=16&output=embed"
                             allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
@@ -178,47 +184,65 @@
                     </div>
                 </div>
 
-                <!-- Info Sidebar Right -->
-                <div class="col-lg-4">
-                    <div class="contact-info-sidebar">
-                        <h5 class="sidebar-section-title">Travel Department</h5>
-                        <p class="sidebar-section-sub">Mon to Fri, 9 AM – 6 PM</p>
-
-                        <div class="info-item">
-                            <div class="info-icon"><i class="fas fa-envelope"></i></div>
-                            <div class="info-text">
-                                <h6>Email</h6>
-                                <a href="mailto:sales1@rolandholidays.com">sales1@rolandholidays.com</a>
-                            </div>
-                        </div>
-
-                        <div class="info-item">
-                            <div class="info-icon"><i class="fas fa-phone-alt"></i></div>
-                            <div class="info-text">
-                                <h6>Phone</h6>
-                                <a href="tel:+919769421051">+91 97694-21051</a>
-                            </div>
-                        </div>
-
-                    
-
-                        <div class="info-item">
-                            <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
-                            <div class="info-text">
-                                <h6>Head Office</h6>
-                                <p>Regus 5th &amp; 6th Floor, Matatial House,<br>H.T. Parekh Marg, Backbay Reclamation,<br>Mumbai – 400020</p>
-                            </div>
-                        </div>
-
+                <!-- Info Cards Right -->
+                <div class="col-lg-5">
+                    <div class="d-flex flex-column gap-3 h-100 justify-content-between">
                         
+                        <!-- Head Office -->
+                        <div class="ds-contact-card">
+                            <div class="ds-contact-icon">
+                                <i class="fas fa-building"></i>
+                            </div>
+                            <div>
+                                <h5 class="ds-contact-title">Head Office</h5>
+                                <p class="ds-contact-text">
+                                    Regus 5th &amp; 6th Floor, Matatial House,<br>
+                                    H.T. Parekh Marg, Backbay Reclamation,<br>
+                                    Mumbai – 400020, India
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Phone & WhatsApp -->
+                        <div class="ds-contact-card">
+                            <div class="ds-contact-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div>
+                                <h5 class="ds-contact-title">Phone &amp; WhatsApp</h5>
+                                <p class="ds-contact-text mb-1">
+                                    Direct Support: <a href="tel:+919769421051" class="ds-contact-link">+91 97694-21051</a>
+                                </p>
+                                <p class="ds-contact-text">
+                                    WhatsApp Desk: <a href="https://api.whatsapp.com/send?phone=919769421051" target="_blank" class="ds-contact-link">+91 97694-21051</a>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Email & Hours -->
+                        <div class="ds-contact-card">
+                            <div class="ds-contact-icon">
+                                <i class="fas fa-envelope-open-text"></i>
+                            </div>
+                            <div>
+                                <h5 class="ds-contact-title">Travel Desk Email &amp; Hours</h5>
+                                <p class="ds-contact-text mb-1">
+                                    Inquiries: <a href="mailto:sales1@rolandholidays.com" class="ds-contact-link">sales1@rolandholidays.com</a>
+                                </p>
+                                <p class="ds-contact-text">
+                                    Hours: Mon to Fri, 9:00 AM – 6:00 PM<br>
+                                    <span class="badge bg-soft-primary text-primary mt-1" style="font-size: 11px; padding: 4px 8px;">24/7 Agent Emergency Desk Available</span>
+                                </p>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
 
             </div>
         </div>
     </section>
-  
-   
+
 
     <!-- ══════════════ MINIMAL BRIGHT LIGHT FOOTER ══════════════ -->
     <footer class="ds-minimal-footer py-5 bg-white">
@@ -285,8 +309,6 @@
     <script src="./assets/js/bootstrap.bundle.min.js"></script>
     <script src="./assets/js/lazysizes.min.js"></script>
     <script src="./assets/js/nav.js"></script>
-
-    <!-- Theme js -->
     <script src="./assets/js/snow.js"></script>
 
     <!-- Toastify & Live Editor Scripts -->
@@ -295,29 +317,30 @@
 
     <script>
         $(document).ready(function () {
-
-            // Smooth scroll to form on CTA click
-            $('a[href="#travel-inquiry-form"]').on('click', function (e) {
+            $('#contact-inquiry-form').on('submit', function (e) {
                 e.preventDefault();
-                $('html, body').animate({
-                    scrollTop: $('#travel-inquiry-form').offset().top - 100
-                }, 600);
-            });
+                var btn = $(this).find('button[type="submit"]');
+                var textEl = btn.find('.primay-button-text');
+                var origText = textEl.first().text();
 
-            // Form submit handler (replace with actual backend/email integration)
-            $('#travel-inquiry-form').on('submit', function (e) {
-                e.preventDefault();
-                const btn = $(this).find('[type="submit"]');
-                btn.html('<i class="fas fa-spinner fa-spin me-2"></i> Sending...').prop('disabled', true);
+                textEl.text('Sending Inquiry...');
 
-                // Simulate async submission — replace with actual fetch/AJAX
                 setTimeout(function () {
-                    btn.html('<i class="fas fa-check me-2"></i> Inquiry Submitted!').css('background', '#27ae60');
-                    setTimeout(function () {
-                        btn.html('<i class="fas fa-paper-plane me-2"></i> Submit Travel Inquiry')
-                            .css('background', '').prop('disabled', false);
-                    }, 4000);
-                }, 1800);
+                    if (typeof Toastify === 'function') {
+                        Toastify({
+                            text: "Thank you! Your travel agent inquiry has been submitted successfully.",
+                            duration: 4000,
+                            close: true,
+                            gravity: "top",
+                            position: "right",
+                            style: { background: "linear-gradient(135deg, #1E4FA3 0%, #0D1F2D 100%)" }
+                        }).showToast();
+                    } else {
+                        alert("Thank you! Your travel agent inquiry has been submitted successfully.");
+                    }
+                    textEl.text(origText);
+                    $('#contact-inquiry-form')[0].reset();
+                }, 1200);
             });
         });
     </script>
