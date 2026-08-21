@@ -115,12 +115,13 @@
     <!-- ══════════════ DESTINATIONS GRID ══════════════ -->
     <section class="routes-section small-section bg-inner">
         <div class="container">
-            <!-- ══════════════ CLEAN SEGMENTED FILTER CONSOLE (DS v3.2) ══════════════ -->
+            <!-- ══════════════ CLEAN SEGMENTED FILTER CONSOLE WITH SMOOTH GLIDER ══════════════ -->
             <div class="ds-filter-console mb-5">
                 <!-- Row 1: Region Hub -->
                 <div class="ds-filter-row">
                     <span class="ds-filter-label">Region Hub</span>
-                    <div class="ds-segmented-track">
+                    <div class="ds-segmented-track" id="regionTrack">
+                        <div class="ds-glider" id="regionGlider"></div>
                         <button class="region-pill active" data-region="all">All Portfolio</button>
                         <button class="region-pill" data-region="india">India Inbound</button>
                         <button class="region-pill" data-region="southeast-asia">Southeast Asia</button>
@@ -134,7 +135,8 @@
                 <!-- Row 2: Season -->
                 <div class="ds-filter-row">
                     <span class="ds-filter-label">Season</span>
-                    <div class="ds-segmented-track">
+                    <div class="ds-segmented-track" id="seasonTrack">
+                        <div class="ds-glider" id="seasonGlider"></div>
                         <button class="season-pill active" data-season="all">All Seasons</button>
                         <button class="season-pill" data-season="summer">Summer Peak</button>
                         <button class="season-pill" data-season="winter">Winter Season</button>
@@ -613,11 +615,33 @@
     <script src="./assets/js/live-editor.js"></script>
 
     <script>
+    // ── Smooth Sliding Glider Engine ──
+    function updateGliders() {
+        var activeRegionBtn = document.querySelector('#regionTrack .region-pill.active');
+        var regionTrack = document.getElementById('regionTrack');
+        var regionGlider = document.getElementById('regionGlider');
+
+        if (activeRegionBtn && regionTrack && regionGlider) {
+            regionGlider.style.width = activeRegionBtn.offsetWidth + 'px';
+            regionGlider.style.left = activeRegionBtn.offsetLeft + 'px';
+        }
+
+        var activeSeasonBtn = document.querySelector('#seasonTrack .season-pill.active');
+        var seasonTrack = document.getElementById('seasonTrack');
+        var seasonGlider = document.getElementById('seasonGlider');
+
+        if (activeSeasonBtn && seasonTrack && seasonGlider) {
+            seasonGlider.style.width = activeSeasonBtn.offsetWidth + 'px';
+            seasonGlider.style.left = activeSeasonBtn.offsetLeft + 'px';
+        }
+    }
+
     // ── Region & Season Filter logic ──
     document.querySelectorAll('.region-pill').forEach(function (btn) {
         btn.addEventListener('click', function () {
             document.querySelectorAll('.region-pill').forEach(function (b) { b.classList.remove('active'); });
             this.classList.add('active');
+            updateGliders();
             filterCards();
         });
     });
@@ -626,6 +650,7 @@
         btn.addEventListener('click', function () {
             document.querySelectorAll('.season-pill').forEach(function (b) { b.classList.remove('active'); });
             this.classList.add('active');
+            updateGliders();
             filterCards();
         });
     });
@@ -655,10 +680,18 @@
             var seasBtn = document.querySelector('.season-pill[data-season="' + season + '"]');
             if (seasBtn) { seasBtn.classList.add('active'); }
         }
+        updateGliders();
         filterCards();
     })();
 
+    window.addEventListener('load', updateGliders);
+    window.addEventListener('resize', updateGliders);
+    document.addEventListener('DOMContentLoaded', updateGliders);
+    setTimeout(updateGliders, 100);
+    setTimeout(updateGliders, 300);
+
     function filterCards() {
+        updateGliders();
         var regionBtn = document.querySelector('.region-pill.active');
         var seasonBtn = document.querySelector('.season-pill.active');
         var region = regionBtn ? (regionBtn.dataset.region || 'all') : 'all';
