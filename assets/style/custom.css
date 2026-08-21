@@ -2318,15 +2318,12 @@ header.tour-header.sticky { position: fixed; top: 0; background: #FFFFFF !import
 
 /* Mobile nav — higher specificity to beat desktop color: #fff !important */
 @media (max-width: 1199px) {
-    header.tour-header .main-navbar .nav-menu > li > a,
-    header.tour-header .main-navbar .nav-menu > li > a:hover,
-    header.tour-header .main-navbar .nav-menu > li > a.active { color: #333 !important; }
-    header.tour-header .main-navbar .nav-menu > li > a::after { display: none !important; }
-    .toggle-nav i { color: #fff !important; }
+    .toggle-nav i,
+    .toggle-nav .sidebar-bar { color: #0F172A !important; }
 
     /* Submenu — remove card styling on mobile */
     header.tour-header .main-navbar .nav-menu > li .nav-submenu { box-shadow: none !important; border-radius: 0 !important; background: transparent !important; overflow: visible !important; border: none !important; }
-    header.tour-header .main-navbar .nav-menu > li .nav-submenu li a { color: #333 !important; }
+    header.tour-header .main-navbar .nav-menu > li .nav-submenu li a { color: #FFFFFF !important; }
 }
 
 /* ── Trending Dropdown ── */
