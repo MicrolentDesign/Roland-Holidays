@@ -57,7 +57,7 @@ function initWebpOptimizer() {
 }
 
 /**
- * Mobile Drawer Menu Handler
+ * Mobile Drawer Menu Handler – Ultra-Luxury B2B Travel Portal
  */
 function initMobileDrawer() {
     const toggleBtns = document.querySelectorAll('.toggle-nav, .sidebar-bar');
@@ -67,13 +67,72 @@ function initMobileDrawer() {
 
     if (!mainNavbar) return;
 
-    // Create close button inside mobile navbar if missing
-    if (!mainNavbar.querySelector('.mobile-close-btn')) {
-        const closeBtn = document.createElement('div');
-        closeBtn.className = 'mobile-close-btn';
-        closeBtn.innerHTML = '<i class="fas fa-times"></i>';
-        mainNavbar.prepend(closeBtn);
-        closeBtn.addEventListener('click', closeDrawer);
+    // 1. Inject Luxury Drawer Header if missing
+    if (!mainNavbar.querySelector('.ds-drawer-header')) {
+        const drawerHeader = document.createElement('div');
+        drawerHeader.className = 'ds-drawer-header';
+        drawerHeader.innerHTML = `
+            <a href="index.html">
+                <img src="./assets/img/logo.png" alt="Roland Holidays" class="ds-drawer-logo">
+            </a>
+            <button type="button" class="mobile-close-btn" aria-label="Close Menu">
+                <i class="fas fa-times"></i>
+            </button>
+        `;
+        mainNavbar.prepend(drawerHeader);
+        const closeBtn = drawerHeader.querySelector('.mobile-close-btn');
+        if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
+    }
+
+    // 2. Enhance Navigation Links with Luxury Icons & Chevrons
+    const iconMap = {
+        'home': 'fas fa-home',
+        'about': 'fas fa-compass',
+        'destination': 'fas fa-globe-asia',
+        'luxury': 'fas fa-umbrella-beach',
+        'testimonial': 'fas fa-quote-right',
+        'contact': 'fas fa-paper-plane'
+    };
+
+    if (navMenu) {
+        navMenu.querySelectorAll('li > a').forEach(link => {
+            if (!link.querySelector('.nav-link-left')) {
+                const text = link.textContent.trim();
+                const lower = text.toLowerCase();
+                let iconClass = 'fas fa-chevron-right';
+                for (const [key, icon] of Object.entries(iconMap)) {
+                    if (lower.includes(key)) {
+                        iconClass = icon;
+                        break;
+                    }
+                }
+                link.innerHTML = `
+                    <div class="nav-link-left">
+                        <span class="nav-link-icon"><i class="${iconClass}"></i></span>
+                        <span class="nav-link-text">${text}</span>
+                    </div>
+                    <i class="fas fa-chevron-right nav-arrow"></i>
+                `;
+            }
+        });
+    }
+
+    // 3. Inject B2B Action Footer if missing
+    if (!mainNavbar.querySelector('.ds-drawer-footer')) {
+        const drawerFooter = document.createElement('div');
+        drawerFooter.className = 'ds-drawer-footer';
+        drawerFooter.innerHTML = `
+            <a href="tel:+919769421051" class="ds-drawer-btn-call">
+                <i class="fas fa-phone-alt"></i> Call Travel Desk
+            </a>
+            <a href="https://api.whatsapp.com/send?phone=919769421051" target="_blank" class="ds-drawer-btn-wa">
+                <i class="fab fa-whatsapp"></i> WhatsApp Support
+            </a>
+            <p class="ds-drawer-badge">
+                <i class="fas fa-shield-alt text-warning me-1"></i> Mumbai Travel Desk | 24/7 B2B
+            </p>
+        `;
+        mainNavbar.appendChild(drawerFooter);
     }
 
     function openDrawer(e) {
