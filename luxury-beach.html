@@ -89,115 +89,224 @@
 
 
     <!-- ══════════════ BEACH DESTINATIONS GRID ══════════════ -->
-    <section class="routes-section small-section bg-inner">
+    <section class="py-section bg-slate-50">
         <div class="container">
-                   <div class="filter-bar filter-bar-dark mb-5">
-                    <div class="filter-group">
-                        <span class="filter-label-dark"><i class="fas fa-globe-asia me-1"></i> Region</span>
-                        <button class="region-pill active" data-region="all">All</button>
-                        <button class="region-pill" data-region="east-asia">East Asia</button>
-                        <button class="region-pill" data-region="south-asia">South Asia</button>
-                        <button class="region-pill" data-region="southeast-asia">Southeast Asia</button>
-                        <button class="region-pill" data-region="west-asia">West Asia</button>
-                    </div>
-                    <div class="filter-group mt-2">
-                        <span class="filter-label-dark"><i class="fas fa-sun me-1"></i> Season</span>
-                        <button class="season-pill active" data-season="all">All</button>
-                        <button class="season-pill" data-season="summer">Summer</button>
-                        <button class="season-pill" data-season="winter">Winter</button>
-                    </div>
-                </div>
+            <div class="text-center mb-5">
+                <span class="section-tag mb-1">Exclusive Collection</span>
+                <h2 class="ds-heading-4xl mb-2">Curated <span class="brush-underline-3a">Luxury Beach Destinations</span></h2>
+                <p class="text-muted max-w-xl mx-auto">Private overwater villas, island sanctuaries, and beachfront resorts paired with exclusive agent rates.</p>
+            </div>
 
             <div class="row g-4" id="destGrid">
 
-                <!-- ══ EAST ASIA ══ -->
-                <div class="col-xl-4 col-md-6 dest-card-wrap" data-season="summer" data-region="east-asia"
-                    data-nnc="gold">
-                    <div class="routes-box">
-                        <div class="routes-img">
-                            <img src="./assets/img/d2.jpg" alt="China" class="img-fluid blur-up lazyloaded">
-
-
+                <!-- 1. Maldives -->
+                <div class="col-xl-4 col-md-6 dest-card-wrap">
+                    <div class="routes-box bg-white rounded-4 overflow-hidden border shadow-sm h-100 d-flex flex-column">
+                        <div class="routes-img position-relative" style="height: 220px;">
+                            <img src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=600&q=80" alt="Maldives Luxury Resorts" class="img-fluid w-100 h-100 object-fit-cover">
+                            <span class="position-absolute top-3 end-3 bg-white px-3 py-1 rounded-pill text-primary font-weight-bold shadow-sm" style="font-size: 12px;"><i class="fas fa-star text-warning me-1"></i> 5★ Ultra Luxury</span>
                         </div>
-                        <div class="routes-content">
-                            <div class="top-bar">
-                                <h5>China</h5>
-                                <h6><i class="fas fa-map-marker-alt me-1 icon-blue"></i> East Asia</h6>
+                        <div class="routes-content p-4 d-flex flex-column flex-grow-1 justify-content-between">
+                            <div>
+                                <div class="top-bar mb-3">
+                                    <h5 class="font-weight-bold text-dark mb-1" style="font-size: 20px;">Maldives Private Atolls</h5>
+                                    <h6 class="text-primary font-weight-bold mb-0" style="font-size: 13px;"><i class="fas fa-map-marker-alt me-1"></i> Indian Ocean</h6>
+                                </div>
+                                <ul class="selling-points list-unstyled mb-4 text-secondary text-small" style="line-height: 1.8;">
+                                    <li><i class="fas fa-check text-primary me-2"></i> Private Overwater Villas &amp; Sunset Cruises</li>
+                                    <li><i class="fas fa-check text-primary me-2"></i> Seaplane &amp; Speedboat Island Transfers</li>
+                                    <li><i class="fas fa-check text-primary me-2"></i> All-Inclusive Dining &amp; Coral Reef Snorkeling</li>
+                                </ul>
                             </div>
-
-                            <ul class="selling-points">
-                                <li>Great Wall tours</li>
-                                <li>Cultural city circuits</li>
-                                <li>Group &amp; FIT packages</li>
-                            </ul>
-
-                            <a href="destination-detail.html" class="btn btn-rounded color1">View Details</a>
+                            <a href="destination-detail.html?country=maldives" class="primary-button ds-btn-kinetic w-100">
+                                <div class="button-item-main">
+                                    <div class="button-text-pill">
+                                        <div class="primay-button-text">Explore Beach Itinerary</div>
+                                        <div class="primay-button-text">Explore Beach Itinerary</div>
+                                    </div>
+                                    <div class="button-arrow-pill">
+                                        <div class="arrow-wrapper"><i class="fas fa-arrow-right button-arrow"></i></div>
+                                    </div>
+                                </div>
+                            </a>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-xl-4 col-md-6 dest-card-wrap" data-season="summer" data-region="east-asia"
-                    data-nnc="platinum">
-                    <div class="routes-box">
-                        <div class="routes-img">
-                            <img src="./assets/img/d1.jpg" alt="Japan" class="img-fluid blur-up lazyloaded">
-
-
+                <!-- 2. Mauritius -->
+                <div class="col-xl-4 col-md-6 dest-card-wrap">
+                    <div class="routes-box bg-white rounded-4 overflow-hidden border shadow-sm h-100 d-flex flex-column">
+                        <div class="routes-img position-relative" style="height: 220px;">
+                            <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=600&q=80" alt="Mauritius Island Resorts" class="img-fluid w-100 h-100 object-fit-cover">
+                            <span class="position-absolute top-3 end-3 bg-white px-3 py-1 rounded-pill text-primary font-weight-bold shadow-sm" style="font-size: 12px;"><i class="fas fa-gem text-warning me-1"></i> Island Paradise</span>
                         </div>
-                        <div class="routes-content">
-                            <div class="top-bar">
-                                <h5>Japan</h5>
-                                <h6><i class="fas fa-map-marker-alt me-1 icon-blue"></i> East Asia</h6>
+                        <div class="routes-content p-4 d-flex flex-column flex-grow-1 justify-content-between">
+                            <div>
+                                <div class="top-bar mb-3">
+                                    <h5 class="font-weight-bold text-dark mb-1" style="font-size: 20px;">Mauritius Beach &amp; Lagoons</h5>
+                                    <h6 class="text-primary font-weight-bold mb-0" style="font-size: 13px;"><i class="fas fa-map-marker-alt me-1"></i> Southern Africa</h6>
+                                </div>
+                                <ul class="selling-points list-unstyled mb-4 text-secondary text-small" style="line-height: 1.8;">
+                                    <li><i class="fas fa-check text-primary me-2"></i> Luxury Beach Resorts &amp; Catamaran Cruises</li>
+                                    <li><i class="fas fa-check text-primary me-2"></i> Chamarel Seven Colored Earth Excursions</li>
+                                    <li><i class="fas fa-check text-primary me-2"></i> Le Morne Brabant &amp; Water Sports Desks</li>
+                                </ul>
                             </div>
-
-                            <ul class="selling-points">
-                                <li>Cherry blossom season tours</li>
-                                <li>Tokyo &amp; Kyoto combos</li>
-                                <li>Luxury ryokan stays</li>
-                            </ul>
-
-                            <a href="destination-detail.html" class="btn btn-rounded color1">View Details</a>
+                            <a href="destination-detail.html?country=mauritius" class="primary-button ds-btn-kinetic w-100">
+                                <div class="button-item-main">
+                                    <div class="button-text-pill">
+                                        <div class="primay-button-text">Explore Beach Itinerary</div>
+                                        <div class="primay-button-text">Explore Beach Itinerary</div>
+                                    </div>
+                                    <div class="button-arrow-pill">
+                                        <div class="arrow-wrapper"><i class="fas fa-arrow-right button-arrow"></i></div>
+                                    </div>
+                                </div>
+                            </a>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-xl-4 col-md-6 dest-card-wrap" data-season="summer" data-region="east-asia"
-                    data-nnc="gold">
-                    <div class="routes-box">
-                        <div class="routes-img">
-                            <img src="https://img.magnific.com/free-photo/haedong-yonggungsa-temple-haeundae-sea-busan-buddhist-temple-busan-south-korea_335224-436.jpg?t=st=1780999439~exp=1781003039~hmac=8dd9fb41a1b00fa2a9d744d4786aa421b14177354122e153df7698906ef3e09e&w=1480" alt="North Korea" class="img-fluid blur-up lazyloaded">
-
-
+                <!-- 3. Seychelles -->
+                <div class="col-xl-4 col-md-6 dest-card-wrap">
+                    <div class="routes-box bg-white rounded-4 overflow-hidden border shadow-sm h-100 d-flex flex-column">
+                        <div class="routes-img position-relative" style="height: 220px;">
+                            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80" alt="Seychelles Islands" class="img-fluid w-100 h-100 object-fit-cover">
+                            <span class="position-absolute top-3 end-3 bg-white px-3 py-1 rounded-pill text-primary font-weight-bold shadow-sm" style="font-size: 12px;"><i class="fas fa-crown text-warning me-1"></i> Private Sanctuary</span>
                         </div>
-                        <div class="routes-content">
-                            <div class="top-bar">
-                                <h5>North Korea</h5>
-                                <h6><i class="fas fa-map-marker-alt me-1 icon-blue"></i> East Asia</h6>
+                        <div class="routes-content p-4 d-flex flex-column flex-grow-1 justify-content-between">
+                            <div>
+                                <div class="top-bar mb-3">
+                                    <h5 class="font-weight-bold text-dark mb-1" style="font-size: 20px;">Seychelles Island Sanctuary</h5>
+                                    <h6 class="text-primary font-weight-bold mb-0" style="font-size: 13px;"><i class="fas fa-map-marker-alt me-1"></i> Indian Ocean</h6>
+                                </div>
+                                <ul class="selling-points list-unstyled mb-4 text-secondary text-small" style="line-height: 1.8;">
+                                    <li><i class="fas fa-check text-primary me-2"></i> Anse Source d'Argent &amp; La Digue Beaches</li>
+                                    <li><i class="fas fa-check text-primary me-2"></i> Praslin Vallee de Mai Giant Palm Forests</li>
+                                    <li><i class="fas fa-check text-primary me-2"></i> Exclusive Island Hopping &amp; Private Villas</li>
+                                </ul>
                             </div>
-
-                            <ul class="selling-points">
-                                <li>Exclusive guided tours</li>
-                                <li>Cultural heritage visits</li>
-                                <li>Specialist group packages</li>
-                            </ul>
-
-                            <a href="destination-detail.html" class="btn btn-rounded color1">View Details</a>
+                            <a href="destination-detail.html?country=seychelles" class="primary-button ds-btn-kinetic w-100">
+                                <div class="button-item-main">
+                                    <div class="button-text-pill">
+                                        <div class="primay-button-text">Explore Beach Itinerary</div>
+                                        <div class="primay-button-text">Explore Beach Itinerary</div>
+                                    </div>
+                                    <div class="button-arrow-pill">
+                                        <div class="arrow-wrapper"><i class="fas fa-arrow-right button-arrow"></i></div>
+                                    </div>
+                                </div>
+                            </a>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-xl-4 col-md-6 dest-card-wrap" data-season="summer" data-region="east-asia"
-                    data-nnc="gold">
-                    <div class="routes-box">
-                        <div class="routes-img">
-                            <img src="https://img.magnific.com/free-photo/gyeongbokgung-palace-with-cherry-blossom-spring-south-korea_335224-383.jpg?t=st=1781000326~exp=1781003926~hmac=d2c794c186ee1b0e6d64bd6179244fe44a047e4c7e539b7d933661eeab120850&w=1480" alt="South Korea" class="img-fluid blur-up lazyloaded">
-
-
+                <!-- 4. Bali (Indonesia DMC) -->
+                <div class="col-xl-4 col-md-6 dest-card-wrap">
+                    <div class="routes-box bg-white rounded-4 overflow-hidden border shadow-sm h-100 d-flex flex-column">
+                        <div class="routes-img position-relative" style="height: 220px;">
+                            <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=600&q=80" alt="Bali DMC Luxury Resorts" class="img-fluid w-100 h-100 object-fit-cover">
+                            <span class="position-absolute top-3 end-3 bg-white px-3 py-1 rounded-pill text-primary font-weight-bold shadow-sm" style="font-size: 12px;"><i class="fas fa-building text-primary me-1"></i> Roland Bali DMC</span>
                         </div>
-                        <div class="routes-content">
-                            <div class="top-bar">
-                                <h5>South Korea</h5>
-                                <h6><i class="fas fa-map-marker-alt me-1 icon-blue"></i> East Asia</h6>
+                        <div class="routes-content p-4 d-flex flex-column flex-grow-1 justify-content-between">
+                            <div>
+                                <div class="top-bar mb-3">
+                                    <h5 class="font-weight-bold text-dark mb-1" style="font-size: 20px;">Bali &amp; Nusa Penida Resorts</h5>
+                                    <h6 class="text-primary font-weight-bold mb-0" style="font-size: 13px;"><i class="fas fa-map-marker-alt me-1"></i> Southeast Asia Hub</h6>
+                                </div>
+                                <ul class="selling-points list-unstyled mb-4 text-secondary text-small" style="line-height: 1.8;">
+                                    <li><i class="fas fa-check text-primary me-2"></i> Official Roland Holidays Bali Office &amp; Ground Fleet</li>
+                                    <li><i class="fas fa-check text-primary me-2"></i> Seminyak &amp; Nusa Dua Luxury Pool Villas</li>
+                                    <li><i class="fas fa-check text-primary me-2"></i> Tanah Lot Sunset &amp; Uluwatu Temple Dinners</li>
+                                </ul>
+                            </div>
+                            <a href="destination-detail.html?country=indonesia" class="primary-button ds-btn-kinetic w-100">
+                                <div class="button-item-main">
+                                    <div class="button-text-pill">
+                                        <div class="primay-button-text">Explore Beach Itinerary</div>
+                                        <div class="primay-button-text">Explore Beach Itinerary</div>
+                                    </div>
+                                    <div class="button-arrow-pill">
+                                        <div class="arrow-wrapper"><i class="fas fa-arrow-right button-arrow"></i></div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. Phuket & Krabi (Thailand) -->
+                <div class="col-xl-4 col-md-6 dest-card-wrap">
+                    <div class="routes-box bg-white rounded-4 overflow-hidden border shadow-sm h-100 d-flex flex-column">
+                        <div class="routes-img position-relative" style="height: 220px;">
+                            <img src="https://images.unsplash.com/photo-1508009603885-50cf7c579365?auto=format&fit=crop&w=600&q=80" alt="Phuket Beach Resorts" class="img-fluid w-100 h-100 object-fit-cover">
+                            <span class="position-absolute top-3 end-3 bg-white px-3 py-1 rounded-pill text-primary font-weight-bold shadow-sm" style="font-size: 12px;"><i class="fas fa-sun text-warning me-1"></i> Tropical Haven</span>
+                        </div>
+                        <div class="routes-content p-4 d-flex flex-column flex-grow-1 justify-content-between">
+                            <div>
+                                <div class="top-bar mb-3">
+                                    <h5 class="font-weight-bold text-dark mb-1" style="font-size: 20px;">Phuket &amp; Krabi Islands</h5>
+                                    <h6 class="text-primary font-weight-bold mb-0" style="font-size: 13px;"><i class="fas fa-map-marker-alt me-1"></i> Thailand Coast</h6>
+                                </div>
+                                <ul class="selling-points list-unstyled mb-4 text-secondary text-small" style="line-height: 1.8;">
+                                    <li><i class="fas fa-check text-primary me-2"></i> Phi Phi &amp; James Bond Speedboat Islands</li>
+                                    <li><i class="fas fa-check text-primary me-2"></i> Patong, Kata &amp; Railay Beachfront Resorts</li>
+                                    <li><i class="fas fa-check text-primary me-2"></i> Carnival Magic &amp; Luxury Yacht Charters</li>
+                                </ul>
+                            </div>
+                            <a href="destination-detail.html?country=thailand" class="primary-button ds-btn-kinetic w-100">
+                                <div class="button-item-main">
+                                    <div class="button-text-pill">
+                                        <div class="primay-button-text">Explore Beach Itinerary</div>
+                                        <div class="primay-button-text">Explore Beach Itinerary</div>
+                                    </div>
+                                    <div class="button-arrow-pill">
+                                        <div class="arrow-wrapper"><i class="fas fa-arrow-right button-arrow"></i></div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 6. Goa & Kovalam (India) -->
+                <div class="col-xl-4 col-md-6 dest-card-wrap">
+                    <div class="routes-box bg-white rounded-4 overflow-hidden border shadow-sm h-100 d-flex flex-column">
+                        <div class="routes-img position-relative" style="height: 220px;">
+                            <img src="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=600&q=80" alt="Goa Luxury Beach Resorts" class="img-fluid w-100 h-100 object-fit-cover">
+                            <span class="position-absolute top-3 end-3 bg-white px-3 py-1 rounded-pill text-primary font-weight-bold shadow-sm" style="font-size: 12px;"><i class="fas fa-cocktail text-primary me-1"></i> Heritage Coast</span>
+                        </div>
+                        <div class="routes-content p-4 d-flex flex-column flex-grow-1 justify-content-between">
+                            <div>
+                                <div class="top-bar mb-3">
+                                    <h5 class="font-weight-bold text-dark mb-1" style="font-size: 20px;">Goa &amp; Kerala Kovalam</h5>
+                                    <h6 class="text-primary font-weight-bold mb-0" style="font-size: 13px;"><i class="fas fa-map-marker-alt me-1"></i> India Inbound Coast</h6>
+                                </div>
+                                <ul class="selling-points list-unstyled mb-4 text-secondary text-small" style="line-height: 1.8;">
+                                    <li><i class="fas fa-check text-primary me-2"></i> Private Beach Resorts &amp; Dudhsagar Waterfalls</li>
+                                    <li><i class="fas fa-check text-primary me-2"></i> Mandovi Sunset Cruises &amp; Heritage Forts</li>
+                                    <li><i class="fas fa-check text-primary me-2"></i> Kovalam Ayurveda Wellness &amp; Cliff Resorts</li>
+                                </ul>
+                            </div>
+                            <a href="destination-detail.html?state=goa" class="primary-button ds-btn-kinetic w-100">
+                                <div class="button-item-main">
+                                    <div class="button-text-pill">
+                                        <div class="primay-button-text">Explore Beach Itinerary</div>
+                                        <div class="primay-button-text">Explore Beach Itinerary</div>
+                                    </div>
+                                    <div class="button-arrow-pill">
+                                        <div class="arrow-wrapper"><i class="fas fa-arrow-right button-arrow"></i></div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- BEACH DESTINATIONS GRID END -->
                             </div>
 
                             <ul class="selling-points">
