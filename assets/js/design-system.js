@@ -60,11 +60,12 @@ function initWebpOptimizer() {
  * Mobile Drawer Menu Handler
  */
 function initMobileDrawer() {
-    const toggleBtn = document.querySelector('.toggle-nav');
+    const toggleBtns = document.querySelectorAll('.toggle-nav, .sidebar-bar');
     const mainNavbar = document.querySelector('.main-navbar');
+    const navMenu = document.querySelector('.nav-menu');
     const overlay = document.querySelector('.menu-overlay');
 
-    if (!toggleBtn || !mainNavbar) return;
+    if (!mainNavbar) return;
 
     // Create close button inside mobile navbar if missing
     if (!mainNavbar.querySelector('.mobile-close-btn')) {
@@ -72,30 +73,37 @@ function initMobileDrawer() {
         closeBtn.className = 'mobile-close-btn';
         closeBtn.innerHTML = '<i class="fas fa-times"></i>';
         mainNavbar.prepend(closeBtn);
-
         closeBtn.addEventListener('click', closeDrawer);
     }
 
-    function openDrawer() {
+    function openDrawer(e) {
+        if (e) e.stopPropagation();
         mainNavbar.classList.add('show');
+        if (navMenu) navMenu.classList.add('open');
         if (overlay) overlay.classList.add('show');
         document.body.style.overflow = 'hidden';
     }
 
-    function closeDrawer() {
+    function closeDrawer(e) {
+        if (e) e.stopPropagation();
         mainNavbar.classList.remove('show');
+        if (navMenu) navMenu.classList.remove('open');
         if (overlay) overlay.classList.remove('show');
         document.body.style.overflow = '';
     }
 
-    toggleBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        openDrawer();
+    toggleBtns.forEach(btn => {
+        btn.addEventListener('click', openDrawer);
     });
 
     if (overlay) {
         overlay.addEventListener('click', closeDrawer);
     }
+
+    // Close on ESC key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeDrawer();
+    });
 }
 
 /**
