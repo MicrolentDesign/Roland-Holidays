@@ -874,12 +874,17 @@ width: 20px; height: 20px; cursor: pointer; }
 .tab-nav-inner::-webkit-scrollbar { display: none; }
 .tab-nav-link {
     display: inline-block; padding: 16px 20px; font-size: 13px; font-weight: 700;
-    color: #555; border-bottom: 3px solid transparent; text-decoration: none;
-    transition: color 0.2s ease, border-bottom-color 0.2s ease;
+    color: #475569; border-bottom: 4px solid transparent; text-decoration: none;
+    transition: all 0.3s ease;
     white-space: nowrap; letter-spacing: .04em;
 }
-.tab-nav-link:hover,
-.tab-nav-link.active { color: #7fb4d4; border-bottom-color: #7fb4d4; }
+.tab-nav-link:hover {
+    color: #1E4FA3;
+}
+.tab-nav-link.active { 
+    color: #1E4FA3; 
+    border-bottom-color: #1E4FA3; 
+}
 
 .stat-strip { display: flex; flex-wrap: wrap; gap: 16px; margin: 24px 0 32px; }
 .stat-strip .stat-box {
@@ -1036,7 +1041,7 @@ width: 20px; height: 20px; cursor: pointer; }
 
     /* Header */
     .brand-logo img { max-height: 50px; }
-    .tour-header .menu { padding: 10px 0; }
+    .tour-header .menu { padding: 0; }
 
     /* Luxury intro strip: 2-column wrap */
     .luxury-intro-strip .inner { flex-wrap: wrap; }
@@ -2828,33 +2833,39 @@ section:not(.breadcrumb-section):not(.hero-section):not(.header-top-bar) {
     .main-navbar,
     header .main-navbar .nav-menu {
         background: #FFFFFF !important;
-        border-left: 1px solid #E2E8F0 !important;
-        box-shadow: -10px 0 40px rgba(15, 23, 42, 0.15) !important;
+        border-left: none !important;
+        box-shadow: -4px 0 24px rgba(0, 0, 0, 0.08) !important;
+        padding: 20px 15px !important;
+    }
+
+    .main-navbar .nav-menu li {
+        margin-bottom: 8px !important;
     }
 
     .main-navbar .nav-menu li a,
     header .main-navbar .nav-menu > li > a {
-        color: #1E293B !important;
-        font-size: 15px !important;
-        font-weight: 600 !important;
-        padding: 12px 14px !important;
-        border-radius: 10px !important;
+        color: #334155 !important;
+        font-size: 16px !important;
+        font-weight: 500 !important;
+        padding: 14px 18px !important;
+        border-radius: 12px !important;
         background: transparent !important;
         display: flex !important;
         align-items: center !important;
+        transition: all 0.2s ease !important;
     }
 
     .main-navbar .nav-menu li a:hover {
-        background: #F8FAFC !important;
-        color: #1E4FA3 !important;
+        background: #F1F5F9 !important;
+        color: #0F172A !important;
     }
 
     .main-navbar .nav-menu li a.active,
     header .main-navbar .nav-menu > li > a.active {
-        background: rgba(30, 79, 163, 0.08) !important;
-        color: #1E4FA3 !important;
-        font-weight: 700 !important;
-        border-left: 3px solid #1E4FA3 !important;
+        background: #EFF6FF !important;
+        color: #2563EB !important;
+        font-weight: 600 !important;
+        border-left: none !important;
     }
 }
 
@@ -2896,3 +2907,117 @@ footer.ds-minimal-footer .ds-footer-links li a:hover,
     transform: translateX(4px) !important;
 }
 
+/* Offer Card Overlay Styles */
+.inset-0 {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.bg-dark-overlay {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0) 60%);
+    pointer-events: none; /* ensures hover state passes through */
+}
+
+.ds-offer-card img {
+    transition: transform 0.4s ease;
+}
+
+.ds-offer-card:hover img {
+    transform: scale(1.06);
+}
+
+/* Premium Service Cards (Comprehensive Travel Services) */
+.ds-service-card {
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+    border: none !important;
+    border-bottom: 3px solid transparent !important;
+    background: #FFFFFF !important;
+}
+
+.ds-service-card:hover {
+    transform: translateY(-8px) !important;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15) !important;
+    border-bottom: 3px solid #D4AF37 !important;
+}
+
+.ds-service-card .overflow-hidden img {
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+}
+
+.ds-service-card:hover .overflow-hidden img {
+    transform: scale(1.08) !important;
+}
+
+/* Premium Icon Container */
+.ds-service-card .rounded-circle {
+    background: linear-gradient(135deg, #1E293B 0%, #0F172A 100%) !important;
+    border: 2px solid #FFFFFF !important;
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.25) !important;
+    transition: transform 0.3s ease !important;
+}
+
+.ds-service-card:hover .rounded-circle {
+    transform: scale(1.1) rotate(5deg) !important;
+}
+
+.ds-service-card .rounded-circle i {
+    color: #D4AF37 !important; /* Gold Accent */
+}
+
+/* Typography Enhancements */
+.ds-service-card h6 {
+    color: #0F172A !important;
+    font-size: 1.15rem !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.01em !important;
+    margin-bottom: 12px !important;
+    transition: color 0.3s ease !important;
+}
+
+.ds-service-card:hover h6 {
+    color: #D4AF37 !important; /* Gold text on hover */
+}
+
+.ds-service-card p {
+    color: #475569 !important;
+    font-size: 0.95rem !important;
+    line-height: 1.6 !important;
+}
+
+/* Pagination Styles */
+.ds-pagination {
+    margin-top: 20px;
+}
+.ds-pagination .page-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    background: #FFFFFF;
+    color: #475569;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    border: 1px solid #E2E8F0;
+    transition: all 0.25s ease;
+}
+.ds-pagination .page-btn:hover {
+    background: #F8FAFC;
+    color: #0F172A;
+    border-color: #CBD5E1;
+}
+.ds-pagination .page-btn.active {
+    background: #D4AF37;
+    color: #FFFFFF;
+    border-color: #D4AF37;
+    box-shadow: 0 4px 10px rgba(212, 175, 55, 0.3);
+}
+.ds-pagination .page-dots {
+    color: #94A3B8;
+    font-weight: 600;
+    padding: 0 4px;
+}
