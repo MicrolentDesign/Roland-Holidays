@@ -39,16 +39,16 @@ function initPageLoader() {
         loader.classList.add('loaded');
         setTimeout(() => {
             if (loader && loader.parentNode) loader.remove();
-        }, 500);
+        }, 150);
     }
 
     if (document.readyState === 'complete') {
-        setTimeout(removeLoader, 180);
+        setTimeout(removeLoader, 50);
     } else {
         window.addEventListener('load', () => {
-            setTimeout(removeLoader, 200);
+            setTimeout(removeLoader, 100);
         });
-        setTimeout(removeLoader, 800);
+        setTimeout(removeLoader, 300);
     }
 }
 
