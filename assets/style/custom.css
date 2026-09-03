@@ -2328,7 +2328,9 @@ header .main-navbar .nav-menu > li > a::before,
 header .main-navbar .nav-menu > li > a::after { display: none !important; content: none !important; }
 header .main-navbar .nav-menu > li > a:hover { color: #1E4FA3 !important; text-decoration: none !important; }
 header .main-navbar .nav-menu > li > a.active { color: #1E4FA3 !important; border-bottom: 3px solid #D4AF37 !important; }
-header.tour-header.sticky { position: fixed; top: 0; background: #FFFFFF !important; box-shadow: 0 4px 20px rgba(0,0,0,0.06) !important; animation: slideDown 0.3s ease; }
+header.tour-header.sticky { position: fixed; top: 0; background: #FFFFFF !important; box-shadow: 0 4px 20px rgba(0,0,0,0.06) !important;
+     /* animation: slideDown 0.3s ease; */
+     }
 @keyframes slideDown { from { transform: translateY(-100%); } to { transform: translateY(0); } }
 
 
