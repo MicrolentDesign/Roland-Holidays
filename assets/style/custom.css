@@ -1845,17 +1845,27 @@ width: 20px; height: 20px; cursor: pointer; }
 }
 .lightbox-close:hover { background: rgba(255,255,255,0.2); }
 .lightbox-inner {
-    display: flex; align-items: center; gap: 16px;
-    width: 100%; max-width: 900px; justify-content: center;
+    position: relative;
+    display: flex; align-items: center; justify-content: center;
+    width: 100%; max-width: 900px;
 }
 .lightbox-nav {
-    background: rgba(255,255,255,0.1); border: none; color: #fff;
+    position: absolute; top: 50%; transform: translateY(-50%);
+    background: rgba(0,0,0,0.35); border: none; color: #fff;
     width: 44px; height: 44px; border-radius: 50%;
     font-size: 22px; cursor: pointer; flex-shrink: 0;
     display: flex; align-items: center; justify-content: center;
     transition: background .2s;
+    z-index: 2;
 }
-.lightbox-nav:hover { background: rgba(127,180,212,0.4); }
+.lightbox-prev { left: 8px; }
+.lightbox-next { right: 8px; }
+.lightbox-nav:hover { background: rgba(127,180,212,0.6); }
+@media (max-width: 480px) {
+    .lightbox-nav { width: 36px; height: 36px; font-size: 18px; }
+    .lightbox-prev { left: 4px; }
+    .lightbox-next { right: 4px; }
+}
 .lightbox-img {
     max-width: 100%; max-height: 78vh; border-radius: 12px;
     object-fit: contain; box-shadow: 0 24px 80px rgba(0,0,0,0.5);
@@ -2588,6 +2598,16 @@ header .main-navbar .nav-menu > li .nav-submenu li a .drop-icon {
     text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4) !important;
 }
 
+/* Shrink long breadcrumb hero titles on mobile so they don't wrap into 3 lines and overlap the breadcrumb trail below */
+@media (max-width: 767px) {
+    .ds-page-title,
+    .breadcrumb-section .breadcrumb-content h1,
+    .breadcrumb-section .breadcrumb-content h2 {
+        font-size: 28px !important;
+        line-height: 1.25 !important;
+    }
+}
+
 /* ══════════════ CARD KINETIC BUTTON ARROW ICON ALIGNMENT ══════════════ */
 .routes-box .primary-button, 
 .routes-box .ds-btn-kinetic {
@@ -2851,6 +2871,26 @@ section:not(.breadcrumb-section):not(.hero-section):not(.header-top-bar) {
 .ds-city-tab.active {
     background: #1a2a3a;
     color: #FFFFFF;
+}
+
+@media (max-width: 767px) {
+    .ds-city-tabs {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        border-radius: 16px;
+        justify-content: flex-start;
+    }
+    .ds-city-tabs::-webkit-scrollbar {
+        display: none;
+    }
+    .ds-city-tab {
+        flex-shrink: 0;
+        padding: 10px 16px;
+        font-size: 13px;
+    }
 }
 
 /* ══════════════ ESSENTIAL TRAVEL INFORMATION ══════════════ */
