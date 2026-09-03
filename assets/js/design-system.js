@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initScrollReveals();
     initMobileDrawer();
     initWebpOptimizer();
+    initDestinationCardClick();
 });
 
 /**
@@ -261,6 +262,23 @@ function initKineticButtons() {
             fill.className = 'button-animated-color';
             btn.appendChild(fill);
         }
+    });
+}
+
+/**
+ * 1b. Make Destination Cards Fully Clickable
+ * Clicking anywhere on a .routes-box card navigates to the same link as its
+ * kinetic button, instead of only the button itself being clickable.
+ */
+function initDestinationCardClick() {
+    document.querySelectorAll('.routes-box').forEach(card => {
+        const link = card.querySelector('.routes-content a[href]');
+        if (!link) return;
+
+        card.addEventListener('click', (e) => {
+            if (e.target.closest('a')) return;
+            window.location.href = link.getAttribute('href');
+        });
     });
 }
 

@@ -874,16 +874,17 @@ width: 20px; height: 20px; cursor: pointer; }
 .tab-nav-inner::-webkit-scrollbar { display: none; }
 .tab-nav-link {
     display: inline-block; padding: 16px 20px; font-size: 13px; font-weight: 700;
-    color: #475569; border-bottom: 4px solid transparent; text-decoration: none;
+    color: #8A94A3; border-bottom: 4px solid transparent; text-decoration: none;
     transition: all 0.3s ease;
     white-space: nowrap; letter-spacing: .04em;
 }
 .tab-nav-link:hover {
     color: #1E4FA3;
 }
-.tab-nav-link.active { 
-    color: #1E4FA3; 
-    border-bottom-color: #1E4FA3; 
+.tab-nav-link.active {
+    color: #1E4FA3;
+    font-weight: 800;
+    border-bottom-color: #1E4FA3;
 }
 
 .stat-strip { display: flex; flex-wrap: wrap; gap: 16px; margin: 24px 0 32px; }
@@ -2628,6 +2629,35 @@ header .main-navbar .nav-menu > li .nav-submenu li a .drop-icon {
     color: #1E4FA3 !important;
 }
 
+/* ══════════════ SYNC BUTTON ANIMATION WITH WHOLE-CARD HOVER ══════════════ */
+.routes-box:hover .primary-button,
+.routes-box:hover .ds-btn-kinetic {
+    transform: translateY(-2px);
+    border-color: rgba(30, 79, 163, 0.4);
+}
+
+.routes-box:hover .primary-button .primay-button-text,
+.routes-box:hover .ds-btn-kinetic .primay-button-text {
+    transform: translateY(-22px);
+    color: #FFFFFF;
+}
+
+.routes-box:hover .primary-button .button-animated-color,
+.routes-box:hover .ds-btn-kinetic .button-animated-color {
+    left: 0;
+}
+
+.routes-box:hover .primary-button .button-arrow-pill,
+.routes-box:hover .ds-btn-kinetic .button-arrow-pill {
+    background-color: #FFFFFF !important;
+    color: #1E4FA3 !important;
+}
+
+.routes-box:hover .primary-button .button-arrow-pill .button-arrow,
+.routes-box:hover .ds-btn-kinetic .button-arrow-pill .button-arrow {
+    color: #1E4FA3 !important;
+}
+
 /* ══════════════ MASTER COMPREHENSIVE SECTION BREATHING SPACE ══════════════ */
 .py-section,
 .section-t-space,
@@ -2790,6 +2820,62 @@ section:not(.breadcrumb-section):not(.hero-section):not(.header-top-bar) {
 
 .ds-contact-link:hover {
     color: #D4AF37 !important;
+}
+
+/* ══════════════ CITY SELECTOR TABS (Thailand Sightseeing Builder) ══════════════ */
+.ds-city-tabs {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 999px;
+    padding: 6px;
+    box-shadow: 0 4px 14px rgba(15, 23, 42, 0.06);
+}
+.ds-city-tab {
+    border: none;
+    background: transparent;
+    padding: 10px 22px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #334155;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    white-space: nowrap;
+}
+.ds-city-tab:hover {
+    color: #1E4FA3;
+}
+.ds-city-tab.active {
+    background: #1a2a3a;
+    color: #FFFFFF;
+}
+
+/* ══════════════ ESSENTIAL TRAVEL INFORMATION ══════════════ */
+.ds-travel-info-box {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 14px;
+    padding: 20px 22px;
+}
+.ds-info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.ds-info-label {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #94A3B8;
+}
+.ds-info-value {
+    font-size: 13px;
+    font-weight: 700;
+    color: #1a2a3a;
 }
 
 /* ══════════════ MOBILE RESPONSIVE OPTIMIZATION OVERHAUL ══════════════ */
